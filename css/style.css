@@ -1,0 +1,61 @@
+
+/* COLORS:
+****************
+	#F9ED69 - header
+	#6A2C70 - sub header
+	#B83B5E - sub sub header
+	#F08A5D - button
+
+
+***************/
+h1,h2,h3,h4 {
+	font-family: 'Martel',sans-serif;
+	font-weight: 200;
+}
+h1#name {
+	position: relative;
+	font-size: 5em;
+	line-height: 1.4;
+	padding: 0;
+	margin: 0;
+	color: #F9ED69;
+}
+h1#name::after {
+	position: absolute;
+	content: '';
+}
+p {
+	font-family: 'Ek Mukta', sans-serif;
+	font-weight: 200;
+}
+section {
+	width: 100%;
+	height: 100vh;
+}
+.front {
+	background: #F0F5F9;
+}
+
+form#contact-me > label {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+form#contact-me > input,
+form#contact-me > textarea {
+	display: block;
+	width: 80%;
+	padding: 0.750em;
+	margin: 1em auto;
+	border: 1px solid rgba(50,50,50,0.6);
+}
+form#contact-me > textarea {
+	height: 100px;
+}
+form#contact-me > #form-submit {
+	width: 35%;
+	margin: 0 auto;
+	background: transparent;
+	border: 1px solid #aaa;
+}

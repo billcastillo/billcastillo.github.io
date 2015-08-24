@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Bill Castillo | Twerk Culture Expert</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,18 +13,41 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/style.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+        <!-- FONTS -->
+        <link href='http://fonts.googleapis.com/css?family=Ek+Mukta:400,200' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Martel:400,200,700' rel='stylesheet' type='text/css'>
+
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <form action="HIDDEN" id="contact-form" role="form" method="POST">
-            <input type="text" name="name" placeholder="Your name">
-            <input type="email" name="_replyto" placeholder="Your email" required />
-            <input type="text" name="message" placeholder="Message" required />
-            <input type="submit" value="Send">
-        </form>
-
+            <section class="front">
+                <div class="row container">
+                    <h1 class="twelve column" id="name">Bill Castillo</h1>
+                </div>
+                <div class="row container">
+                    <h2 class="twelve column" id="description">A connoisseur of Bitch. Fuck. Nigga.</h2>
+                </div>
+                    <p id="sub-description">Want website? <a href="#contact-me">Hit me up</a></p>
+                
+            </section>
+            <section class="contact">
+                <div class="row container" id="contact">
+                    <div class="col-md-6 col-xs-12 contact-description">
+                        <h2>I need money for food.</h2>
+                    </div>
+                    <form action="HIDDEN" class="col-md-6 col-md-push-6 col-xs-12 col-xs-push-0" id="contact-me" role="form" method="POST">
+                        <label>Contact Me:</label>
+                        <input type="text" id="form-name" name="name" placeholder="Name" />
+                        <input type="email" name="_replyto" placeholder="Email" required />
+                        <textarea type="text" name="message" placeholder="Message" required></textarea>
+                        <input type="submit" id="form-submit" value="Submit">
+                    </form>
+                </div>
+            </section>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
@@ -37,13 +60,13 @@
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='https://www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+            ga('create','(UA-66058302-1','auto');ga('send','pageview');
 
             $(document).ready(function() {
             var base64_email = 'Y2FzdGlsbG9iaWxAZ21haWwuY29t';
             var base_url = '//formspree.io/';
             var action = base_url + atob(base64_email);
-            $('#contact-form').attr('action', action);
+            $('#contact-me').attr('action', action);
             });
         </script>
     </body>
