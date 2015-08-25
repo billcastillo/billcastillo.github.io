@@ -29,11 +29,21 @@ h1#name {
 	color: #F08A5D;
 }
 h2#description {
+	position: relative;
 	line-height: 1.6;
-	border-left: 0.250em solid #ccc;
-	padding-left: 0.50em;
+	padding-left: 1.250em;
 	margin-bottom: 1em;
 	color: #6A2C70;
+}
+h2#description::before {
+	position: absolute;
+	content: '';
+	left: 15px;
+	top: 0;
+	bottom: 0;
+	width: 0.250em;
+	height: 100%;
+	background: #ccc;
 }
 #sub-description p {
 	padding: 0 1.250em;
@@ -46,7 +56,7 @@ section {
 	height: 100vh;
 }
 .front {
-	background: #EBEEF0;
+	background: #EFEEF0;
 }
 .front-container,
 .contact-container{
