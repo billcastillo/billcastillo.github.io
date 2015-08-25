@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -8,15 +8,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+
+        <!-- FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Martel:400,200,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Ek+Mukta:400,200,700' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/style.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
-        <!-- FONTS -->
-        <link href='https://fonts.googleapis.com/css?family=Ek+Mukta:400,200' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Martel:400,200,700' rel='stylesheet' type='text/css'>
 
     </head>
     <body>
@@ -24,31 +23,39 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
             <section class="front">
-                <div class="row container">
-                    <h1 class="twelve column" id="name">Bill Castillo</h1>
+                <div class="container front-container">
+                    <div class="logo">
+                        <img src="" />
+                    </div>
+                    <div class="row main-description">
+                        <h1 class="col-md-12" id="name">Bill Castillo</h1>
+                        <h2 class="col-md-12" id="description">Twerk Culture Expert | <span class="bold">Web Designer</span> | Alchemist</h2>
+                        <div class="cold-md-12" id="sub-description">
+                            <p>I'm a minimalist front-end developer who makes websites and people cum together.</p>
+                            <p>Want website? <a href="#contact-me">Hit me</a></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="row container">
-                    <h2 class="twelve column" id="description">A connoisseur of Bitch. Fuck. Nigga.</h2>
-                </div>
-                    <p id="sub-description">Want website? <a href="#contact-me">Hit me up</a></p>
-                
             </section>
             <section class="about">
-                <h2>About me and shit.</h2>
-                <h2>fuc</h2>
+
             </section>
             <section class="contact">
-                <div class="row container" id="contact">
-                    <div class="col-md-6 col-xs-12 contact-description">
-                        <h2>I need money for food.</h2>
+                <div class="container contact-container">
+                    <div class="row" id="contact">
+                        <div class="col-md-5 col-xs-11 contact-description">
+                            <h2>I need money for food.</h2>
+                        </div>
+                        <div  class="col-md-5 col-xs-11">
+                            <form action="HIDDEN" id="contact-me" role="form" method="POST">
+                                <label>Contact Me:</label>
+                                <input type="text" id="form-name" name="name" placeholder="Name" />
+                                <input type="email" name="_replyto" placeholder="Email" required />
+                                <textarea type="text" name="message" placeholder="Message" required></textarea>
+                                <input type="submit" id="form-submit" value="Submit">
+                            </form>
+                        </div>
                     </div>
-                    <form action="HIDDEN" class="col-md-6 col-md-push-6 col-xs-12 col-xs-push-0" id="contact-me" role="form" method="POST">
-                        <label>Contact Me:</label>
-                        <input type="text" id="form-name" name="name" placeholder="Name" />
-                        <input type="email" name="_replyto" placeholder="Email" required />
-                        <textarea type="text" name="message" placeholder="Message" required></textarea>
-                        <input type="submit" id="form-submit" value="Submit">
-                    </form>
                 </div>
             </section>
         </div>
@@ -57,7 +64,6 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

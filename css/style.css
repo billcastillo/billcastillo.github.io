@@ -6,46 +6,71 @@
 	#B83B5E - sub sub header
 	#F08A5D - button
 
-
 ***************/
+.bold {
+	font-weight: 700;
+}
+p {
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 h1,h2,h3,h4 {
 	font-family: 'Martel',sans-serif;
 	font-weight: 200;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 h1#name {
 	position: relative;
 	font-size: 5em;
-	line-height: 1.4;
-	padding: 0;
-	margin: 0;
-	color: #F9ED69;
+	line-height: 1.2;
+	color: #F08A5D;
 }
-h1#name::after {
-	position: absolute;
-	content: '';
+h2#description {
+	line-height: 1.6;
+	border-left: 0.250em solid #ccc;
+	padding-left: 0.50em;
+	margin-bottom: 1em;
+	color: #6A2C70;
 }
-p {
+#sub-description p {
+	padding: 0 1.250em;
 	font-family: 'Ek Mukta', sans-serif;
 	font-weight: 200;
 }
 section {
 	width: 100%;
+	min-height: 100vh;
 	height: 100vh;
 }
 .front {
-	background: #F0F5F9;
+	background: #EBEEF0;
 }
-
+.front-container,
+.contact-container{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+#contact {
+	margin: 0 auto;
+}
+.contact-description {
+	padding: 1em;
+	text-align: left;
+}
 form#contact-me > label {
 	display: block;
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 	text-align: center;
 }
 form#contact-me > input,
 form#contact-me > textarea {
 	display: block;
-	width: 80%;
+	width: 90%;
 	padding: 0.750em;
 	margin: 1em auto;
 	border: 1px solid rgba(50,50,50,0.6);
