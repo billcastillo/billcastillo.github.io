@@ -48,7 +48,7 @@ h2#description::before {
 #sub-description p {
 	padding: 0 1.250em;
 	font-family: 'Ek Mukta', sans-serif;
-	font-weight: 200;
+	font-weight: 400;
 }
 section {
 	width: 100%;
@@ -61,8 +61,16 @@ section {
 .front-container,
 .contact-container{
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+	top: 25%;
+	transform: translateY(-25%);
+}
+@media screen and (min-width: 769px) {
+	.front-container,
+	.contact-container{
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 }
 #contact {
 	margin: 0 auto;
