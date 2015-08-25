@@ -61,8 +61,7 @@ section {
 .front-container,
 .contact-container{
 	position: relative;
-	top: 25%;
-	transform: translateY(-25%);
+	top: 2em;
 }
 @media screen and (min-width: 769px) {
 	.front-container,
