@@ -4,12 +4,25 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Bill Castillo</title>
-        <meta name="description" content="">
+        <meta name="description" content="Bill Castillo - A minimalist front-end designer who makes websites of any kind.">
+        <meta name="keywords" content="Bill Castillo,bill,castillo,website,developer,web developer,web designer,designer,programmer,UX,UI,dubai,tondo,manila,philippines,UAE,U.A.E.,united arab emirates,fire magician,fire,magician">
+        <meta name="author" content="Bill Castillo">
+        <meta property="og:title" content="Bill Castillo" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Bill Castillo - I make websites and people come together ;)" />
+        <meta property="og:site_name" content="Bill Castillo" />
+            <!-- GOOGLE VERIFICATION no subdomain-->
+            <meta name="google-site-verification" content="jCosw1Vm8uSI93BTC03a7gGG6d_mqroPa6cSmbBbTLs" />
+            <!-- GOOGLE VERIFICATION with subdomain-->
+            <meta name="google-site-verification" content="jCosw1Vm8uSI93BTC03a7gGG6d_mqroPa6cSmbBbTLs" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+        <!--
+        <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+        
         <!-- FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Martel:400,200,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Ek+Mukta:400,200,700' rel='stylesheet' type='text/css'>
 
@@ -19,18 +32,35 @@
 
     </head>
     <body>
+        <div id="loader" class="se-pre-con"></div>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
             <section class="front">
+                <header class="col-md-12 col-sm-12 col-xs-12">
+                    <nav id="main-nav">
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Blog</a></li>
+                            <li><a href="">Resume</a></li>
+                            <li><a href="#contact-me">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
                 <div class="container front-container">
+                    <!--
                     <div class="logo">
                         <img src="" />
                     </div>
+                    -->
                     <div class="row main-description">
-                        <h1 class="col-md-12" id="name">Bill Castillo</h1>
-                        <h2 class="col-md-12" id="description">Twerk Culture Expert | <span class="bold">Web Designer</span> | Alchemist</h2>
-                        <div class="cold-md-12" id="sub-description">
+                        <h1 class="animate fadeInUp col-md-12 col-sm-12 col-xs-12" id="name" data-wow-delay="0.5s">Bill Castillo</h1>
+                        <h2 class="animate fadeInUp col-md-11 col-sm-11 col-xs-12" id="description" data-wow-delay="1s">
+                            <span class="description" data-wow-delay="1s">Twerk Culture Expert |</span>
+                            <span class="bold description" data-wow-delay="1.3s">Web Designer |</span>
+                            <span class="description" data-wow-delay="1.5s">Alchemist</span>
+                        </h2>
+                        <div class="animate fadeIn cold-md-12 col-sm-12 col-xs-12" id="sub-description" data-wow-delay="1.5s">
                             <p>I'm a minimalist front-end developer who makes websites and people cum together.</p>
                             <p>Want website? <a href="#contact-me">Hit me</a></p>
                         </div>
@@ -43,10 +73,10 @@
             <section class="contact">
                 <div class="container contact-container">
                     <div class="row" id="contact">
-                        <div class="col-md-5 col-xs-11 contact-description">
-                            <h2>I need money for food.</h2>
+                        <div class="col-md-6 col-sm-12 col-xs-12 contact-description">
+                            <h2 id="contact-description">I need money for food.</h2>
                         </div>
-                        <div  class="col-md-5 col-xs-11">
+                        <div  class="col-md-6 col-sm-12 col-xs-12">
                             <form action="HIDDEN" id="contact-me" role="form" method="POST">
                                 <label>Contact Me:</label>
                                 <input type="text" id="form-name" name="name" placeholder="Name" />
@@ -77,6 +107,11 @@
             var base_url = '//formspree.io/';
             var action = base_url + atob(base64_email);
             $('#contact-me').attr('action', action);
+            });
+
+            $(window).load(function() {
+            // Animate loader off screen
+                $(".se-pre-con").fadeOut("slow");;
             });
         </script>
     </body>

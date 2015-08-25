@@ -1,3 +1,4 @@
+//ANCHOR SMOOTH SCROLL
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -12,3 +13,14 @@ $(function() {
     }
   });
 });
+
+//WOW JS
+wow = new WOW(
+{
+  boxClass:     'animate',      // default
+  animateClass: 'animated', // default
+  offset:       0,          // default
+  mobile:       true,       // default
+  live:         true       // default
+})
+wow.init();

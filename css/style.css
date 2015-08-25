@@ -7,50 +7,37 @@
 	#F08A5D - button
 
 ***************/
+/* PRELOAD
+***************/
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../img/preload.gif) center no-repeat #fff;
+}
 .bold {
 	font-weight: 700;
 }
 p {
+	margin-bottom: 1em;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 h1,h2,h3,h4 {
-	font-family: 'Martel',sans-serif;
+	font-family: 'Martel', serif;
 	font-weight: 200;
 	margin: 0;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-h1#name {
-	position: relative;
-	font-size: 5em;
-	line-height: 1.2;
-	color: #F08A5D;
-}
-h2#description {
-	position: relative;
-	line-height: 1.6;
-	padding-left: 1.250em;
-	margin-bottom: 1em;
-	color: #6A2C70;
-}
-h2#description::before {
-	position: absolute;
-	content: '';
-	left: 15px;
-	top: 0;
-	bottom: 0;
-	width: 0.250em;
-	height: 100%;
-	background: #ccc;
-}
-#sub-description p {
-	padding: 0 1.250em;
-	font-family: 'Ek Mukta', sans-serif;
-	font-weight: 400;
-}
 section {
+	position: relative;
 	width: 100%;
 	min-height: 100vh;
 	height: 100vh;
@@ -61,7 +48,8 @@ section {
 .front-container,
 .contact-container{
 	position: relative;
-	padding-top: 1em;
+	top: 25%;
+	transform: translateY(-25%);
 }
 @media screen and (min-width: 769px) {
 	.front-container,
@@ -71,12 +59,103 @@ section {
 		transform: translateY(-50%);
 	}
 }
+header {
+	position: absolute;
+	top: 0;
+	margin: 0 auto;
+}
+nav#main-nav {
+	display: block;
+}
+nav#main-nav ul {
+	text-align: center;
+	padding: 0;
+}
+nav#main-nav ul li {
+	display: inline-block;
+	padding: 0.250em;
+	margin: 0.250em;
+}
+nav#main-nav ul li a {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 300;
+	text-decoration: none;
+
+	padding: 0.250em;
+	margin: 0.250em;
+}
+@media screen and (min-width: 768px) {
+	nav#main-nav ul li a {
+
+	}
+}
+
+h1#name {
+	position: relative;
+	font-size: 3.5em;
+	line-height: 1.2;
+	color: #F08A5D;
+	text-align: center;
+	margin: 0 auto;
+
+	background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 60s infinite linear;
+}
+h2#description {
+	position: relative;
+	font-size: 1em;
+	line-height: 1.6;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	padding-left: 0;
+	color: #6A2C70;
+	text-align: center;
+}
+.description {
+	display: block;
+}
+#sub-description p {
+	padding: 0 1.250em;
+	margin: 0 auto;
+	font-family: 'Ek Mukta', sans-serif;
+	font-weight: 400;
+	text-align: center;
+}
+@media screen and (min-width: 768px) {
+	h1#name {
+		font-size: 5em;
+		line-height: 1.4;
+		text-align: left;
+	}
+	h2#description {
+		font-size: 1.50em;
+		padding-left: 0.250em;
+		border-left: 5px solid #ccc;	
+		text-align: left;
+	}
+	.description {
+		display: inline;
+	}
+	#sub-description p {
+		text-align: left;
+	}
+}
 #contact {
 	margin: 0 auto;
 }
 .contact-description {
-	padding: 1em;
-	text-align: left;
+	text-align: center;
+	margin-bottom: 2em;
+}
+#contact-description {
+	padding: 15px;
+}
+@media screen and (min-width: 768px) {
+	.contact-description {
+		text-align: left;
+	}
 }
 form#contact-me > label {
 	display: block;
