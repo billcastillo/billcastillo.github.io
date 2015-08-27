@@ -36,7 +36,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-            <section class="front">
+            <section class="front" data-type="background" data-speed="2">
                 <header class="col-md-12 col-sm-12 col-xs-12">
                     <nav id="main-nav">
                         <ul>
@@ -56,19 +56,20 @@
                     <div class="row main-description">
                         <h1 class="animate fadeInUp col-md-12 col-sm-12 col-xs-12" id="name" data-wow-delay="0.5s">Bill Castillo</h1>
                         <h2 class="animate fadeInUp col-md-11 col-sm-11 col-xs-12" id="description" data-wow-delay="1.25s">
-                            <span class="description">Twerk Culture Expert |</span>
                             <span class="bold description">Web Designer |</span>
-                            <span class="description">Alchemist</span>
+                            <span class="description">Alchemist |</span>
+                            <span class="description">Twerk Culture Expert</span>
                         </h2>
                         <div class="animate fadeIn cold-md-12 col-sm-12 col-xs-12" id="sub-description" data-wow-delay="1.85s">
-                            <p>I'm a minimalist front-end developer who make websites and people cum together.</p>
-                            <p>Want website? <a href="#contact-me">Hit me</a></p>
+                            <p>I'm a minimalist front-end developer who make websites and people get along.</p>
+                            <p>I'm open for any kind of collaborations and projects you have in mind. <a href="#contact-me">Hit me</a></p>
                         </div>
                     </div>
                 </div>
             </section>
             <section class="about">
-
+                <div class="about-me-container">
+                </div>
             </section>
             <section class="contact">
                 <div class="container contact-container">
@@ -113,6 +114,55 @@
             // Animate loader off screen
                 $(".se-pre-con").fadeOut("slow");;
             });
+
+            //background parallax scroll
+            function parallaxIt() {
+
+              // create variables
+              var $fwindow = $(window);
+              var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+              // on window scroll event
+              $fwindow.on('scroll resize', function() {
+                scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              }); 
+
+              // for each of content parallax element
+              $('[data-type="content"]').each(function (index, e) {
+                var $contentObj = $(this);
+                var fgOffset = parseInt($contentObj.offset().top);
+                var yPos;
+                var speed = ($contentObj.data('speed') || 1 );
+
+                $fwindow.on('scroll resize', function (){
+                  yPos = fgOffset - scrollTop / speed; 
+
+                  $contentObj.css('top', yPos);
+                });
+              });
+
+              // for each of background parallax element
+              $('[data-type="background"]').each(function(){
+                var $backgroundObj = $(this);
+                var bgOffset = parseInt($backgroundObj.offset().top);
+                var yPos;
+                var coords;
+                var speed = ($backgroundObj.data('speed') || 0 );
+
+                $fwindow.on('scroll resize', function() {
+                  yPos = - ((scrollTop - bgOffset) / speed); 
+                  coords = '50% '+ yPos + 'px';
+
+                  $backgroundObj.css({ backgroundPosition: coords });
+                }); 
+              }); 
+
+              // triggers winodw scroll for refresh
+              $fwindow.trigger('scroll');
+            };
+
+            parallaxIt();
+
         </script>
     </body>
 </html>
