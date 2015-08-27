@@ -72,10 +72,13 @@ section {
 	position: relative;
 	top: 2em;
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
 	section {
 		min-height: 100vh;
 		height: 100vh;
+	}
+	.front {
+		background: url('https://unsplash.it/420/600/?image=677');
 	}
 	.front-container,
 	.contact-container{
