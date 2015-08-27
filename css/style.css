@@ -48,7 +48,7 @@ section {
 .front {
 	position: relative;
 	background: #fff;
-	background: url('https://unsplash.it/1440/800/?image=677');
+	background: url('https://unsplash.it/420/600/?image=677');
 	background-size: auto 150%;
 	background-position: center;
 	z-index: 1;
@@ -70,7 +70,7 @@ section {
 .front-container,
 .contact-container{
 	position: relative;
-	top: 2em;
+	top: 1em;
 }
 @media screen and (min-width: 768px) {
 	section {
@@ -78,7 +78,9 @@ section {
 		height: 100vh;
 	}
 	.front {
-		background: url('https://unsplash.it/420/600/?image=677');
+		background: url('https://unsplash.it/1440/800/?image=677');
+		background-size: auto 150%;
+		background-position: center;
 	}
 	.front-container,
 	.contact-container{
@@ -141,16 +143,13 @@ nav#main-nav ul li a:hover {
 
 	}
 }
-/*
 .main-description {
-	background: linear-gradient( to right, rgba(255,255,255,0.60), transparent );
-	padding: 15px;
-	border-radius: 8px;
-	width: auto;
+	width: 100%;
+	margin: 0 auto;
 }
-*/
 h1#name {
 	position: relative;
+	display: block;
 	font-size: 4em;
 	line-height: 1.2;
 	color: #F08A5D;
@@ -164,6 +163,7 @@ h1#name {
 }
 h2#description {
 	position: relative;
+	display: block;
 	font-size: 1.250em;
 	line-height: 1.6;
 	margin: 0 auto;
@@ -178,6 +178,7 @@ h2#description {
 	display: block;
 }
 #sub-description p {
+	display: block;
 	padding: 0 1.250em;
 	margin: 0 auto;
 	font-family: 'Ek Mukta', sans-serif;
@@ -187,6 +188,11 @@ h2#description {
 	color: #404040;
 }
 @media screen and (min-width: 768px) {
+	.main-description {
+		min-width: 750px;
+		width: 60%;
+		max-width: 1028px;
+	}
 	h1#name {
 		font-size: 7.50em;
 		line-height: 1.4;
@@ -206,9 +212,6 @@ h2#description {
 		text-align: left;
 	}
 }
-#contact {
-	margin: 0 auto;
-}
 .contact-description {
 	text-align: center;
 	margin-bottom: 2em;
@@ -226,23 +229,24 @@ form#contact-me {
 }
 form#contact-me > label {
 	display: block;
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 	text-align: center;
 }
-form#contact-me > input,
-form#contact-me > textarea {
+form#contact-me input,
+form#contact-me textarea {
 	display: block;
-	width: 80%;
-	padding: 0.750em;
+	width: 90%;
+	padding: 1em;
 	margin: 1em auto;
-	border: 1px solid rgba(50,50,50,0.6);
+	border: 1px solid rgba(50,50,50,0.4);
 }
-form#contact-me > textarea {
-	height: 100px;
+form#contact-me textarea {
+	height: 85px;
 }
-form#contact-me > #form-submit {
-	width: 35%;
+form#contact-me #form-submit {
+	width: 30%;
+	max-width: 250px;
 	margin: 0 auto;
 	background: transparent;
 	border: 1px solid #aaa;

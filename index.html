@@ -54,13 +54,13 @@
                     </div>
                     -->
                     <div class="row main-description">
-                        <h1 class="animate fadeInUp col-md-12 col-sm-12 col-xs-12" id="name" data-wow-delay="0.5s">Bill Castillo</h1>
-                        <h2 class="animate fadeInUp col-md-11 col-sm-11 col-xs-12" id="description" data-wow-delay="1.25s">
+                        <h1 class="animate fadeInUp" id="name" data-wow-delay="0.5s" data-wow-offset"-50">Bill Castillo</h1>
+                        <h2 class="animate fadeInUp" id="description" data-wow-delay="1.25s" data-wow-offset"-50">
                             <span class="bold description">Web Designer |</span>
                             <span class="description">Alchemist |</span>
                             <span class="description">Twerk Culture Expert</span>
                         </h2>
-                        <div class="animate fadeIn cold-md-12 col-sm-12 col-xs-12" id="sub-description" data-wow-delay="1.85s">
+                        <div class="animate fadeIn" id="sub-description" data-wow-delay="1.85s" data-wow-offset"-80">
                             <p>I'm a minimalist front-end developer who make websites and people get along.</p>
                             <p>I'm open for any kind of collaborations and projects you have in mind. <a href="#contact-me">Hit me</a></p>
                         </div>
@@ -68,25 +68,32 @@
                 </div>
             </section>
             <section class="about">
-                <div class="about-me-container">
-                </div>
             </section>
             <section class="contact">
                 <div class="container contact-container">
-                    <div class="row" id="contact">
-                        <div class="col-md-6 col-sm-12 col-xs-12 contact-description">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 contact-description">
                             <h2 id="contact-description">I need money for food.</h2>
                         </div>
-                        <div  class="col-md-6 col-sm-12 col-xs-12">
-                            <form action="HIDDEN" id="contact-me" role="form" method="POST">
-                                <label>Contact Me:</label>
-                                <input type="text" id="form-name" name="name" placeholder="Name" />
-                                <input type="email" name="_replyto" placeholder="Email" required />
-                                <textarea type="text" name="message" placeholder="Message" required></textarea>
-                                <input type="submit" id="form-submit" value="Send">
-                            </form>
-                        </div>
                     </div>
+                    
+                        <form action="HIDDEN" id="contact-me" role="form" method="POST">
+                            <label>Contact Me:</label>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 col-xs-12">    <input type="text" id="form-name" name="name" placeholder="Name" />
+                                <input type="email" id="form-email" name="_replyto" placeholder="Email" required />
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <textarea type="text" name="message" placeholder="Message" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <input type="submit" id="form-submit" value="Send">
+                            </div>
+                        </div>
+                        </form>
+                    
                 </div>
             </section>
         </div>

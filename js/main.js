@@ -19,7 +19,7 @@ wow = new WOW(
 {
   boxClass:     'animate',      // default
   animateClass: 'animated', // default
-  offset:       0,          // default
+  offset:       -50,          // default
   mobile:       true,       // default
   live:         true       // default
 })
