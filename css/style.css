@@ -253,6 +253,69 @@ form#contact-me #form-submit {
 	background: transparent;
 	border: 1px solid #aaa;
 }
+
+/* ABOUT PART
+ * *********************
+*/
+
+.about-content {
+	width: 90%;
+	margin: 0 auto;
+	padding: 1em;
+}
+.about-description {
+	width: 80%;
+	max-width: 700px;
+	margin: 0.50em auto;
+	line-height: 1.6;
+}
+.portfolio-gallery {
+	margin: 2em 0;
+	text-align: center;
+}
+.portfolio-gallery h2 {
+
+}
+ul#portfolio-gallery-list {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+}
+ul#portfolio-gallery-list li {
+	position: relative;
+	width: 100%;
+	height: 250px;
+	z-index: 1;
+}
+ul#portfolio-gallery-list li a {
+	font-size: 1em;
+}
+ul#portfolio-gallery-list li:after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	z-index: -1;
+	background: url('../img/overlay-1.png');
+	background-size: cover;
+	background-position: center;
+}
+ul#portfolio-gallery-list li:hover ~ ul#portfolio-gallery-list li:after{
+	opacity: 0.75;
+}
+@media screen and (min-width: 768px) {
+	.about-content {
+		width: 80%;
+	}
+}
+/* RESUME PAGE
+ * *********************
+*/
+
 #back-home {
 	position: absolute;
 	font-family: 'Ek Mukta', sans-serif;
@@ -269,7 +332,6 @@ body#resume section {
 	width: 90%;
 	max-width: 1024px;
 	margin: 1em auto;
-	border: 0.250em solid #222;
 	padding: 15px;
 }
 .resume-section {
@@ -292,13 +354,14 @@ body#resume section {
 	padding: 1em 0;
 }
 #resume-name {
-	font-size: 4em;
+	font-size: 2.750em;
 }
 .resume-section h1,
 .resume-section h2 {
 	font-family: 'Marte',serif;
 	font-size: 2.250em;
 	font-weight: 200;
+	color: #202020;
 }
 .resume-section h3,
 .resume-section h4,
@@ -306,10 +369,22 @@ body#resume section {
 	font-family: 'Ek Mukta', sans-serif;
 	font-size: 1.250em;
 	font-weight: 200;
+	color: #404040;
 }
 
 .resume-section h3 {
 	font-weight: 400;
+}
+
+/* removes border on IPHONE 6 PLUS AND BELOW
+*/
+@media screen and (min-width: 415px) {
+	#resume-name {
+		font-size: 4em;
+	}
+	.resume-container {
+		border: 0.50em solid #222;
+	}
 }
 @media screen and (min-width: 768px) {
 	#back-home {
@@ -322,7 +397,6 @@ body#resume section {
 	.resume-container {
 		width: 80%;
 		margin: 1em auto;
-		border: 0.50em solid #222;
 
 		-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
 		-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
