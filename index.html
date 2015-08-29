@@ -40,9 +40,8 @@
                 <header class="col-md-12 col-sm-12 col-xs-12">
                     <nav id="main-nav">
                         <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Blog</a></li>
-                            <li><a href="">Resume</a></li>
+                            <li><a href="https://billcastillo.me">Home</a></li>
+                            <li><a href="resume.html">Resume</a></li>
                             <li><a href="#contact-me">Contact</a></li>
                         </ul>
                     </nav>
@@ -62,7 +61,7 @@
                         </h2>
                         <div class="animate fadeIn" id="sub-description" data-wow-delay="1.85s" data-wow-offset"-80">
                             <p>I'm a minimalist front-end developer who make websites and people get along.</p>
-                            <p>I'm open for any kind of collaborations and projects you have in mind. <a href="#contact-me">Hit me</a></p>
+                            <p><a href="#contact-me">Hit me.</a></p>
                         </div>
                     </div>
                 </div>
@@ -77,7 +76,7 @@
                         </div>
                     </div>
                     
-                        <form action="HIDDEN" id="contact-me" role="form" method="POST">
+                        <form action="http://mailthis.to/casbie" id="contact-me" role="form" method="POST">
                             <label>Contact Me:</label>
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-xs-12">    <input type="text" id="form-name" name="name" placeholder="Name" />
@@ -90,6 +89,8 @@
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <input type="submit" id="form-submit" value="Send">
+
+                                <input type="hidden" name="_confirmation" value="<b>Thank you!</b> We have received your message and will get back to you asap.<br><a href='https://billcastillo.me'>Go back.</a>">
                             </div>
                         </div>
                         </form>
@@ -110,19 +111,22 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','(UA-66058302-1','auto');ga('send','pageview');
 
+            /*hide email using base64
+             *
             $(document).ready(function() {
             var base64_email = 'Y2FzdGlsbG9iaWxAZ21haWwuY29t';
             var base_url = '//formspree.io/';
             var action = base_url + atob(base64_email);
             $('#contact-me').attr('action', action);
             });
+            */
 
+            //PRELOAD
             $(window).load(function() {
-            // Animate loader off screen
                 $(".se-pre-con").fadeOut("slow");;
             });
 
-            //background parallax scroll
+            // PARALLAX SCROLL
             function parallaxIt() {
 
               // create variables

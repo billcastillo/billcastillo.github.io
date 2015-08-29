@@ -5,6 +5,8 @@
 	#6A2C70 - sub header
 	#B83B5E - sub sub header
 	#F08A5D - button
+	#404040 - text
+	#505050 - subtext
 
 ***************/
 /* PRELOAD
@@ -250,4 +252,80 @@ form#contact-me #form-submit {
 	margin: 0 auto;
 	background: transparent;
 	border: 1px solid #aaa;
+}
+#back-home {
+	position: absolute;
+	font-family: 'Ek Mukta', sans-serif;
+	top: 5%;
+	left: 5%;
+	z-index: 10;
+}
+body#resume section {
+	position: relative;
+	height: 100%;
+	min-height: 100%;
+}
+.resume-container {
+	width: 90%;
+	max-width: 1024px;
+	margin: 1em auto;
+	border: 0.250em solid #222;
+	padding: 15px;
+}
+.resume-section {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	padding: 1em 0;
+}
+.resume-section::after {
+	position: absolute;
+	content: '';
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	margin: 0 auto;
+	border-bottom: 1px solid #ddd;
+}
+.resume-header {
+	padding: 1em 0;
+}
+#resume-name {
+	font-size: 4em;
+}
+.resume-section h1,
+.resume-section h2 {
+	font-family: 'Marte',serif;
+	font-size: 2.250em;
+	font-weight: 200;
+}
+.resume-section h3,
+.resume-section h4,
+.resume-section p {
+	font-family: 'Ek Mukta', sans-serif;
+	font-size: 1.250em;
+	font-weight: 200;
+}
+
+.resume-section h3 {
+	font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+	#back-home {
+		top: 15px;
+		left: 15px;
+	}
+	.resume-section {
+		width: 90%;
+	}
+	.resume-container {
+		width: 80%;
+		margin: 1em auto;
+		border: 0.50em solid #222;
+
+		-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+		-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+		box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+	}
 }
