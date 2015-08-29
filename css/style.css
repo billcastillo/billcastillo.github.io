@@ -81,7 +81,7 @@ section {
 	}
 	.front {
 		background: url('https://unsplash.it/1440/800/?image=677');
-		background-size: auto 150%;
+		background-size: 500% auto;
 		background-position: center;
 	}
 	.front-container,
@@ -221,27 +221,23 @@ h2#description {
 #contact-description {
 	padding: 15px;
 }
-@media screen and (min-width: 768px) {
-	.contact-description {
-		text-align: left;
-	}
+.contact-container h2 {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
 }
 form#contact-me {
 	padding: 2em auto;
 }
-form#contact-me > label {
-	display: block;
-	width: 90%;
-	margin: 0 auto;
-	text-align: center;
-}
 form#contact-me input,
 form#contact-me textarea {
 	display: block;
-	width: 90%;
+	width: 80%;
 	padding: 1em;
 	margin: 1em auto;
 	border: 1px solid rgba(50,50,50,0.4);
+	border-radius: 0;
 }
 form#contact-me textarea {
 	height: 85px;
@@ -252,6 +248,11 @@ form#contact-me #form-submit {
 	margin: 0 auto;
 	background: transparent;
 	border: 1px solid #aaa;
+}
+@media screen and (min-width: 768px) {
+	.contact-description {
+		text-align: left;
+	}
 }
 
 /* ABOUT PART
@@ -281,32 +282,7 @@ ul#portfolio-gallery-list {
 	padding: 0;
 	margin: 0 auto;
 }
-ul#portfolio-gallery-list li {
-	position: relative;
-	width: 100%;
-	height: 250px;
-	z-index: 1;
-}
-ul#portfolio-gallery-list li a {
-	font-size: 1em;
-}
-ul#portfolio-gallery-list li:after {
-	position: absolute;
-	content: '';
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	right: 0;
-	opacity: 0;
-	z-index: -1;
-	background: url('../img/overlay-1.png');
-	background-size: cover;
-	background-position: center;
-}
-ul#portfolio-gallery-list li:hover ~ ul#portfolio-gallery-list li:after{
-	opacity: 0.75;
-}
+
 @media screen and (min-width: 768px) {
 	.about-content {
 		width: 80%;
