@@ -51,7 +51,7 @@ section {
 	position: relative;
 	background: #fff;
 	background: url('https://unsplash.it/420/600/?image=677');
-	background-size: auto 150%;
+	background-size: auto 130%;
 	background-position: center;
 	z-index: 1;
 	/* #EFEEF0 */
@@ -85,7 +85,7 @@ section {
 		background-position: center;
 	}
 	.front-container,
-	.contact-container{
+	.contact-container {
 		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
@@ -95,6 +95,7 @@ header {
 	position: relative;
 	top: 0;
 	margin: 0 auto;
+	z-index: 100;
 }
 nav#main-nav {
 	display: block;
@@ -170,7 +171,6 @@ h2#description {
 	line-height: 1.6;
 	margin: 0 auto;
 	margin-bottom: 1em;
-	padding-left: 0;
 	color: #6A2C70;
 	/*
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.33); */
@@ -198,20 +198,15 @@ h2#description {
 	h1#name {
 		font-size: 7.50em;
 		line-height: 1.4;
-		text-align: left;
 	}
 	h2#description {
-		font-size: 1.750em;
-		padding-left: 0.250em;
-		border-left: 5px solid #ccc;	
-		text-align: left;
+		font-size: 1.750em;	
 	}
 	.description {
 		display: inline;
 	}
 	#sub-description p {
 		font-size: 1.250em;
-		text-align: left;
 	}
 }
 .contact-description {
@@ -225,6 +220,7 @@ h2#description {
 	display: block;
 	width: 80%;
 	margin: 0 auto;
+	padding: 1em;
 	text-align: center;
 }
 form#contact-me {
@@ -243,13 +239,21 @@ form#contact-me textarea {
 	height: 85px;
 }
 form#contact-me #form-submit {
-	width: 30%;
+	width: 50%;
 	max-width: 250px;
 	margin: 0 auto;
 	background: transparent;
 	border: 1px solid #aaa;
 }
 @media screen and (min-width: 768px) {
+	.contact-container h2,
+	form#contact-me input,
+	form#contact-me textarea {
+		width: 90%;
+	}
+	form#contact-me #form-submit {
+		width: 30%;
+	}
 	.contact-description {
 		text-align: left;
 	}
