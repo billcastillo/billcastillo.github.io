@@ -328,7 +328,7 @@ video#bgvid {
     background-attachment: fixed;
 }
 @media screen and (max-width: 800px) {
-    html {
+    #about-section-1 {
          background: url('../media/Hello-World.jpg') #000 no-repeat center center fixed;
     }
     #bgvid {
