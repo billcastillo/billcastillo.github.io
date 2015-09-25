@@ -24,4 +24,3 @@ wow = new WOW(
   live:         true       // default
 })
 wow.init();
-
