@@ -8,11 +8,15 @@ h6 {
   padding: 0;
   line-height: 1.6;
   font-family: 'Martel', 'Georgia' 'Arial', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   color: #563761;
   -webkit-font-smoothing: antialiased;
 }
 -moz-osx-font-smoothing grayscale,
+h1 {
+  font-weight: 300;
+  font-size: 3.5rem;
+}
 p {
   margin: 0;
   margin-bottom: 1em;
@@ -50,13 +54,13 @@ body .back::after {
   display: inline-block;
   width: 50px;
   margin: 0.5em auto;
-  content: "\f053";
+  content: "\f104";
   left: 0;
   right: 0;
   top: 0;
   text-align: center;
   font-family: FontAwesome;
-  font-size: 2em;
+  font-size: 3em;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -65,6 +69,9 @@ body .back::after {
 }
 body .back:hover::after {
   color: #89579a;
+}
+.em {
+  font-weight: 400;
 }
 .row {
   display: block;
@@ -105,5 +112,5 @@ body .back:hover::after {
   margin: 0 auto;
   margin-bottom: 2em;
   padding: 2em;
-  background: #f2f2f2;
+  background: #f8f8f8;
 }

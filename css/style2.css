@@ -1,30 +1,6 @@
 /* Variables
  *
  *************************************/
-.alegreya {
-  font-family: 'Alegreya Sans', 'Helvetica', 'Arial';
-}
-.martel,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-h1#main-title {
-  font-family: 'Martel', 'Georgia', serif;
-}
-.palanquin,
--moz-osx-font-smoothing grayscale,
-p,
-ul li a,
-h1#main-title::before,
-h2#main-description,
-.image-section .image-section-overlay h2,
-.contact-section .contact-section-content .contact-form form #form-submit {
-  font-family: 'Palanquin', 'Arial', sans-serif;
-}
 /* Mixins
  *
  *************************************/
@@ -69,13 +45,13 @@ body .top::after {
   display: inline-block;
   width: 50px;
   margin: 0 auto;
-  content: "\f077";
+  content: "\f106";
   left: 0;
   right: 0;
-  bottom: 1em;
+  bottom: 0.25em;
   text-align: center;
   font-family: FontAwesome;
-  font-size: 2em;
+  font-size: 3em;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -98,12 +74,15 @@ p {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  font-family: 'Martel', 'Georgia', serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 -moz-osx-font-smoothing grayscale,
 p {
   line-height: 1.4;
+  font-family: 'Palanquin', 'Arial', sans-serif;
+  font-weight: 300;
 }
 a {
   text-decoration: none;
@@ -134,15 +113,20 @@ ul li {
   display: inline-block;
 }
 ul li a {
+  font-family: 'Palanquin', 'Arial', sans-serif;
   font-weight: 300;
   color: #563761;
 }
 .main-container {
-  width: 80%;
+  width: 90%;
   max-width: 1024px;
   margin: 0 auto;
   margin-bottom: 4em;
-  background: #f2f2f2;
+}
+@media screen and (min-width: 769px) {
+  .main-container {
+    width: 80%;
+  }
 }
 /*************************************************************** 
  ***************************************************************
@@ -158,8 +142,9 @@ header {
   z-index: 1000;
 }
 header ul {
-  text-align: right;
+  text-align: center;
   margin: 0;
+  padding: 0;
 }
 header ul li {
   margin: 0 1em;
@@ -171,48 +156,122 @@ header ul li a {
   letter-spacing: -1px;
   line-height: 2;
 }
+@media screen and (min-width: 769px) {
+  header ul {
+    text-align: right;
+  }
+}
+.main-section-overlay {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("https://unsplash.it/400/700/?random");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: 100;
+}
+@media screen and (min-width: 769px) {
+  .main-section-overlay {
+    background: url("https://unsplash.it/1000/800/?random");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+}
 .main-section {
-  height: calc(100vh - 76px);
+  position: relative;
+  height: 100vh;
   text-align: center;
   z-index: 500;
 }
-.main-section-content {
-  position: relative;
-  top: 40%;
-  transform: translateY(-40%);
+.main-section .bottom::after {
+  position: absolute;
+  content: "\f107";
+  width: 50px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 1em;
+  font-size: 3em;
+  text-align: center;
+  font-family: FontAwesome;
+  font-size: 3em;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #563761;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
   z-index: 600;
 }
-h1#main-title {
+.main-section .bottom:hover::after {
+  color: #89579a;
+}
+.main-section-content {
+  height: 100%;
+  background: rgba(242,242,242,0.65);
+  z-index: 600;
+}
+.main-section-content .main-section-middle {
   position: relative;
-  display: inline-block;
+  top: 35%;
+  transform: translateY(-35%);
+}
+.main-section-content h1#main-title {
+  position: relative;
+  font-family: 'Martel', 'Georgia', serif;
+  font-weight: 400;
   font-weight: 200;
-  font-size: 5em;
+  display: inline-block;
+  font-size: 3.5rem;
   letter-spacing: -2px;
   color: #563761;
   line-height: 1.4;
 }
-h1#main-title::before {
+.main-section-content h1#main-title::before {
   position: absolute;
   display: block;
   content: "Hi, I'm";
   top: -14px;
   left: 4px;
-  font-size: 0.25em;
+  font-family: 'Palanquin', 'Arial', sans-serif;
   font-weight: 300;
+  font-size: 1rem;
   letter-spacing: 1px;
   color: #a7425c;
 }
-h2#main-description {
+.main-section-content h2#main-description {
+  font-family: 'Palanquin', 'Arial', sans-serif;
   font-weight: 300;
-  transform: translateY(-80%);
+  transform: translateY(-50%);
+  font-size: 1.5em;
   color: #a7425c;
+}
+@media screen and (min-width: 769px) {
+  .main-section-content h1#main-title {
+    font-size: 5rem;
+  }
+  .main-section-content h1#main-title::before {
+    font-size: 0.25em;
+  }
+  .main-section-content h2#main-description {
+    font-size: 1.5rem;
+  }
 }
 .image-section {
   position: relative;
   height: 35vh;
-  background: url("../img/1.jpg");
-  background-size: cover;
+  background: url("https://unsplash.it/800/400/?random");
   background-attachment: fixed;
+  background-size: cover;
   background-position: right center;
   z-index: 400;
   -webkit-transition: -webkit-filter 3s linear;
@@ -231,19 +290,36 @@ h2#main-description {
   position: absolute;
   display: block;
   box-sizing: border-box;
-  width: 50%;
+  width: 70%;
   height: 100%;
   content: '';
   top: 0;
   left: 0;
   text-align: left;
-  padding: 2em;
+  padding: 1em;
 }
 .image-section .image-section-overlay h2 {
   color: #f8f8f8;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  font-family: 'Palanquin', 'Arial', sans-serif;
   font-weight: 300;
   vertical-align: middle;
+  font-size: 1.25rem;
+}
+@media screen and (min-width: 769px) {
+  .image-section {
+    background: url("https://unsplash.it/1200/600/?random");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right center;
+  }
+  .image-section .image-section-overlay {
+    width: 50%;
+    padding: 2em;
+  }
+  .image-section .image-section-overlay h2 {
+    font-size: 1.5rem;
+  }
 }
 .about-section {
   height: 100%;
@@ -275,26 +351,43 @@ h2#main-description {
 }
 .contact-section .contact-section-content .contact-form {
   display: block;
-  width: 80%;
+  width: 90%;
   max-width: 768px;
   margin: 0 auto;
   text-align: center;
+  box-sizing: border-box;
 }
 .contact-section .contact-section-content .contact-form form input,
 .contact-section .contact-section-content .contact-form form textarea {
   display: block;
+  box-sizing: border-box;
   width: 100%;
+  max-width: 768px;
   padding: 1.5em;
   margin: 2em 0;
   border: 1px solid rgba(86,55,97,0.4);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-box-shadow: 0 0 0 #fff;
+  -moz-box-shadow: 0 0 0 #fff;
+  box-shadow: 0 0 0 #fff;
 }
 .contact-section .contact-section-content .contact-form form #form-submit {
-  max-width: 300px;
+  max-width: 250px;
   margin: 0 auto;
   font-size: 1.5em;
-  padding: 0.5em;
+  padding: 0.25em 0;
+  border-radius: 8px;
+  font-family: 'Palanquin', 'Arial', sans-serif;
+  font-weight: 300;
   background: transparent;
 }
 .contact-section .contact-section-content .contact-form form textarea {
   height: 150px;
+}
+@media screen and (min-width: 769px) {
+  .contact-form {
+    width: 80%;
+  }
 }
