@@ -38,7 +38,7 @@ body {
   width: 100%;
   height: 100%;
   font-size: 100%;
-  padding: 2em 0;
+  padding: 0;
 }
 body .top::after {
   position: absolute;
@@ -48,7 +48,7 @@ body .top::after {
   content: "\f106";
   left: 0;
   right: 0;
-  bottom: 0.25em;
+  bottom: 0;
   text-align: center;
   font-family: FontAwesome;
   font-size: 3em;
@@ -118,10 +118,21 @@ ul li a {
   color: #563761;
 }
 .main-container {
-  width: 90%;
+  width: 100%;
   max-width: 1024px;
   margin: 0 auto;
   margin-bottom: 4em;
+}
+@media screen and (min-width: 415px) {
+  body {
+    padding: 2em 0;
+  }
+  .main-container {
+    width: 90%;
+    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.4);
+  }
 }
 @media screen and (min-width: 769px) {
   .main-container {
@@ -138,7 +149,7 @@ ul li a {
  */
 header {
   display: block;
-  padding: 1em 2em;
+  padding: 1em;
   z-index: 1000;
 }
 header ul {
@@ -151,14 +162,20 @@ header ul li {
 }
 header ul li a {
   padding: 1em 0;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   font-weight: 300;
   letter-spacing: -1px;
   line-height: 2;
 }
 @media screen and (min-width: 769px) {
+  header {
+    padding: 1em 2em;
+  }
   header ul {
     text-align: right;
+  }
+  header ul li a {
+    font-size: 1.25rem;
   }
 }
 .main-section-overlay {
@@ -197,7 +214,7 @@ header ul li a {
   margin: 0 auto;
   left: 0;
   right: 0;
-  bottom: 1em;
+  bottom: 0.5em;
   font-size: 3em;
   text-align: center;
   font-family: FontAwesome;
@@ -222,6 +239,8 @@ header ul li a {
 }
 .main-section-content .main-section-middle {
   position: relative;
+  box-sizing: border-box;
+  padding: 0.5em;
   top: 35%;
   transform: translateY(-35%);
 }
@@ -231,16 +250,17 @@ header ul li a {
   font-weight: 400;
   font-weight: 200;
   display: inline-block;
-  font-size: 3.5rem;
+  font-size: 3rem;
   letter-spacing: -2px;
   color: #563761;
-  line-height: 1.4;
+  line-height: 1;
+  text-align: left;
 }
 .main-section-content h1#main-title::before {
   position: absolute;
   display: block;
   content: "Hi, I'm";
-  top: -14px;
+  top: -20px;
   left: 4px;
   font-family: 'Palanquin', 'Arial', sans-serif;
   font-weight: 300;
@@ -251,24 +271,32 @@ header ul li a {
 .main-section-content h2#main-description {
   font-family: 'Palanquin', 'Arial', sans-serif;
   font-weight: 300;
-  transform: translateY(-50%);
-  font-size: 1.5em;
+  transform: translateY(0%);
+  font-size: 1.25em;
   color: #a7425c;
 }
 @media screen and (min-width: 769px) {
+  .main-section .bottom::after {
+    bottom: 1em;
+  }
   .main-section-content h1#main-title {
+    line-height: 1.4;
     font-size: 5rem;
+    text-align: center;
   }
   .main-section-content h1#main-title::before {
+    top: -12px;
     font-size: 0.25em;
   }
   .main-section-content h2#main-description {
     font-size: 1.5rem;
+    transform: translateY(-50%);
   }
 }
 .image-section {
   position: relative;
   height: 35vh;
+  background: #563761;
   background: url("https://unsplash.it/800/400/?random");
   background-attachment: fixed;
   background-size: cover;
@@ -288,17 +316,20 @@ header ul li a {
 }
 .image-section .image-section-overlay {
   position: absolute;
-  display: block;
+  display: table;
   box-sizing: border-box;
-  width: 70%;
+  width: 100%;
   height: 100%;
   content: '';
   top: 0;
   left: 0;
-  text-align: left;
+  text-align: center;
   padding: 1em;
+  background: rgba(86,55,97,0.4);
+  z-index: 500;
 }
 .image-section .image-section-overlay h2 {
+  display: table-cell;
   color: #f8f8f8;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
   font-family: 'Palanquin', 'Arial', sans-serif;
@@ -314,11 +345,7 @@ header ul li a {
     background-position: right center;
   }
   .image-section .image-section-overlay {
-    width: 50%;
     padding: 2em;
-  }
-  .image-section .image-section-overlay h2 {
-    font-size: 1.5rem;
   }
 }
 .about-section {
@@ -332,6 +359,10 @@ header ul li a {
   z-index: 600;
   color: #f8f8f8;
 }
+.about-section .about-section-content h1 {
+  text-align: center;
+  font-weight: 200;
+}
 .about-section .about-section-content h2 {
   font-weight: 200;
 }
@@ -343,11 +374,14 @@ header ul li a {
 }
 .contact-section {
   height: 100%;
-  min-height: 100vh;
   background: #ece3ef;
 }
 .contact-section .contact-section-content {
   padding: 2em;
+}
+.contact-section .contact-section-content h1 {
+  text-align: center;
+  font-weight: 200;
 }
 .contact-section .contact-section-content .contact-form {
   display: block;
