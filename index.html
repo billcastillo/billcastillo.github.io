@@ -23,12 +23,13 @@
 
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
         <!-- Fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Martel:400,300,200' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Ovo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
 
     </head>
     <body>
@@ -36,75 +37,85 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="container" id="main-container">
+        <div class="container-fluid">
 
-            <section class="section_first">
-                <h1>Bill Castillo</h1>
-                <h3>Web Designer &nbsp; | &nbsp; Alchemist</h3>
-            </section>
-
-
-            <section class="section_second animate fadeInUp" data-wow-duration="1.5s">
-                <h2>About</h2>
-                <p>I'm a minimalist front-end developer who makes websites to control my ego. <a href="https://billcastillo.me/resume">See resume.</a></p>
-            </section>
-
-            <section class="section_third animate fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                <h2>Projects</h2>
-                <div class="row center-text">
-                    <div class="col-m-5 col-s-12 projects">
-                        <div class="projects-overlay">
-
-                        </div>
-                    </div>
-                    <div class="col-m-5 col-s-12 projects">
-                        <div class="projects-overlay">
-
-                        </div>
+            <section class="page-section main-section row middle-xs" id="header">
+                <div class="logo col-xs-12 col-sm-5">
+                    <img src="img/logo.png" alt="logo" />
+                </div>
+                <div class="col-xs-12 col-sm-7">
+                    <div class="header-text">
+                        <h1>Bill Castillo</h1>
+                        <h2>Minimalist front-end designer/developer. See <a href="https://billcastillo.me/resume">resume,</a> <a href="#projects">projects</a></h2>
                     </div>
                 </div>
+
+                <a href="#projects" class="arrow down"></a>
             </section>
 
-            <section class="section_fourth animate fadeInUp" data-wow-duration="1.5s">
-                <h2>Connect</h2>
-                <div class="row center-text">
-                    <div class="connect">
-                        <ul>
-                            <li><a target="_blank" href="https://github.com/billcastillo">
-                                <i class="fa fa-github"></i>
-                            </a></li>
-                            <li><a target="_blank" href="http://codepen.io/billcastillo">
-                                <i class="fa fa-codepen"></i>
-                            </a></li>
-                            <li><a target="_blank" href="https://twitter.com/castlenibill">
-                                <i class="fa fa-twitter"></i>
-                            </a></li>
-                        </ul>
+            <section class="projects-section page-section row center-xs" id="projects">
+                <h2 class="main-title col-xs-12">On Going Projects</h2>
+
+                <div class="projects row center-xs col-xs-12">
+
+                    <div class="project col-xs-12 col-md-6">
+                        <h3 class="project-title">Enigma Beauty Salon &amp; Spa</h3>
+                        <a href="https://enigmaladiessalon.com" target="_blank">
+                            <img src="img/project-1.jpg" alt="enigma beauty salon">
+                        </a>
+                        <p main-descrition>
+                            A website for the a salon in Dubai which features the services and employees.
+                        </p>
                     </div>
+
+                    <div class="project col-xs-12 col-md-6">
+                        <h3 class="project-title">Webdev Tools</h3>
+                        <a href="http://webdevtools.xyz" target="_blank">
+                            <img src="https://unsplash.it/500/475/?random" alt="enigma beauty salon">
+                        </a>
+                        <p main-descrition>
+                            A collection of tools for web developers and designers.
+                        </p>
+                    </div>
+
                 </div>
+
             </section>
 
-            <section class="section_fifth animate fadeInUp" data-wow-duration="1.5s">
-                <h2>Contact</h2>
-                <p>Hit me up at castillobil@gmail.com</p>
-                <div class="row">
-                    <form action="http://mailthis.to/casbie" id="contact-me" role="form" method="POST" class="col-m-12">
-                    <input type="text" id="form-name" name="name" placeholder="Name" />
-                    <input type="email" id="form-email" name="_replyto" placeholder="* Email" required />
-                    <textarea type="text" name="message" placeholder="* Message" required></textarea>
-                    <input type="submit" id="form-submit" value="Send">
-                    <input type="hidden" name="_confirmation" value="<b>Thank you!</b> We have received your message and will get back to you asap.<br><a href='https://billcastillo.me'>Go back.</a>">
-                    </form>
-                </div>
+            <section class="page-section contact-section row middle-xs" id="contact">
+                    <div class="col-xs-12 center-xs">
+                        <h2 class="main-title">Contact</h2>
+                        <p>Hit me up at castillobil@gmail.com</p>
+
+                        <form action="http://mailthis.to/casbie" id="contact-me" role="form" method="POST">
+                            <input type="text" id="form-name" name="name" placeholder="Name" />
+                            <input type="email" id="form-email" name="_replyto" placeholder="* Email" required />
+                            <textarea type="text" name="message" placeholder="* Message" required></textarea>
+                            <input type="submit" id="form-submit" value="Send">
+                            <input type="hidden" name="_confirmation" value="<b>Thank you!</b> I'll get back to you asap.<br><a href='https://billcastillo.me'>Go back.</a>">
+                        </form>
+                    </div>
+
+                    <ul class="social">
+                        <h2 class="main-title">Follow</h2>
+                        <li><a href="https://github.com/billcastillo" target="_blank">
+                            <i class="icon ion-social-github"></i>
+                        </a></li>
+                        <li><a href="http://codepen.io/billcastillo/" target="_blank">
+                            <i class="icon ion-social-codepen"></i>
+                        </a></li>
+                    </ul>
+
             </section>
+
 
         </div> <!--Content End-->
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+
+        <script src="dist/js/all.min.js"></script>
 
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -112,7 +123,7 @@
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='https://www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+            ga('create','UA-66058302-1','auto');ga('send','pageview');
 
             $('body').noisy({
                 'intensity' : 0.15, 
