@@ -88,7 +88,7 @@ h1 {
 .arrow:hover::before {
   color: #b22445;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .arrow {
     bottom: 1em;
   }
@@ -138,7 +138,7 @@ h1 {
 .main-section h2 {
   font-size: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .page-section {
     margin-bottom: 0;
   }
