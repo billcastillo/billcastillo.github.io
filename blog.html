@@ -1,0 +1,26 @@
+---
+layout: page
+title: Blog
+menu: main
+body_class: pages
+permalink: /blog/
+---
+
+<div class="wrapper blog-page">
+
+    <ul class="post-list row center-xs">
+      {% for post in site.posts %}
+        <li class="col-xs-12 col-md-8">
+
+          <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+            <h2>
+              {{ post.title }}
+            </h2>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+</div><!-- end wrapper / blog-page -->

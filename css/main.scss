@@ -1,0 +1,399 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+
+// Our variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+$main-font: "Ovo",'Georgia','Helvetica,','Arial',serif;
+$sub-font: "Merriweather Sans",'Helvetica','Arial',sans-serif;
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        //"base",
+        //"layout",
+        "syntax-highlighting",
+        "materialize"
+;
+
+@import "flexboxgrid.min.css";
+
+/* ------------------------------------------------------
+ * Main Style
+ */
+
+.wrapper {
+	z-index: 20;
+}
+
+/*************************************************
+ * LAYOUTS
+ **************************************************/
+
+.pages {
+	//background: rgba(172,219,201,0.33);
+	background: url("../assets/grey.png") repeat;
+}
+
+/* PAGE LAYOUT
+ * ***********
+ */
+
+header {
+	padding: 1em 0;
+	z-index: 20;
+	.post-title {
+		font-family: $main-font;
+		font-size: 5rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		text-align: center;
+		margin: 1em 0;
+	}
+}
+
+@include media-query($on-palm) {
+	header {
+		.post-title {
+			font-size: 3.50rem;
+		}
+	}
+}
+
+/* POST LAYOUT
+ * ***********
+ */
+
+.post-header-blog {
+	text-align: center;
+	.post-title {
+		font-family: $main-font;
+		margin-bottom: 0;
+	}
+	.post-meta {
+		text-align: center;
+		margin-top: 0;
+		color: #707070;
+	}
+}
+
+.post-content {
+	margin-top: 2em;
+	text-align: left;
+	h1,h2,h3,h4,h5,h6 {
+		font-family: $main-font;
+	}
+	p,span,a {
+		font-family: $sub-font;
+	}
+}
+
+/**
+ * Icons
+ */
+.icon {
+
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+
+        path {
+            fill: $grey-color;
+        }
+    }
+}
+
+/*************************************************
+ * TOP-NAVIGATION
+ */
+
+.nav-wrapper {
+	> .logo {
+		img {
+			height: 100px;
+			width: auto;
+		}
+	}
+
+	> nav {
+		background-color: transparent;
+		box-shadow: none;
+		text-align: center;
+
+		> a {
+			color: #222;
+			padding: 0.250em 0;
+			padding-right: 2.50em;
+			font-family: $sub-font;
+			font-size: 1.250rem;
+			font-weight: 400;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+
+			&:nth-last-child(1) {
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+/*************************************************
+ * INDEX PAGE
+ */
+
+.main-page {
+	position: relative;
+	height: 100vh;
+
+	&::after {
+		position: fixed;
+		content: '';
+		width: 110%;
+		height: 110%;
+		top: -5%;
+		left: -5%;
+		background: url('https://unsplash.it/1280/780?image=972') no-repeat;
+		background-size: cover;
+		background-position: center;
+		//filter: blur(2px);
+		//-webkit-filter: blur(2px);
+		z-index: -2;
+		overflow: none;
+	}
+
+	&::before {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		background: rgba(255, 255, 255,0.33);
+	}
+}
+
+.home {
+	height: calc(100vh - 272px);
+	text-align: center;
+	z-index: 10;
+
+	> div {
+		padding: 1em 0;
+		//border: 5px solid #fff;
+	}
+
+	.main-title {
+		font-family: $main-font;
+		font-size: 4.50rem;
+		white-space: nowrap;
+		margin-bottom: 0;
+	}
+	.main-description {
+		font-family: $sub-font;
+		font-size: 1.50rem;
+		font-weight: 300;
+		margin-top: 0;
+	}
+}
+
+
+@include media-query($on-palm) {
+	.home {
+		.main-title {
+			font-size: 3rem;
+		}
+		.main-description {
+			font-size: 1rem;
+		}
+	}
+}
+
+/*************************************************
+ * BLOG PAGE
+ */
+
+.blog-page {
+	.post-list {
+		text-align: left;
+		li {
+			padding-top: 2em;
+			border-bottom: 1px solid #eee;
+
+			&:nth-child(1) {
+				padding-top: 0;
+			}
+
+			&:nth-last-child(1) {
+				border: none;
+			}
+
+			.post-meta {
+				top: 0;
+				line-height: 0;
+			}
+
+			h2 {
+				font-family: $sub-font;
+				font-size: 4rem;
+				font-weight: 400;
+				letter-spacing: -2px;
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+@include media-query($on-palm) {
+	.blog-page {
+		.post-list {
+			li {
+				h2 {
+					font-size: 2.50rem;
+				}
+			}
+		}
+	}
+}
+
+/*************************************************
+ * PROJECTS
+ */
+
+.projects-grid {
+	margin-bottom: 2em;
+}
+.card {
+	.card-image {
+		.card-title {
+			position: absolute;
+			font-family: $sub-font;
+			font-size: 1.250rem;
+			font-weight: 300;
+			left: -10px;
+			padding: 0.050em 1em;
+			background-color: rgba(0,0,0,0.60);
+			&::before {
+				position: absolute;
+				content: '';
+				left: 0;
+				top: -10px;
+				height: 0;
+				width: 0;
+				background-color: transparent;
+				border-bottom: 10px solid rgba(0,0,0,0.60);
+				border-left: 10px solid transparent;
+			}
+		}
+	}
+}
+
+/*************************************************
+ * RESUME PAGE
+ */
+
+.resume-page {
+	div {
+		text-align: left;
+	}
+	.section_1 {
+		padding-bottom: 1em;
+		border-bottom: 1px solid #ddd;
+		h2 {
+			font-size: 3rem;
+			margin: 0;
+		}
+		h3 {
+			font-size: 1.50rem;
+			margin: 0;
+		}
+	}
+
+	.sub-section {
+		padding: 0;
+		padding-bottom: 1em;
+		border-bottom: 1px solid #ddd;
+		h2,p {
+			margin: 0;
+			line-height: 1.6;
+		}
+		h2 {
+			margin-top: 15px;
+			font-size: 2rem;
+			text-transform: uppercase;
+		}
+
+		&:nth-last-child(1) {
+			border-bottom: none;
+		}
+		p:nth-child(1) {
+			margin-top: 15px;
+		}
+		.sub-sub-section {
+			padding-bottom: 15px;
+			border-bottom: 1px solid #eee;
+			&:nth-last-child(1) {
+				border: none;
+			}
+		}
+	}
+}
+
+/*************************************************
+ * FOOTER
+ **************************************************/
+
+footer {
+
+	.wrapper {
+		width: 80%;
+		margin: 2em auto;
+		border-top: 1px solid #ccc;
+		padding-top: 2em;
+		text-align: left;
+
+		p {
+			margin: 0;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+---
+layout: page
+title: Projects
+menu: main
+body_class: pages
+permalink: /projects/
+---
+
+<div class="wrapper projects-page">
+
+	<div class="row projects-grid center-xs">
+	{% for projects in site.data.projects %}
+        <div class="col col-xs-10 col-md-4">
+          <div class="card hoverable">
+            <div class="card-image">
+            	<a href="{{ projects.website }}" target="_blank">
+	              <img src="{{ projects.image-file }}">
+	              <div class="card-title">{{ projects.name}}</div>
+	            </a>
+            </div>
+            <div class="card-content">
+              <p>{{ projects.description }}</p>
+            </div>
+            <div class="card-action">
+              <a href="{{ projects.website }}" target="_blank">Website > </a>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+    </div><!-- end row -->
+
+</div><!-- end wrapper / projects-page -->

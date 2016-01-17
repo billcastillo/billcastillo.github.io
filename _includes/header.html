@@ -1,0 +1,33 @@
+<header class="site-header">
+
+  <div class="wrapper">
+
+    <div class="row nav-wrapper middle-xs center-xs around-md">
+      <div class="logo col-xs-12 col-md-2 col-md-offset-2">
+        <a href="{{site.url}}">
+          <img src="{{site.baseurl}}/assets/logo.png" alt="bc">
+        </a>
+      </div>
+
+      <nav class="col-xs-12 col-md-6">
+        {% for p in site.pages %}
+          {% if p.menu == 'main' %}
+            <a class="page-link" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+
+      <!--
+      <nav class="col-xs-12 col-md-6">
+          {% for my_page in site.pages %}
+            {% if my_page.title %}
+              <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+            {% endif %}
+          {% endfor %}
+      </nav>
+      -->
+    </div><!-- end row -->
+
+  </div><!-- end wrapper -->
+
+</header>

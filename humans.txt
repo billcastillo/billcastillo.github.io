@@ -1,15 +1,12 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
+# OWNER
 
-# TEAM
-
-    <name> -- <role> -- <twitter>
+    Bill Castillo -- Designer / Developer -- github.com/billcastillo
 
 # THANKS
 
-    <name>
+    to my self lol
 
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    Jekyll,Apache Server Configs, jQuery, Modernizr, Normalize.css

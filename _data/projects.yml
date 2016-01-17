@@ -1,0 +1,9 @@
+- name: Enigma Ladies Salon
+  website: https://enigmaladiessalon.com
+  description: A website for a salon in Dubai that features the essential information for the business.
+  image-file: "../assets/enigmasalon.jpg"
+
+- name: Web Dev Tools
+  website: http://webdevtools.xyz
+  description: A site that features a collection of tools and websites for a web designer/developer. 
+  image-file: "https://unsplash.it/400/260/?random"
