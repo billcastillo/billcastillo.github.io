@@ -7,8 +7,12 @@
         <a href="{{site.url}}">
           <img src="{{site.baseurl}}/assets/logo.png" alt="bc">
         </a>
-      </div>
-
+      </div> 
+      <nav class="col-xs-12 col-md-6">
+        <a class="page-link" href="{{ p.url }}/blog">Blog</a>
+        <a class="page-link" href="{{ p.url }}/projects">Projects</a>
+      </nav>
+      <!--
       <nav class="col-xs-12 col-md-6">
         {% for p in site.pages %}
           {% if p.menu == 'main' %}
@@ -17,7 +21,7 @@
         {% endfor %}
       </nav>
 
-      <!--
+      
       <nav class="col-xs-12 col-md-6">
           {% for my_page in site.pages %}
             {% if my_page.title %}
