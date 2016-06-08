@@ -1,0 +1,333 @@
+
+/* Variables */
+
+// COLORS
+$black-head = #303030
+$black-sub = #404040
+
+$color1 = #625772
+$color2 = #c06084
+$grey-light = #A7FFEB
+$grey-dark =  #767676
+
+$white = #f2f2f2
+	
+$base-font-size = 16px
+$line-height = 1.6
+$leading = 14px * $line-height;
+
+// BG COLORS
+
+$bg-1 = #FDFFA3
+$bg-2 = #F59AF0
+$bg-3 = #A980E4
+$bg-4 = #A2E4A2
+
+// Media Queries
+
+$sm = 48em
+$md = 64em
+$lg = 75em
+
+// Fonts
+
+$pts = 'PT Serif','Georgia','Helvetica','Arial',sans-serif
+$ssp = 'Source Sans Pro','Georgia','Times New Roman','TimesNewRoman',serif
+
+/*********************************
+/* MIXINS */
+
+ 
+vendor(prop, args)
+	-webkit-{prop} args
+	-moz-{prop} args
+	-ms-{prop} args
+	{prop} args
+ 
+border-radius()
+	vendor('border-radius', arguments)
+
+/*
+box-shadow()
+	vendor('box-shadow', arguments) */
+
+flex()
+	vendor('flex')
+
+/*
+transition()
+	vendor('transition', arguments) */
+
+/*
+linear-gradient()
+	vendor('linear-gradient', arguments) */
+
+filter()
+	vendor('filter', arguments)
+
+transform()
+	vendor('transform', arguments)
+
+animation()
+	vendor('animation', arguments)
+
+animation-duration()
+	vendor('animation-duration', arguments)
+
+/* General Rules */
+
+html, body
+	font-size $base-font-size
+	font-family $pts
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	overflow-x hidden
+
+h1,h2,h3,h4,h5,h6
+	font-family $ssp
+	font-weight 700
+	margin-bottom 0.50em
+	//line-height ( 2 * ( 14px * $line-height) )
+	//margin-top ( 14px * $line-height)
+	// line-height (2 * $leading)
+	// margin-top (2.5 * $leading)
+	color #973c5e
+	text-rendering optimizeLegibility
+	
+h1
+	font-size 3.052em
+	letter-spacing -2px
+h2
+	font-size 2.441em // 2.66em
+h3
+	font-size 1.953em // 2.313em
+h4
+	font-size 1.563em
+h5
+	font-size 1.25em
+h6
+	font-size 1.25em
+	font-style italic
+p
+	font-size 1.150em // 1.323em
+	font-weight 400
+	line-height 1.8
+	margin-top 1em
+	margin-bottom 2em
+	color #aa436a // #F38181
+	text-rendering geometricPrecision
+
+a
+	color #7E94BF
+
+img
+	max-width 100%
+
+figure
+	margin 2em auto
+	padding 1em
+	text-align center
+	figcaption
+		font-size 0.750em
+		font-weight 400
+		font-style italic
+		line-height 1.6
+		margin 0
+		padding 0.50em
+		text-align center
+		color $grey-dark
+	&::after
+		content ''
+		clear both
+
+figure.floatLeft,
+figure.floatRight
+	max-width 350px
+
+article,
+.width-1000
+	max-width 1000px
+	margin-left auto
+	margin-right auto
+	h1,h2,h3,h4,h5,h6,p
+		max-width 700px
+		margin-left auto
+		margin-right auto
+		
+@media screen and (min-width: $sm)
+	html, body
+		font-size: 18px
+	h1,h2,h3,h4,h5,h6
+		//line-height ( 2 * ( 16px * $line-height) )
+		//margin-top ( 2.5 * ( 16px * $line-height) )
+		// line-height (2 * $leading)
+		// margin-top (2.5 * $leading)
+	figure
+		margin 0 auto
+	figure.floatCenter
+		max-width 700px;
+	p
+		font-size 1.125em
+
+/* General CLASS */
+
+.main_container
+	padding 0 2em
+
+.floatRight
+	float none
+.floatLeft
+	float none
+	
+.blockQuote
+	margin 2em 0 1.50em 0
+	font-style italic
+
+.height-100
+	height 100vh
+
+.width-700
+	max-width 700px
+	margin-left auto
+	margin-right auto
+
+.border
+	padding 0.250em
+	border 1px solid $black-head
+
+
+@media screen and (min-width: $sm)
+	.main_container
+		padding 0
+	.floatRight
+		float right
+	.floatLeft
+		float left
+
+
+/* Main Style */
+
+.main_container {
+	max-width 1000px
+	margin 0 auto
+}
+
+.main_splash
+	position relative
+	min-height 100vh
+	overflow hidden
+	header
+		position absolute
+		width 100%
+		top 10%
+		left 0
+		right 0
+		text-align center
+		z-index 100
+		#main-nav
+			display block
+			width auto
+			margin 0 auto
+			ul
+				font-family $ssp
+				text-align center
+				li					
+					display inline-block
+					border-radius 50%
+					text-align center
+					transition all 0.7s ease-in-out
+					animation Floating 3s infinite ease-in-out
+					&:not(:last-child)
+						margin-right 1em
+					&:nth-child(1)
+						animation-duration 3.75s
+						a
+							background #973c5e
+					&:nth-child(2)
+						a
+							background #1D2B53
+					&:nth-child(3)
+						animation-duration 4.5s
+						a
+							background #FFF024
+					&:hover
+						box-shadow 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+					a
+						padding 0.750em 1.20em
+						text-decoration none
+						border-radius 50%
+						color #f6f6f6
+	#particles-js
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 99%
+		background linear-gradient(180deg, #f6f6f6, transparent)
+		-webkit-transform translateZ(0)
+		ms-transform translateZ(0)
+		transform translateZ(0) // increase animation performance
+		z-index 10
+	.main_splash_text
+		position absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%) scale(2	)
+		-moz-transform translate(-50%, -50%) scale(1)
+		-webkit-transform translate(-50%, -50%) scale(2)
+		zoom 0.5
+		text-align center
+		z-index 20
+		h1,h2
+			font-family $pts
+			font-weight 400
+			margin 0
+			white-space nowrap
+			letter-spacing 2px
+		h1
+			display inline-block
+			font-size 2.50em
+			// text-transform uppercase
+			// text-shadow 2px 1px 2px rgba(0,0,0,0.35)
+			z-index 20
+		h2
+			font-size 1.50em
+			font-weight 400
+			margin-top 0
+			color #aaa
+			font-variant small-caps
+			z-index 15
+		&::before
+			position absolute
+			content "Hi, I'm"
+			top -25%
+			left 11%
+			color #aaa
+			
+@media screen and (min-width: $sm)
+	.main_splash
+		height 100vh
+		.main_splash_text
+			h1
+				font-size 2em
+			h2
+				font-size 1.250em
+			&::before
+				left 14%
+
+
+@-webkit-keyframes Floating
+	from
+		transform translate(0, 0px)
+	65%
+		transform translate(0, 15px)
+	to
+		transform translate(0, -0px)  
+
+@-moz-keyframes Floating
+	from
+		transform translate(0, 0px)
+	65%
+		transform translate(0, 0px)
+	to
+		transform translate(0, 0px)

@@ -1,0 +1,23 @@
+{
+  "name": "billcastillo.github.io",
+  "version": "3.0.0",
+  "description": "personal portfolio",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/billcastillo/billcastillo.github.io.git"
+  },
+  "keywords": [
+    "bill",
+    "castillo"
+  ],
+  "author": "bill castillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/billcastillo/billcastillo.github.io/issues"
+  },
+  "homepage": "https://github.com/billcastillo/billcastillo.github.io#readme"
+}
