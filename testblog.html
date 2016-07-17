@@ -34,6 +34,7 @@
 
   <link href="css/framework.css" rel="stylesheet"/>
   <link href="css/style.css" rel="stylesheet"/>
+  <link href="css/prism.css" rel="stylesheet"/>
 
   <!-- fonts -->
   <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,400italic' rel='stylesheet' type='text/css'>
@@ -52,8 +53,9 @@
   <div class="main_container row">
     <article class="col-xs-12">
     <h1>
-      Dubai
+      Test blog
     </h1>
+    <h2>Overview</h2>
     <p>
       I have been recently looking at some Javascript libraries to make particle-based backgrounds. I found 2 promising libraries, Particleground and particles.js. Before jumping in and copy/pasting sample code, I figured I'd do some thinking of my own and see if I really need a library to achieve a simple particle background where the particles are connected by lines, depending on their distance.
     </p>
@@ -67,7 +69,7 @@
     <p>
       I have been recently looking at some Javascript libraries to make particle-based backgrounds. I found 2 promising libraries, Particleground and particles.js. Before jumping in and copy/pasting sample code, I figured I'd do some thinking of my own and see if I really need a library to achieve a simple particle background where the particles are connected by lines, depending on their distance.
     </p>
-    <figure class="floatRight">
+    <figure class="floatRight col-xs-12 col-sm-4">
       <img src="img/logoLR.jpg" alt="">
       <figcaption>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</figcaption>
     </figure>
@@ -79,11 +81,75 @@
      <p>
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
     </p>
+    
+    <h2>Final Result:</h2>
+    <pre class="language-css"><code>
+      p {
+        font-size: 1em;
+        line-height: 1.735;
+      }
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        background: none;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin-bottom: 2.50em;
+        overflow: auto;
+        border-radius: 0.3em;
+      }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #272822;
+      }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal;
+      }
+
+      .token.comment,
+      .token.prolog,
+      .token.doctype,
+      .token.cdata {
+        color: slategray;
+      }
+
+    </code></pre>
 
     <h5>Lorem ipsum dolor sit amet aw orem ipsum dolor  5</h5>
      <p>
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
     </p>
+
+    <pre><code class="language-markup">
+      <script type="prism-html-markup">
+      <p>Hi</p>
+      </script>
+    </code></pre>
 
     <p>
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
@@ -99,6 +165,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="js/scripts.js"></script>
+
   <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
     function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

@@ -96,10 +96,11 @@ figure::after {
   content: '';
   clear: both;
 }
+/*
 figure.floatLeft,
-figure.floatRight {
-  max-width: 350px;
-}
+figure.floatRight
+	max-width 350px
+*/
 article {
   padding-top: 2em;
   padding-bottom: 2em;
@@ -133,10 +134,17 @@ article h5,
 article h6,
 .width-1000 h6,
 article p,
-.width-1000 p {
+.width-1000 p,
+article pre,
+.width-1000 pre {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+article pre,
+.width-1000 pre {
+  max-height: 500px;
+  overflow: auto;
 }
 @media screen and (min-width: 48em) {
   html,
@@ -156,7 +164,7 @@ article p,
 }
 /* General CLASS */
 .main_container {
-  padding: 0 1em;
+  padding: 0 0.5em;
 }
 .floatRight {
   float: none;
@@ -431,6 +439,18 @@ article p,
 }
 .white-text {
   color: #f2f2f2;
+}
+.full {
+  width: 100%;
+}
+.half {
+  width: 50%;
+}
+.third {
+  width: 33.33%;
+}
+.fourth {
+  width: 25%;
 }
 @-moz-keyframes Floating {
   from {

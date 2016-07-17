@@ -28,7 +28,7 @@ $c1 = #973c5e
 $c2 = #1D2B53
 $c3 = #fff357
 
-$htext = #853553
+$header-text = #853553
 
 // Media Queries
 
@@ -38,8 +38,8 @@ $lg = 75em
 
 // Fonts
 
-$pts = 'Lora','Georgia','Helvetica','Arial',sans-serif
-$ssp = 'PT Sans','Georgia','Times New Roman','TimesNewRoman',serif
+$header-font = 'Lora','Georgia','Helvetica','Arial',sans-serif
+$body-font = 'PT Sans','Georgia','Times New Roman','TimesNewRoman',serif
 
 /*********************************
 /* MIXINS */
@@ -85,13 +85,13 @@ animation-duration()
 
 html, body
 	font-size $base-font-size
-	font-family $pts
+	font-family $header-font
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
 	overflow-x hidden
 
 h1,h2,h3,h4,h5,h6
-	font-family $ssp
+	font-family $body-font
 	font-family 'PT Sans'
 	font-weight 400
 	margin-bottom 0.50em
@@ -99,7 +99,7 @@ h1,h2,h3,h4,h5,h6
 	//margin-top ( 14px * $line-height)
 	// line-height (2 * $leading)
 	// margin-top (2.5 * $leading)
-	color $htext
+	color $header-text
 	letter-spacing -0.01em
 	text-rendering optimizeLegibility
 	
@@ -114,6 +114,7 @@ h3
 	font-size 1.953em // 2.313em
 h4
 	font-size 1.563em
+	//color lighten( $header-text, 25% )
 h5
 	font-size 1.25em
 	font-weight 700
@@ -158,9 +159,11 @@ figure
 		content ''
 		clear both
 
+/*
 figure.floatLeft,
 figure.floatRight
 	max-width 350px
+*/
 
 article
 	padding-top 2em
@@ -180,11 +183,16 @@ article,
 	h1
 		color $c3
 		text-shadow 1px 0px 1px rgba(0,0,0,0.35)
-	h2,h3,h4,h5,h6,p
+	h2,h3,h4,h5,h6,p,pre
 		max-width 700px
 		margin-left auto
 		margin-right auto
-		
+	pre
+		max-height 500px
+		overflow auto
+
+
+
 @media screen and (min-width: $sm)
 	html, body
 		font-size: 18px
@@ -204,7 +212,7 @@ article,
 /* General CLASS */
 
 .main_container
-	padding 0 1em
+	padding 0 0.50em
 
 .floatRight
 	float none
@@ -261,7 +269,7 @@ article,
 			width auto
 			margin 0 auto
 			ul
-				font-family $ssp
+				font-family $body-font
 				text-align center
 				li					
 					display inline-block
@@ -333,7 +341,7 @@ article,
 		text-align center
 		z-index 20
 		h1,h2
-			font-family $pts
+			font-family $header-font
 			font-weight 400
 			margin 0
 			white-space nowrap
@@ -341,7 +349,7 @@ article,
 		h1
 			display inline-block
 			font-size 2.50em
-			color $htext
+			color $header-text
 			// text-transform uppercase
 			// text-shadow 2px 1px 2px rgba(0,0,0,0.35)
 			z-index 20
@@ -409,3 +417,12 @@ article,
 	
 .white-text
 	color $white
+
+.full
+	width 100%
+.half
+	width 50%
+.third
+	width 33.33%
+.fourth
+	width 25%
