@@ -27,7 +27,7 @@ h5,
 h6 {
   font-family: 'PT Sans', 'Georgia', 'Times New Roman', 'TimesNewRoman', serif;
   font-family: 'PT Sans';
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 0.5em;
   color: #853553;
   letter-spacing: -0.01em;
@@ -36,7 +36,6 @@ h6 {
 h1 {
   font-size: 6em;
   font-weight: 700;
-  margin-bottom: 1em;
   text-align: center;
 }
 h2 {
@@ -50,16 +49,18 @@ h4 {
 }
 h5 {
   font-size: 1.25em;
+  font-weight: 700;
 }
 h6 {
   font-size: 1.25em;
+  font-weight: 700;
   font-style: italic;
 }
 p {
   font-family: 'Lora';
   font-size: 1.05em;
   font-weight: 400;
-  line-height: 1.735;
+  line-height: 1.7;
   margin-top: 0;
   margin-bottom: 2.5em;
   color: #a04c6c;
@@ -150,11 +151,12 @@ article p,
   }
   p {
     font-size: 1.05em;
+    line-height: 1.735;
   }
 }
 /* General CLASS */
 .main_container {
-  padding: 0 2em;
+  padding: 0 1em;
 }
 .floatRight {
   float: none;
