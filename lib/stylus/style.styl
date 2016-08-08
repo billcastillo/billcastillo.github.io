@@ -44,6 +44,12 @@ $body-font = 'PT Sans','Georgia','Times New Roman','TimesNewRoman',serif
 /*********************************
 /* MIXINS */
 
+absolute()
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
  
 vendor(prop, args)
 	-webkit-{prop} args
@@ -131,6 +137,7 @@ p
 	margin-bottom 2.50em
 	color $text // #F38181
 	text-rendering geometricPrecision
+	-webkit-font-smoothing subpixel-antialiased
 
 a
 	color #7E94BF
@@ -256,14 +263,35 @@ article,
 	position relative
 	min-height 100vh
 	overflow hidden
+	background url('../img/me.svg')
+	background-size cover
+	background-position center center
+	/*
+	&::before
+		absolute()
+		background linear-gradient( 92deg, alpha($c1,0.35), alpha($c2,0.35) )
+		z-index 1
+	*/
 	header
 		position absolute
 		width 100%
 		top 10%
-		left 0
+		left 5%
 		right 0
-		text-align center
+		text-align left
 		z-index 100
+		#main_nav
+			ul
+				list-style none
+				li
+					margin-bottom 0.50em
+					a
+						font-size 1.50em
+						font-weight 400
+						text-decoration none
+						color #ffbbbb
+						
+		/*
 		#main-nav
 			display block
 			width auto
@@ -318,28 +346,25 @@ article,
 							visibility hidden
 							opacity 1
 							transition all 0.15s ease-in-out
-							
+		*/
 	#particles-js
-		position absolute
-		top 0
-		left 0
-		width 100%
-		height 99%
+		absolute()
+		display block
 		background linear-gradient(180deg, #f6f6f6, transparent)
+		background transparent
 		-webkit-transform translateZ(0)
 		ms-transform translateZ(0)
 		transform translateZ(0) // increase animation performance
-		z-index 10
 	.main_splash_text
 		position absolute
 		top 50%
 		left 50%
-		transform translate(-50%, -50%) scale(2	)
+		transform translate(-50%, -50%) scale(2)
 		-moz-transform translate(-50%, -50%) scale(1)
 		-webkit-transform translate(-50%, -50%) scale(2)
 		zoom 0.5
 		text-align center
-		z-index 20
+		z-index 1000
 		h1,h2
 			font-family $header-font
 			font-weight 400
@@ -348,35 +373,38 @@ article,
 			letter-spacing 2px
 		h1
 			display inline-block
-			font-size 2.50em
+			font-size 3em // 2.50em
 			color $header-text
 			// text-transform uppercase
 			// text-shadow 2px 1px 2px rgba(0,0,0,0.35)
-			z-index 20
+			background $c1
+			background linear-gradient( 92deg, $c1, $c2 )
+			-webkit-background-clip text
+			-webkit-text-fill-color transparent
+			text-shadow 1px 1px 1px rgba(0, 0, 0, 0.08), 2px 2px 1px rgba(0, 0, 0, 0.075), 4px 4px 1px rgba(0, 0, 0, 0.07), 6px 6px 1px rgba(0, 0, 0, 0.065), 8px 8px 1px rgba(0, 0, 0, 0.06), 10px 10px 1px rgba(0, 0, 0, 0.055), 12px 12px 1px rgba(0, 0, 0, 0.05), 14px 14px 1px rgba(0, 0, 0, 0.045), 16px 16px 1px rgba(0, 0, 0, 0.04), 18px 18px 1px rgba(0, 0, 0, 0.035), 20px 20px 1px rgba(0, 0, 0, 0.03), 22px 22px 1px rgba(0, 0, 0, 0.025), 24px 24px 1px rgba(0, 0, 0, 0.02), 26px 26px 1px rgba(0, 0, 0, 0.015), 28px 28px 1px rgba(0, 0, 0, 0.01), 30px 30px 1px rgba(0, 0, 0, 0.005), 32px 32px 1px rgba(0, 0, 0, 0.0025), 34px 34px 1px rgba(0, 0, 0, 0.002), 36px 36px 1px rgba(0, 0, 0, 0.0015), 38px 38px 1px rgba(0, 0, 0, 0.001)
 		h2
-			font-size 1.50em
+			font-size 1.250em // 1.50em
 			font-weight 400
 			margin-top 0
-			color #aaa
+			color #ffbbbb
 			font-variant small-caps
-			z-index 15
 		&::before
 			position absolute
 			content "Hi, I'm"
 			top -25%
-			left 11%
-			color #aaa
+			left 0%
+			color #ffbbbb
 			
 @media screen and (min-width: $sm)
 	.main_splash
 		height 100vh
 		.main_splash_text
 			h1
-				font-size 2em
+				font-size 3em // 2em
 			h2
-				font-size 1.250em
+				font-size 1.50em // 1.250em
 			&::before
-				left 14%
+				left 5%
 
 
 @-webkit-keyframes Floating

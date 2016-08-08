@@ -65,6 +65,7 @@ p {
   margin-bottom: 2.5em;
   color: #a04c6c;
   text-rendering: geometricPrecision;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 a {
   color: #7e94bf;
@@ -208,114 +209,108 @@ article pre,
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  background: url("../img/me.svg");
+  background-size: cover;
+  background-position: center center;
+/*
+	&::before
+		absolute()
+		background linear-gradient( 92deg, alpha($c1,0.35), alpha($c2,0.35) )
+		z-index 1
+	*/
 }
 .main_splash header {
   position: absolute;
   width: 100%;
   top: 10%;
-  left: 0;
+  left: 5%;
   right: 0;
-  text-align: center;
+  text-align: left;
   z-index: 100;
+/*
+		#main-nav
+			display block
+			width auto
+			margin 0 auto
+			ul
+				font-family $body-font
+				text-align center
+				li					
+					display inline-block
+					border-radius 50%
+					transition all 0.7s ease-in-out
+					box-shadow 0 16px 28px 0 rgba(0,0,0,0.22), 0 25px 55px 0 rgba(0,0,0,0.21)
+					animation Floating 4s infinite ease-in-out
+					&:not(:last-child)
+						margin-right 1em
+					&:nth-child(1)
+						animation-duration 5.75s
+						a
+							background #973c5e
+							span
+								left 85%
+					&:nth-child(2)
+						a
+							background #1D2B53
+							span
+								left 115%
+					&:nth-child(3)
+						animation-duration 6.5s
+						a
+							background #FFF024
+							span
+								left 110%
+					&:hover
+						a
+							span
+								opacity 1
+								visibility visible
+								transform translate(-50%,-50%) scale(1)
+					a
+						display block
+						position relative
+						padding 0.80em 1.100em
+						text-decoration none
+						border-radius 50%
+						color $white
+						text-shadow 2px 2px 3px rgba(0,0,0,0.60)
+						z-index 150
+						span
+							position absolute
+							top 50%
+							left 0
+							visibility hidden
+							opacity 1
+							transition all 0.15s ease-in-out
+		*/
 }
-.main_splash header #main-nav {
-  display: block;
-  width: auto;
-  margin: 0 auto;
+.main_splash header #main_nav ul {
+  list-style: none;
 }
-.main_splash header #main-nav ul {
-  font-family: 'PT Sans', 'Georgia', 'Times New Roman', 'TimesNewRoman', serif;
-  text-align: center;
+.main_splash header #main_nav ul li {
+  margin-bottom: 0.5em;
 }
-.main_splash header #main-nav ul li {
-  display: inline-block;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-  transition: all 0.7s ease-in-out;
-  box-shadow: 0 16px 28px 0 rgba(0,0,0,0.22), 0 25px 55px 0 rgba(0,0,0,0.21);
-  -webkit-animation: Floating 4s infinite ease-in-out;
-  -moz-animation: Floating 4s infinite ease-in-out;
-  -ms-animation: Floating 4s infinite ease-in-out;
-  animation: Floating 4s infinite ease-in-out;
-}
-.main_splash header #main-nav ul li:not(:last-child) {
-  margin-right: 1em;
-}
-.main_splash header #main-nav ul li:nth-child(1) {
-  -webkit-animation-duration: 5.75s;
-  -moz-animation-duration: 5.75s;
-  -ms-animation-duration: 5.75s;
-  animation-duration: 5.75s;
-}
-.main_splash header #main-nav ul li:nth-child(1) a {
-  background: #973c5e;
-}
-.main_splash header #main-nav ul li:nth-child(1) a span {
-  left: 85%;
-}
-.main_splash header #main-nav ul li:nth-child(2) a {
-  background: #1d2b53;
-}
-.main_splash header #main-nav ul li:nth-child(2) a span {
-  left: 115%;
-}
-.main_splash header #main-nav ul li:nth-child(3) {
-  -webkit-animation-duration: 6.5s;
-  -moz-animation-duration: 6.5s;
-  -ms-animation-duration: 6.5s;
-  animation-duration: 6.5s;
-}
-.main_splash header #main-nav ul li:nth-child(3) a {
-  background: #fff024;
-}
-.main_splash header #main-nav ul li:nth-child(3) a span {
-  left: 110%;
-}
-.main_splash header #main-nav ul li:hover a span {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transform: translate(-50%, -50%) scale(1);
-  -moz-transform: translate(-50%, -50%) scale(1);
-  -ms-transform: translate(-50%, -50%) scale(1);
-  transform: translate(-50%, -50%) scale(1);
-}
-.main_splash header #main-nav ul li a {
-  display: block;
-  position: relative;
-  padding: 0.8em 1.1em;
+.main_splash header #main_nav ul li a {
+  font-size: 1.5em;
+  font-weight: 400;
   text-decoration: none;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-  color: #f2f2f2;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-  z-index: 150;
-}
-.main_splash header #main-nav ul li a span {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  visibility: hidden;
-  opacity: 1;
-  transition: all 0.15s ease-in-out;
+  color: #fbb;
 }
 .main_splash #particles-js {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 99%;
+  height: 100%;
+  display: block;
   background: linear-gradient(180deg, #f6f6f6, transparent);
+  background: transparent;
   -webkit-transform: translateZ(0);
   ms-transform: translateZ(0);
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
-  z-index: 10;
 }
 .main_splash .main_splash_text {
   position: absolute;
@@ -329,7 +324,7 @@ article pre,
   -webkit-transform: translate(-50%, -50%) scale(2);
   zoom: 0.5;
   text-align: center;
-  z-index: 20;
+  z-index: 1000;
 }
 .main_splash .main_splash_text h1,
 .main_splash .main_splash_text h2 {
@@ -341,37 +336,40 @@ article pre,
 }
 .main_splash .main_splash_text h1 {
   display: inline-block;
-  font-size: 2.5em;
+  font-size: 3em;
   color: #853553;
-  z-index: 20;
+  background: #973c5e;
+  background: linear-gradient(92deg, #973c5e, #1d2b53);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.08), 2px 2px 1px rgba(0,0,0,0.075), 4px 4px 1px rgba(0,0,0,0.07), 6px 6px 1px rgba(0,0,0,0.065), 8px 8px 1px rgba(0,0,0,0.06), 10px 10px 1px rgba(0,0,0,0.055), 12px 12px 1px rgba(0,0,0,0.05), 14px 14px 1px rgba(0,0,0,0.045), 16px 16px 1px rgba(0,0,0,0.04), 18px 18px 1px rgba(0,0,0,0.035), 20px 20px 1px rgba(0,0,0,0.03), 22px 22px 1px rgba(0,0,0,0.025), 24px 24px 1px rgba(0,0,0,0.02), 26px 26px 1px rgba(0,0,0,0.015), 28px 28px 1px rgba(0,0,0,0.01), 30px 30px 1px rgba(0,0,0,0.005), 32px 32px 1px rgba(0,0,0,0.003), 34px 34px 1px rgba(0,0,0,0.002), 36px 36px 1px rgba(0,0,0,0.002), 38px 38px 1px rgba(0,0,0,0.001);
 }
 .main_splash .main_splash_text h2 {
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: 400;
   margin-top: 0;
-  color: #aaa;
+  color: #fbb;
   font-variant: small-caps;
-  z-index: 15;
 }
 .main_splash .main_splash_text::before {
   position: absolute;
   content: "Hi, I'm";
   top: -25%;
-  left: 11%;
-  color: #aaa;
+  left: 0%;
+  color: #fbb;
 }
 @media screen and (min-width: 48em) {
   .main_splash {
     height: 100vh;
   }
   .main_splash .main_splash_text h1 {
-    font-size: 2em;
+    font-size: 3em;
   }
   .main_splash .main_splash_text h2 {
-    font-size: 1.25em;
+    font-size: 1.5em;
   }
   .main_splash .main_splash_text::before {
-    left: 14%;
+    left: 5%;
   }
 }
 @-webkit-keyframes Floating {
