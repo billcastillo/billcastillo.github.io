@@ -5,6 +5,11 @@
  * @author ocodia
  */
 
+code,
+pre {
+	font-size: 14px;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #f8f8f2;
@@ -30,7 +35,7 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em 0.50em;
+	padding: 0.50em 2em;
 	margin-bottom: 2.50em;
 	overflow: auto;
 	border-radius: 0.3em;
