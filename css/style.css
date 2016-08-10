@@ -97,11 +97,6 @@ figure::after {
   content: '';
   clear: both;
 }
-/*
-figure.floatLeft,
-figure.floatRight
-	max-width 350px
-*/
 article {
   padding-top: 2em;
   padding-bottom: 2em;
@@ -189,6 +184,36 @@ article pre,
   padding: 0.25em;
   border: 1px solid #303030;
 }
+.button {
+  display: inline-block;
+  font-size: 0.75em;
+  margin-top: 2em;
+  color: #d799b0;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 0.53, 0.86, 0.67);
+}
+.button:hover {
+  color: #6084c0;
+}
+/*
+.button
+	display inline-block
+	padding 0.750em 0.750em 0.50em 0.750em
+	margin-top 2em
+	border 1px solid $links
+	color $links
+	font-family $body-font
+	font-size 0.850em
+	font-weight 400
+	letter-spacing 1px
+	text-decoration none
+	transition all 0.3s cubic-bezier(.16,.53,.86,.67)
+	&:hover
+		background linear-gradient(135deg, $links, lighten($links,25%))
+		border 1px solid transparent
+		color $white
+		box-shadow 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
+*/
 @media screen and (min-width: 48em) {
   .main_container {
     padding: 0;
@@ -199,11 +224,53 @@ article pre,
   .floatLeft {
     float: left;
   }
+  .button {
+    padding: 0.5em 0.75em;
+  }
 }
 /* Main Style */
 .main_container {
   max-width: 1000px;
   margin: 0 auto;
+}
+header {
+  position: absolute;
+  width: 100%;
+  top: 10%;
+  right: 0;
+  text-align: center;
+  z-index: 100;
+}
+header #main_nav ul {
+  list-style: none;
+}
+header #main_nav ul li {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+header #main_nav ul li:not(:last-child) {
+  margin-right: 2em;
+}
+header #main_nav ul li:not(:last-child)::after {
+  position: absolute;
+  content: '/';
+  right: -1em;
+  font-size: 1.5em;
+  color: #d799b0;
+}
+header #main_nav ul li a {
+  font-size: 1.5em;
+  font-weight: 400;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #d799b0;
+  transition: all 0.3s cubic-bezier(0.16, 0.53, 0.86, 0.67);
+}
+header #main_nav ul li a:hover {
+  color: #6084c0;
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.35);
 }
 .main_splash {
   position: relative;
@@ -211,95 +278,6 @@ article pre,
   overflow: hidden;
   background-size: cover;
   background-position: center center;
-/*
-	&::before
-		absolute()
-		background linear-gradient( 92deg, alpha($c1,0.35), alpha($c2,0.35) )
-		z-index 1
-	*/
-}
-.main_splash header {
-  position: absolute;
-  width: 100%;
-  top: 10%;
-  left: 5%;
-  right: 0;
-  text-align: left;
-  z-index: 100;
-/*
-		#main-nav
-			display block
-			width auto
-			margin 0 auto
-			ul
-				font-family $body-font
-				text-align center
-				li					
-					display inline-block
-					border-radius 50%
-					transition all 0.7s ease-in-out
-					box-shadow 0 16px 28px 0 rgba(0,0,0,0.22), 0 25px 55px 0 rgba(0,0,0,0.21)
-					animation Floating 4s infinite ease-in-out
-					&:not(:last-child)
-						margin-right 1em
-					&:nth-child(1)
-						animation-duration 5.75s
-						a
-							background #973c5e
-							span
-								left 85%
-					&:nth-child(2)
-						a
-							background #1D2B53
-							span
-								left 115%
-					&:nth-child(3)
-						animation-duration 6.5s
-						a
-							background #FFF024
-							span
-								left 110%
-					&:hover
-						a
-							span
-								opacity 1
-								visibility visible
-								transform translate(-50%,-50%) scale(1)
-					a
-						display block
-						position relative
-						padding 0.80em 1.100em
-						text-decoration none
-						border-radius 50%
-						color $white
-						text-shadow 2px 2px 3px rgba(0,0,0,0.60)
-						z-index 150
-						span
-							position absolute
-							top 50%
-							left 0
-							visibility hidden
-							opacity 1
-							transition all 0.15s ease-in-out
-		*/
-}
-.main_splash header #main_nav ul {
-  list-style: none;
-}
-.main_splash header #main_nav ul li {
-  margin-bottom: 0.5em;
-}
-.main_splash header #main_nav ul li a {
-  font-size: 1.5em;
-  font-weight: 400;
-  font-variant: small-caps;
-  letter-spacing: 2px;
-  text-decoration: none;
-  color: #fbb;
-  transition: all 0.3s cubic-bezier(0.07, 0.76, 0.87, 0.57);
-}
-.main_splash header #main_nav ul li a:hover {
-  color: #6084c0;
 }
 .main_splash #particles-js {
   position: absolute;
@@ -308,8 +286,8 @@ article pre,
   width: 100%;
   height: 100%;
   display: block;
-  background: linear-gradient(135deg, transparent, #f2f2f2);
   background: transparent;
+  background: linear-gradient(135deg, transparent, #f2f2f2);
   -webkit-transform: translateZ(0);
   ms-transform: translateZ(0);
   -webkit-transform: translateZ(0);
@@ -355,15 +333,15 @@ article pre,
   font-size: 1.25em;
   font-weight: 400;
   margin-top: 0;
-  color: #fbb;
+  color: #d799b0;
   font-variant: small-caps;
 }
 .main_splash .main_splash_text::before {
   position: absolute;
   content: "Hi, I'm";
-  top: -25%;
+  top: -15%;
   left: 0%;
-  color: #fbb;
+  color: #d799b0;
 }
 @media screen and (min-width: 48em) {
   .main_splash {

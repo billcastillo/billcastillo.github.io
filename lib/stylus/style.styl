@@ -29,6 +29,7 @@ $c2 = #1D2B53
 $c3 = #fff357
 
 $header-text = #853553
+$white-text = #d799b0
 
 // Media Queries
 
@@ -166,12 +167,6 @@ figure
 		content ''
 		clear both
 
-/*
-figure.floatLeft,
-figure.floatRight
-	max-width 350px
-*/
-
 article
 	padding-top 2em
 	padding-bottom 2em
@@ -197,8 +192,6 @@ article,
 	pre
 		max-height 500px
 		overflow auto
-
-
 
 @media screen and (min-width: $sm)
 	html, body
@@ -237,12 +230,37 @@ article,
 	max-width 700px
 	margin-left auto
 	margin-right auto
-
 .border
 	padding 0.250em
 	border 1px solid $black-head
-
-
+.button
+	display inline-block
+	font-size 0.750em
+	margin-top 2em
+	color $white-text
+	text-decoration none
+	transition all 0.3s cubic-bezier(.16,.53,.86,.67)
+	&:hover
+		color $links
+/*
+.button
+	display inline-block
+	padding 0.750em 0.750em 0.50em 0.750em
+	margin-top 2em
+	border 1px solid $links
+	color $links
+	font-family $body-font
+	font-size 0.850em
+	font-weight 400
+	letter-spacing 1px
+	text-decoration none
+	transition all 0.3s cubic-bezier(.16,.53,.86,.67)
+	&:hover
+		background linear-gradient(135deg, $links, lighten($links,25%))
+		border 1px solid transparent
+		color $white
+		box-shadow 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
+*/
 @media screen and (min-width: $sm)
 	.main_container
 		padding 0
@@ -250,6 +268,8 @@ article,
 		float right
 	.floatLeft
 		float left
+	.button
+		padding 0.50em 0.750em
 
 
 /* Main Style */
@@ -259,6 +279,39 @@ article,
 	margin 0 auto
 }
 
+header
+	position absolute
+	width 100%
+	top 10%
+	right 0
+	text-align center
+	z-index 100
+	#main_nav
+		ul
+			list-style none
+			li
+				position relative
+				display inline-block
+				margin-bottom 0.50em
+				&:not(:last-child)
+					margin-right 2em
+					&::after
+						position absolute
+						content '/'
+						right -1em
+						font-size 1.50em
+						color $white-text
+				a
+					font-size 1.50em
+					font-weight 400
+					font-variant small-caps
+					letter-spacing 2px
+					text-decoration none
+					color $white-text
+					transition all 0.3s cubic-bezier(.16,.53,.86,.67)
+					&:hover
+						color $links
+						text-shadow 0px 1px 1px rgba(0,0,0,0.35)
 .main_splash
 	position relative
 	min-height 100vh
@@ -266,97 +319,11 @@ article,
 	//background url('../img/me.svg')
 	background-size cover
 	background-position center center
-	/*
-	&::before
-		absolute()
-		background linear-gradient( 92deg, alpha($c1,0.35), alpha($c2,0.35) )
-		z-index 1
-	*/
-	header
-		position absolute
-		width 100%
-		top 10%
-		left 5%
-		right 0
-		text-align left
-		z-index 100
-		#main_nav
-			ul
-				list-style none
-				li
-					margin-bottom 0.50em
-					a
-						font-size 1.50em
-						font-weight 400
-						font-variant small-caps
-						letter-spacing 2px
-						text-decoration none
-						color #ffbbbb
-						transition all 0.3s cubic-bezier(.07,.76,.87,.57)
-						&:hover
-							color $links
-						
-		/*
-		#main-nav
-			display block
-			width auto
-			margin 0 auto
-			ul
-				font-family $body-font
-				text-align center
-				li					
-					display inline-block
-					border-radius 50%
-					transition all 0.7s ease-in-out
-					box-shadow 0 16px 28px 0 rgba(0,0,0,0.22), 0 25px 55px 0 rgba(0,0,0,0.21)
-					animation Floating 4s infinite ease-in-out
-					&:not(:last-child)
-						margin-right 1em
-					&:nth-child(1)
-						animation-duration 5.75s
-						a
-							background #973c5e
-							span
-								left 85%
-					&:nth-child(2)
-						a
-							background #1D2B53
-							span
-								left 115%
-					&:nth-child(3)
-						animation-duration 6.5s
-						a
-							background #FFF024
-							span
-								left 110%
-					&:hover
-						a
-							span
-								opacity 1
-								visibility visible
-								transform translate(-50%,-50%) scale(1)
-					a
-						display block
-						position relative
-						padding 0.80em 1.100em
-						text-decoration none
-						border-radius 50%
-						color $white
-						text-shadow 2px 2px 3px rgba(0,0,0,0.60)
-						z-index 150
-						span
-							position absolute
-							top 50%
-							left 0
-							visibility hidden
-							opacity 1
-							transition all 0.15s ease-in-out
-		*/
 	#particles-js
 		absolute()
 		display block
-		background linear-gradient(135deg, transparent, #f2f2f2)
 		background transparent
+		background linear-gradient(135deg, transparent, #f2f2f2)
 		-webkit-transform translateZ(0)
 		ms-transform translateZ(0)
 		transform translateZ(0) // increase animation performance
@@ -393,14 +360,14 @@ article,
 			font-size 1.250em // 1.50em
 			font-weight 400
 			margin-top 0
-			color #ffbbbb
+			color $white-text
 			font-variant small-caps
 		&::before
 			position absolute
 			content "Hi, I'm"
-			top -25%
+			top -15%
 			left 0%
-			color #ffbbbb
+			color $white-text
 			
 @media screen and (min-width: $sm)
 	.main_splash
