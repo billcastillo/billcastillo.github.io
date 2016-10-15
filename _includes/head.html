@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+	<meta name="author" content="Bill Castillo">
+  <meta property="og:title" content="Bill Castillo" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Bill Castillo - Front-end Developer / Designer" />
+  <meta property="og:site_name" content="Bill Castillo" />
+  <meta name="description" content="Front-end Developer / Designer">
+  <link rel="canonical" href="https://billcastillo.me/">
+
+	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+	<!-- fonts -->
+	<script type="text/javascript">
+	WebFontConfig = {
+	google: { families: [ 'Lora:400,400italic,700:latin',
+	'PT+Sans:400,400italic,700:latin' ] }
+	};
+	(function() {
+	var wf = document.createElement('script');
+	wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+	wf.type = 'text/javascript';
+	wf.async = 'true';
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(wf, s);
+	})();
+	</script>
+
+	<noscript>
+	  <link href="https://fonts.googleapis.com/css?family=Lora:400,700|PT+Sans:400,400i,700" rel="stylesheet">
+	</noscript>
+	
+	<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='https://www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','ID','auto');ga('send','pageview');
+ 	</script>
+</head>

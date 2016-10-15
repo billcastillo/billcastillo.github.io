@@ -1,90 +1,30 @@
-<!DOCTYPE html>
-<html>
+---
+layout: index-layout
+---
 
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Bill Castillo</title>
-
-  <meta name="theme-color" content="#973c5e">
-
-  <!--Favicon-->
-    <link rel="icon" type="image/ico" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <!-- Meta tags for SEO -->
-  <meta name="keywords" content="bill castillo,web designer,web developer,programmer,manila,dubai,portfolio,website">
-  <meta name="author" content="Bill Castillo">
-  <meta property="og:title" content="Bill Castillo" />
-  <meta property="og:type" content="website" />
-  <meta property="og:description" content="Bill Castillo - Minimalist web designer / developer" />
-  <meta property="og:site_name" content="Bill Castillo" />
-  <meta name="description" content="Front-end / web designer and developer.">
-  <link rel="canonical" href="https://billcastillo.me/">
-
-  <link rel="alternate" type="application/rss+xml" title="Bill Castillo" href="https://billcastillo.me/feed.xml">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="">
-
-  <link href="css/framework.css" rel="stylesheet"/>
-  <link href="css/style.css" rel="stylesheet"/>
-
-  <!-- fonts -->
-  <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,400italic' rel='stylesheet' type='text/css'>
-  
-  <!--
-  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-  -->
-
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700' rel='stylesheet' type='text/css'>
-
-</head>
-<body>
-
-
-  <main class="main_splash">
-    <div id="particles-js"></div>
-
-    <header>
-      <nav id="main_nav">
-        <ul>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Projects</a></li>
-        </ul>
-      </nav>
-
-    </header>
-    
-    <div class="main_splash_text">
+<main class="index__main-splash">
+  <div id="particles-js"></div>
+    <div class="index__text">
       <h1>Bill Castillo</h1>
       <h2>Web Designer / Developer</h2>
-      <a class="button" href="mailto:castillobil@gmail.com">
-        Contact Me
-      </a>
     </div>
-  </main>
+    {% include header-index.html %}
+</main>
 
 
 
-  
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
-  
-  <script src="js/particle.js"></script>
-  <script>
-    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='https://www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','ID','auto');ga('send','pageview');
- </script>
+<!-- list all posts
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li>
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
+    <h2>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h2>
+  </li>
+  {% endfor %}
+</ul>
 
-</body>
-</html>
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+-->

@@ -1,8 +1,3 @@
-.gitignore
-!.keep
-*.DS_Store
-*.sass-cache
-/.asset-cache/*
-/_site/*
-/_vendor/*
-node_modules/
+_site
+.sass-cache
+.jekyll-metadata

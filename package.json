@@ -1,7 +1,7 @@
 {
-  "name": "billcastillo.github.io",
-  "version": "3.0.0",
-  "description": "personal portfolio",
+  "name": "billcastillo",
+  "version": "1.0.0",
+  "description": "bill castillo website",
   "main": "gulpfile.js",
   "scripts": {
     "test": "-test"
@@ -11,6 +11,8 @@
     "url": "git+https://github.com/billcastillo/billcastillo.github.io.git"
   },
   "keywords": [
+    "bill",
+    "castillo",
     "bill",
     "castillo"
   ],
