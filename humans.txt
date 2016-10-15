@@ -1,0 +1,12 @@
+# OWNER
+
+    Bill Castillo -- Designer / Developer -- github.com/billcastillo
+
+# THANKS
+
+    to my self lol
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Jekyll,Apache Server Configs, jQuery, Modernizr, Normalize.css

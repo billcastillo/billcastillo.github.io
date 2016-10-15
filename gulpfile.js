@@ -1,67 +1,42 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
-var prefix      = require('gulp-autoprefixer');
-var cp          = require('child_process');
+// Include gulp
+var gulp = require('gulp'); 
 
-var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
-var messages = {
-    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
-};
+// Include Our Plugins
+var stylus = require('gulp-stylus');
+var browserSync = require('browser-sync').create();
 
-/**
- * Build the Jekyll Site
- */
-gulp.task('jekyll-build', function (done) {
-    browserSync.notify(messages.jekyllBuild);
-    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
-        .on('close', done);
+
+// Watch Files For Changes
+gulp.task('watch', function() {
+    gulp.watch('./lib/stylus/*.styl', ['stylus']);
 });
 
-/**
- * Rebuild Jekyll & do page reload
- */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-    browserSync.reload();
+// Gulp Stylus
+gulp.task('stylus', function () {
+  gulp.src('./lib/stylus/*.styl')
+    .pipe(stylus())
+    .pipe(gulp.dest('./css'));
 });
 
-/**
- * Wait for jekyll-build, then launch the Server
- */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
-    browserSync({
+gulp.task('browser-sync', function() {
+    browserSync.init({
         server: {
-            baseDir: '_site'
+            baseDir: "./"
         }
     });
 });
 
-/**
- * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
- */
-gulp.task('sass', function () {
-    return gulp.src('_scss/main.scss')
-        .pipe(sass({
-            includePaths: ['scss'],
-            onError: browserSync.notify
-        }))
-        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('_site/css'))
-        .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('css'));
+// Static Server + watching scss/html files
+gulp.task('serve', ['stylus'], function() {
+
+    browserSync.init({
+        server: "./"
+    });
+
+    gulp.watch("./lib/stylus/*.styl", ['stylus']).on('change', browserSync.reload);
+    gulp.watch("./dist/js/*.js", ['scripts']).on('change', browserSync.reload);
+    gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
-/**
- * Watch scss files for changes & recompile
- * Watch html/md files, run jekyll & reload BrowserSync
- */
-gulp.task('watch', function () {
-    gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
-});
-
-/**
- * Default task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync & watch files.
- */
-gulp.task('default', ['browser-sync', 'watch']);
+// Default Task
+gulp.task('default', ['stylus', 'serve', 'watch']);
