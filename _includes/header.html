@@ -1,18 +1,42 @@
-<header class="header__default">
-  <div class="container">
-    <div class="header__close--container">
+<header>
+  <div class="container row middle-xs">
+    <div class="headerLogo col-sm-3">
+      <!--
       <a href="{{ site.url }}" alt="Home">
-        <img class="header__close--icon" src="{{ site.baseurl }}/img/icons/close.png" alt="">
+        <img src="{{ site.baseurl }}/img/icons/casbie-logo.png" alt="">
       </a>
+      -->
     </div>
-    <nav class="main-nav">
-      <ul class="list__inline">
-        <li class="list__item">
-          <a href="{{ siet.baseurl }}/projects.html">Projects</a>
-        </li>
-        <li class="list__item">
-          <a href="{{ siet.baseurl }}/contact.html">Contact</a>
-        </li>
+    <nav class="mainNav col-xs-12 col-sm-9">
+      <ul class="mainNav__ul">
+        
+          <li class="mainNav__li">
+            <a href="#about" title="" class="a-noStyle">
+            <div class="mainNav__li--img">
+              <img src="{{ site.baseurl }}/img/icons/about.svg" alt="">
+            </div>
+            <span class="mainNav__li--title">About</span>
+            </a>
+          </li>
+        
+          <li class="mainNav__li">
+            <a href="#projects" title="" class="a-noStyle">
+            <div class="mainNav__li--img">
+              <img src="{{ site.baseurl }}/img/icons/document.svg" alt="">
+            </div>
+            <span class="mainNav__li--title">Projects</span>
+            </a>
+          </li>
+       
+          <li class="mainNav__li">
+            <a href="#contact" title="" class="a-noStyle">
+            <div class="mainNav__li--img">
+              <img src="{{ site.baseurl }}/img/icons/contact.svg" alt="">
+            </div>
+            <span class="mainNav__li--title">Contact</span>
+            </a>
+          </li>
+       
       </ul>
     </nav>
   </div>

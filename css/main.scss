@@ -6,14 +6,14 @@
 
 
 // Our variables
-$header-font:	'Lora','Georgia','TimesNewRoman','Times New Roman',Helvetica,Arial,serif;
-$body-font:		'PT Sans',Helvetica, Arial, sans-serif;
+$header-font:	'Domine','Georgia','TimesNewRoman','Times New Roman',Helvetica,Arial,serif;
+$body-font:		'Muli','Helvetica','Arial',sans-serif;
 
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$base-line-height: 1.635;
 
 $spacing-unit:     30px;
 
@@ -21,21 +21,37 @@ $color-1:		#973c5e;
 $color-2:		#1D2B53;
 $color-3:		#fff357;
 
-$header-color:	#202020;
-$text-color:	#404040;
 $link-color:	#6084c0;
 $grey-bg:	#fef2e4;
 
-$grey-color:       #d799b0;
+$grey-color:       #989a9b;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+$c1:        #E5E1E6;
+$c2:        #FFA5C0;
+$c3:        #F6A995;
+$c4:        #F2C398;
+$c5:        #f2e3f2;
+
+$heading-color:  #373340;
+$body-color:     #504766;
+$white-color:    $c1;
+
 // Width of the content area
+
+/*
 $xs:   		480px;
-$sm:        768px;
-$md:		1024px;
-$lg:		1280px;
-$xl:		1440px;
+$sm:        769px;
+$md:		1025px;
+$lg:		1281px;
+$xl:		1441px;
+$xxl:       1981px;
+*/
+
+$sm:        737px;
+$md:        1281px;
+$lg:        1601px;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -44,7 +60,13 @@ $xl:		1440px;
 //         padding-left: $spacing-unit / 2;
 //     }
 // }
-@mixin media-query($device) {
+@mixin media-query($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin media-min($device) {
     @media screen and (min-width: $device) {
         @content;
     }

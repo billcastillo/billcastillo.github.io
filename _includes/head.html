@@ -3,19 +3,39 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
 	<meta name="author" content="Bill Castillo">
-  <meta property="og:title" content="Bill Castillo" />
-  <meta property="og:type" content="website" />
-  <meta property="og:description" content="Bill Castillo - Front-end Developer / Designer" />
-  <meta property="og:site_name" content="Bill Castillo" />
-  <meta name="description" content="Front-end Developer / Designer">
-  <link rel="canonical" href="https://billcastillo.me/">
+  	<meta property="og:title" content="Bill Castillo" />
+  	<meta property="og:type" content="website" />
+  	<meta property="og:description" content="Front-end Designer / Web Developer / UI / UX. I design and build website interfaces that humans should find easy to use and understand." />
+  	<meta property="og:site_name" content="Bill Castillo" />
+  	<meta name="description" content="Front-end Designer / Web Developer / UI / UX. I design and build website interfaces that humans should find easy to use and understand.">
+
+  	<script type='application/ld+json'> 
+	{
+	  "@context": "http://www.schema.org",
+	  "@type": "person",
+	  "name": "Bill Castillo",
+	  "jobTitle": "Front-end Designer / Web Developer / UI / UX / Web Designer",
+	  "url": "https://billcastillo.me/",
+	  "logo": "https://billcastillo.me/img/casbie-logo.png",
+	  "image": "https://billcastillo.me/img/casbie.png",
+	  "description": "I design and build website interfaces that humans should find easy to use and understand.",
+	  "address": {
+	    "@type": "PostalAddress",
+	    "addressLocality": "Manila",
+	    "addressCountry": "Philippines"
+	  },
+	  "email": "castillobil@gmail.com"
+	}
+ </script>
+
+  	<link rel="canonical" href="https://billcastillo.me/">
 
 	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
@@ -39,7 +59,7 @@
 	</script>
 
 	<noscript>
-	  <link href="https://fonts.googleapis.com/css?family=Lora:400,700|PT+Sans:400,400i,700" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Domine:400,700|Muli:400,400i,700" rel="stylesheet">
 	</noscript>
 	
 	<script>
@@ -48,6 +68,6 @@
     e=o.createElement(i);r=o.getElementsByTagName(i)[0];
     e.src='https://www.google-analytics.com/analytics.js';
     r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','ID','auto');ga('send','pageview');
+    ga('create','UA-66058302-1','auto');ga('send','pageview');
  	</script>
 </head>

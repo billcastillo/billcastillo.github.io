@@ -1,30 +1,155 @@
 ---
-layout: index-layout
+layout: default
 ---
 
-<main class="index__main-splash">
-  <div id="particles-js"></div>
-    <div class="index__text">
+<main>
+  <section class="indexMainSplash">
+  <!-- <div id="particles-js"></div> -->
+    <div class="indexMainSplash__heading">
       <h1>Bill Castillo</h1>
-      <h2>Web Designer / Developer</h2>
+      <h2>Front-end Designer / Web Developer / UI / UX</h2>
     </div>
-    {% include header-index.html %}
+  </section>
+
+  <section class="indexDescription" id="about">
+    <div class="indexDescription__heading">
+      <h3 class="h3-custom indexDescription__heading--h3">
+        I design and build <u>website interfaces</u> that humans should find easy to use and understand.
+      </h3>
+    </div>
+  </section>
+
+  <section class="indexProjects" id="projects">
+    <div class="container">
+
+    <div class="indexProjects__header row">
+      <div class="col-xs-2 col-md-2">
+        
+      </div>
+      <div class="col-xs-10 col-sm-6 col-md-10">
+        <h2 class="indexProjects__header--h2">
+          Recent Projects
+        </h2>
+        <p class="indexProjects__header--p">
+          My proud works; my collected adventures.
+        </p>
+      </div>
+    </div>
+
+    <div class="indexProjects__row row">
+
+      <div class="indexProjects__title col-xs-2 col-md-2">
+        <h2 class="indexProjects__title--h2 h2-custom">Enigma Ladies Salon</h2>
+      </div>
+
+      <div class="indexProjects__right row col-xs-10 col-md-10">
+
+        <div class="indexProjects__main col-xs-12 row">
+
+          <div class="col-xs-12 col-sm-6">
+            <h4 class="h4-custom txt-white indexProjects__heading">Website / Marketing</h4>
+            <p class="txt-white indexProjects__description">A website for an exclusive high-end salon in Dubai. Matching their consistent quality, vivid, and vibrant art they produce for their precious work.</p>
+          </div>
+
+          <div class="indexProjects__image--container col-xs-12 col-sm-6">
+            <img
+            class="indexProjects__image"
+            src="{{ site.baseurl }}/img/projects/enigma-salon/desktop-screenshot.png" alt="">
+          </div>
+
+          <div class="indexProjects__buttons col-xs-12 row around-xs start-sm">
+            <p class="tooltip--triangle btn btn-white col-xs-8" href="#" title="Case Study"  data-tooltip="Soon!">
+              Case Study
+            </p>
+            <a class="col-xs-8 btn btn-white" target="_blank" href="https://enigmaladiessalon.com" title="Launch Project">
+              Launch Project
+            </a>
+          </div>
+        </div> <!-- indexProjects -->
+
+        <div class="indexProjects__gallery col-xs-12 row start-xs">
+          <div class="col-xs-6 col-sm-4">
+            <img 
+            src="{{ site.baseurl }}/img/projects/enigma-salon/1.jpg" alt="">
+          </div>
+          <div class="col-xs-6 col-sm-4">
+            <img 
+            src="{{ site.baseurl }}/img/projects/enigma-salon/2.jpg" alt="">
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <img 
+            src="{{ site.baseurl }}/img/projects/enigma-salon/3.jpg" alt="">
+          </div>
+        </div>
+
+      </div><!-- indexProjects__right -->
+
+      </div> <!-- indexProjects__row -->
+
+    </div> <!-- container -->
+  </section>
+
+  <section class="indexProfile">
+    <div class="indexProfile__row row middle-xs container">
+      <div class="col-xs-2 col-sm-2 indexProfile__left">
+        
+      </div>
+      <div class="col-xs-12 col-sm-10 indexProfile__container row middle-xs">
+        
+      <div class="indexProfile__description col-xs-12 col-sm-5">
+        <h4 class="h4-custom"><i>Collab... bro?</i></h4>
+        <p>
+          Follow me on my experimental adventures on codepen and maybe let's have a collaboration on my personal projects!
+        </p>
+        <p>My soundcloud is fire too..</p>
+      </div>
+
+      <div class="indexProfile__links col-xs-12 col-sm-7">
+
+      <div class="indexProfile__links--row row around-xs">
+      <div class="indexProfile__box col-xs-4">
+        <a href="https://codepen.io/billcastillo/" target="_blank" title="codepen">
+        <div class="indexProfile__box--container indexProfile__box--codepen">
+          <div class="indexProfile__box--content">
+            <img src="{{ site.baseurl }}/img/icons/codepen.svg" alt="codepen">
+            <span class="a-noStyle indexProfile__box--name">
+              codepen
+            </span>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="indexProfile__box col-xs-4">
+        <a href="https://github.com/billcastillo" target="_blank" title="github">
+        <div class="indexProfile__box--container indexProfile__box--github">
+          <div class="indexProfile__box--content">
+            <img src="{{ site.baseurl }}/img/icons/github.svg" alt="github">
+            <span class="a-noStyle indexProfile__box--name">
+              github
+            </span>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="indexProfile__box col-xs-4">
+        <a href="https://soundcloud.com/bill-castillo" target="_blank" title="soundcloud">
+        <div class="indexProfile__box--container indexProfile__box--soundcloud">
+          <div class="indexProfile__box--content">
+            <img src="{{ site.baseurl }}/img/icons/soundcloud.svg" alt="soundcloud">
+            <span class="txt-white indexProfile__box--name">
+              soundcloud
+            </span>
+          </div>
+        </div>
+        </a>
+      </div>
+      </div>
+
+      </div>
+      </div>
+    </div>
+  </section>
+
 </main>
-
-
-
-<!-- list all posts
-<ul class="post-list">
-  {% for post in site.posts %}
-  <li>
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-    <h2>
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h2>
-  </li>
-  {% endfor %}
-</ul>
-
-<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
--->
