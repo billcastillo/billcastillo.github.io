@@ -12,3 +12,9 @@ $(function() {
     }
   });
 });
+
+window.onload = function(){ 
+  var indexSplash = document.getElementsByClassName('indexMainSplash')[0];
+  var getHeight = indexSplash.offsetHeight;
+  indexSplash.style.height = getHeight + 'px';
+};

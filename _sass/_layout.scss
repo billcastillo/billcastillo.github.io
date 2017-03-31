@@ -37,7 +37,7 @@
 
 .indexMainSplash {
     position: relative;
-    min-height: 80vh;
+    height: 80vh;
     overflow: hidden;
     // background url('../img/me.svg')
     // background-size: cover;
@@ -198,9 +198,6 @@ header {
     width: 80%;
     margin: 0 auto;
     text-align: center;
-    // top: 50%;
-    //left: 50%;
-    // transform: translateX(-50%);
 }
 
 @include media-min($sm) {
@@ -272,12 +269,6 @@ header {
 .indexProjects__heading {
     
 }
-
-/*
-.indexProjects__description {
-    color: $white-color;
-}
-*/
 
 .indexProjects__image {
     position: relative;
