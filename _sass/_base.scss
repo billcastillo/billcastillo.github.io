@@ -57,14 +57,19 @@ p,a,span {
 }
  */
 
+strong {
+  font-weight: 900;
+}
+
 i {
   font-style: italic;
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-weight: 400;
-  line-height: 1.2;
   font-family: 'Domine','Georgia','TimesNewRoman','Times New Roman',Helvetica,Arial,serif;
+  font-weight: 700;
+  letter-spacing: -0.040em;
+  line-height: 1.2;
   color: $heading-color;
 }
 
@@ -75,17 +80,17 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5em;
-  font-size: calc( 1em + 1vw );
-  font-weight: 400;
+  font-size: 2.5em; 
+  font-size: calc( 1em + 1.50vw );
   margin-top: 0.4em;
   margin-bottom: 0.4em;
 }
 
 h2.h2-custom {
   font-family: $body-font;
-  font-size: calc( 2em + 1vw );
   font-weight: 400;
+  letter-spacing: 0;
+  font-size: calc( 2em + 1vw );
 }
 
 h3 {
@@ -98,6 +103,7 @@ h3.h3-custom {
   font-family: $body-font;
   font-size: calc( 1.50em + 1vw );
   font-weight: 400;
+  letter-spacing: 0;
   line-height: 1.4;
 }
 
@@ -270,7 +276,7 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: $base-font-weight;
+    // font-weight: $base-font-weight;
     text-rendering: optimizeLegibility;
 }
 

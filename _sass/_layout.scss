@@ -88,7 +88,7 @@
         display: inline-block;
         font-family: $header-font;
         font-size: calc( 3em + 2.50vw );
-
+        font-weight: 400;
         color: #e6b0bb;
         white-space: nowrap;
         letter-spacing: -2px;
@@ -102,8 +102,9 @@
         // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.08), 2px 2px 1px rgba(0, 0, 0, 0.075), 4px 4px 1px rgba(0, 0, 0, 0.07), 6px 6px 1px rgba(0, 0, 0, 0.065), 8px 8px 1px rgba(0, 0, 0, 0.06), 10px 10px 1px rgba(0, 0, 0, 0.055), 12px 12px 1px rgba(0, 0, 0, 0.05), 14px 14px 1px rgba(0, 0, 0, 0.045), 16px 16px 1px rgba(0, 0, 0, 0.04), 18px 18px 1px rgba(0, 0, 0, 0.035), 20px 20px 1px rgba(0, 0, 0, 0.03), 22px 22px 1px rgba(0, 0, 0, 0.025), 24px 24px 1px rgba(0, 0, 0, 0.02), 26px 26px 1px rgba(0, 0, 0, 0.015), 28px 28px 1px rgba(0, 0, 0, 0.01), 30px 30px 1px rgba(0, 0, 0, 0.005), 32px 32px 1px rgba(0, 0, 0, 0.0025), 34px 34px 1px rgba(0, 0, 0, 0.002), 36px 36px 1px rgba(0, 0, 0, 0.0015), 38px 38px 1px rgba(0, 0, 0, 0.001);
     }
     h2 {
-        font-size: calc( 0.750em + 0.50vw );
         font-family: $body-font;
+        font-size: calc( 0.750em + 0.50vw );
+        font-weight: 400;
         color: $grey-color;
         line-height: 1.635;
         margin: 0;
@@ -397,9 +398,9 @@ header {
     z-index: 1;
     h2 {
         font-size: calc( 1.50em + 3.50vw );
-        font-weight: 700;
+        font-weight: 900;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        // letter-spacing: 2px;
         padding: 10px 15px;
         margin: 0 0 15px 0;
         color: white;
@@ -425,13 +426,12 @@ header {
     top: 100%;
     left: 0;
     // right: -10%;
+    padding: $spacing-unit 0;
     background: white;
 }
 
 .projectsOverview {
     position: relative;
-    max-width: 300px;
-    margin: 0 auto;
     &--btn {
         z-index: 10;
     }
@@ -488,7 +488,6 @@ header {
         border: 10px solid $c2;
     }
     .projectsOverview {
-        width: 100%;
             &--btn {
             position: absolute;
             top: 100%;
