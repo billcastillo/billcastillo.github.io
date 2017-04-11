@@ -3,37 +3,43 @@
 .btn {
     padding: 10px 15px;
     margin: 15px 15px 15px 0;
+    border-radius: 50px;
     font-weight: 700;
     color: $body-color;
     text-align: center;
     transition: box-shadow 0.2s ease;
-    @extend .shadow-2;
+    @extend .shadow-1;
     &:hover {
         cursor: pointer;
         text-decoration: none;
         color: $body-color;
-        @extend .shadow-3;
+        @extend .shadow-2;
     }
 }
 
-.btn-white {
-    background: white;
-}
+.btn-white { background: white; }
+.btn-yellow { background: #fcfca4; }
 
-.txt-white {
-    color: $white-color;
-}
+.txt-white { color: $white-color; }
 
 .a-noStyle {
     color: $body-color;
-    &:hover {
-        text-decoration: none;
-    }
+    &:hover { text-decoration: none; }
 }
 
 /*------------------------------------*\
   #INDEX-PAGE
 \*------------------------------------*/
+
+.gradient {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: linear-gradient(0deg,#fff,#f2f2f2);
+    z-index: -1;
+}
 
 .indexMainSplash {
     position: relative;
@@ -120,7 +126,7 @@
 header {
     position: absolute;
     width: 100%;
-    padding: $spacing-unit / 2 0;
+    padding: $spacing-unit 0;
     z-index: 10;
     .headerLogo {
         text-align: left;
@@ -176,11 +182,6 @@ header {
     }
 }
 
-
-.indexDescription {
-
-}
-
 .indexDescription__heading {
     max-width: 1280px;
     margin: 0 auto;
@@ -203,47 +204,23 @@ header {
 @include media-min($sm) {
     header {
         padding: $spacing-unit 0;
-        .mainNav {
-            text-align: right;
-        }   
+        .mainNav { text-align: right; }   
     }
-    .indexDescription__heading {
-        padding: 160px 0;
-    }
+    .indexDescription__heading { padding: 160px 0; }
 }
 
-.indexProjects {
-    padding-top: 80px;
-}
-
-.indexProjects__header {
-    // margin-bottom: $spacing-unit;
-    > div {
-        padding: 0;
-    }
-}
-
-.indexProjects__row {
-    height: auto;
-}
-
-.indexProjects__right {
-    padding: 0;
-}
+.indexProjects { padding-top: 80px; }
+.indexProjects__header > div,
+.indexProjects__right { padding: 0; }
 
 .indexProjects__main {
-    // height: 100%;
     padding: 40px 0;
     background: linear-gradient(135deg, #FF4081, #4B007D);
 }
 
-.indexProjects__image--container {
-    position: relative;
-}
+.indexProjects__image--container,
+.indexProjects__title { position: relative; }
 
-.indexProjects__title {
-    position: relative;
-}
 
 .indexProjects__title--h2 {
     position: absolute;
@@ -263,11 +240,6 @@ header {
         max-width: 200px;
         // margin: 15px 15px 15px 0;
     }
-}
-
-
-.indexProjects__heading {
-    
 }
 
 .indexProjects__image {
@@ -291,12 +263,8 @@ header {
 }
 
 @include media-min($sm) {
-    .indexProjects {
-        padding-top: 160px;
-    }
-    .indexProjects__main {
-        padding: 80px 30px;
-    }
+    .indexProjects { padding-top: 160px; }
+    .indexProjects__main { padding: 80px 30px; }
     .indexProjects__image {
         position: absolute;
         top: -35%;
@@ -320,18 +288,12 @@ header {
 }
 
 .indexProfile {
-    //min-height: 50vh;
     padding-top: 60px;
     text-align: center;
 }
 
-.indexProfile__left {
-    display: none;
-}
-
-.indexProfile__container {
-    padding: 0;
-}
+.indexProfile__left { display: none; }
+.indexProfile__container { padding: 0; }
 
 .indexProfile__links {
     position: relative;
@@ -400,6 +362,153 @@ header {
     }
 }
 
+/*------------------------------------*\
+  #PROJECT-PAGE
+\*------------------------------------*/
+
+.projectsSection {
+    width: 100%;
+    max-width: 737px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.projectsImage {
+    width: 100%;
+    img {
+        width: 100%;
+        margin: $spacing-unit * 2 0 $spacing-unit 0;
+    }
+}
+
+.projectsSplash {
+    padding: 160px 0 0 0;
+}
+
+.projectsSplashContainer {
+    position: relative;
+    width: 100%;
+}
+
+.projecsTitle {
+    position: absolute;
+    top: -5%;
+    left: 0;
+    z-index: 1;
+    h2 {
+        font-size: calc( 1.50em + 3.50vw );
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 10px 15px;
+        margin: 0 0 15px 0;
+        color: white;
+        &:nth-child(1),
+        &:nth-child(2) { background: rgba($c3, 0.75); }
+        &:nth-child(3) { background: rgba($c2, 0.75); }
+    }
+}
+
+.projectsHeroImageContainer {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    padding-bottom: 40px;
+}
+
+.projectsHeroImage img { width: 100%; }
+
+.projectsOverviewContainer {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    // right: -10%;
+    background: white;
+}
+
+.projectsOverview {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+    &--btn {
+        z-index: 10;
+    }
+}
+
+@include media-min($sm) {
+    .projectsSection {
+        padding-top: 60px;
+    }
+    .projectsSplash {
+        padding: 160px 0 240px 0;
+    }
+    .projectsSplashContainer {
+        width: 80%;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .projecsTitle {
+        top: -5%;
+        left: -10%;
+    }
+    .projectsHeroImageContainer {
+        width: 100%;
+        left: 0%;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 50%;
+            height: 50%;
+            bottom: 0;
+            right: -10%;
+            background: #4B007D;
+            z-index: -1;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            width: 50%;
+            height: 50%;
+            bottom: -10%;
+            left: 30%;
+            background: #ff4081;
+            z-index: -1;
+        }
+    }
+    .projectsOverviewContainer {
+        position: absolute;
+        width: 55%;
+        min-width: 300px;
+        top: 75%;
+        left: 50%;
+        // right: -10%;
+        padding: 15px $spacing-unit;
+        border: 10px solid $c2;
+    }
+    .projectsOverview {
+        width: 100%;
+            &--btn {
+            position: absolute;
+            top: 100%;
+            right: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .projectsImage {
+        position: relative;
+        left: -153px;
+        width: 1000px;
+    }
+}
+
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+
 footer {
     text-align: center;
     padding-top: 80px;
@@ -426,5 +535,22 @@ footer {
         .footerBg {
             padding-bottom: 160px;
         }
+    }
+}
+
+.back {
+    position: absolute;
+    top: $spacing-unit;
+    left: $spacing-unit / 2;
+    z-index: 10;
+    img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@include media-min($sm) {
+    .back {
+        left: $spacing-unit;
     }
 }

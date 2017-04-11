@@ -101,6 +101,11 @@ h3.h3-custom {
   line-height: 1.4;
 }
 
+h3.projectsH3 {
+  font-weight: 700;
+  font-size: calc( 1.50em + 1vw );
+}
+
 h4 {
   font-size: 1.5em;
   margin-top: 0.67em;
@@ -244,17 +249,21 @@ figcaption {
 
 /**
  * Lists
-
-ul, ol {
-    margin-left: $spacing-unit;
-}
  */
+ol {
+    margin-left: $spacing-unit;
+    line-height: 1.635;
+}
+
+
+
 li {
     > ul,
     > ol {
          margin-bottom: 0;
     }
 }
+
 
 
 /**
@@ -508,7 +517,7 @@ pre {
   padding-right: 1rem;
   padding-left: 1rem;
 }
-
+.col-xs-0 { display: none; }
 .col-xs {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
