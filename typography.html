@@ -1,25 +1,27 @@
 ---
 
-title: Typography
+title: Basic Web Typography
 css: /css/typography.css
-
+description: An interactive guide for basic web typography.
 ---
 {% include head.html %}
 
 <body>
 	<div class="wrapper">
+		<div class="bg__image"></div>
 		<div class="container">
 			
 			<button class="btn button"></button>
 			
-			<section class="titleSection">
-			<h1 class="titleSection__title">Basics of Web Typography</h1>
-			<span class="titleSection__author">by <a href="https://billcastillo.me">Bill Castillo</a></span>
-			</section>
-
+			<header class="titleSection"> 
+				<h1 class="titleSection__title">Basic Web Typography</h1>
+				<span class="titleSection__author">by <a href="https://billcastillo.me">Bill Castillo</a></span>
+			</header>
+			
+			<article>
 			<section class="sectionGuide zero">
 			<h2>Introduction</h2>
-			<p>Hello. This article will introduce you on the basic guidelines of web typography. A collection of simple concepts that only takes a few lines of <code>CSS</code> to implement. Please note that this is just a guide to help you achieve better readability and not to be taken religiously. Feel free to implement your own ideas to showcase a unique look or for just fun experimentation.</p>
+			<p>Hello. This article will introduce you on the basic guidelines of web typography. A collection of simple concepts that only takes a few lines of <code>CSS</code> to implement. Please note that this is just a guide to help you achieve better readability and not to be taken religiously. Feel free to implement your own idea if you'd like to showcase a unique look or for just fun experimentation.</p>
 			<p>
 			To help you understand the difference, this page will serve as a interactive demo while we go each through of the guides.</p>
 
@@ -31,7 +33,7 @@ css: /css/typography.css
 			<button class="btn btn-next">Next</button>
 
 			<section class="sectionGuide first">
-			<h3>Visual Heirarchy</h3>
+			<h2>Visual Heirarchy</h2>
 			<p>Implementing a proper structure heirarchy on your page will already show a significant impact on its readability. This will show what needs to be emphasized; and to guide users on the overall composition of the page.</p>
 
 			<p>In order to do this, let's break down the containing elements:</p>
@@ -44,7 +46,8 @@ css: /css/typography.css
 				<li>Quotes / Blockquotes</li>
 				<li>Etc.</li>
 			</ul>
-
+			
+			<h3>Headers</h3>
 			<p><code>Headers</code> or <code>headings</code> are the most important part an article. A sub-heading, just like a paragraph, are used to seperate different ideas, and subsections of the same topic. The HTML nodes from <code>h1</code> to <code>h6</code> should be used for the relevant contexts.</p>
 
 <pre>
@@ -58,7 +61,7 @@ css: /css/typography.css
   </code>
 </pre>
 
-			<p>With <code>CSS</code>, you can implement different font-sizes for each node. Using ratio of 1.4, I've was able to have a modular sacle for my headers.</p>
+			<p>Using <code>CSS</code>, you can implement different <code>font-size</code> for each node. Using ratio of 1.4, I was able to have a modular scale for my headers.</p>
 
 <pre>
 	<code>
@@ -70,15 +73,20 @@ css: /css/typography.css
 	h6 { font-size: 1.00em; }
 	</code>
 </pre>
-		
-			<p><code>paragraphs</code> should be short and sweet. Make it approachable and easily digestible. The <code>line-height</code> and <code>margin-bottom</code> property will help make room for breathing space for your paragraph. Following the principle of at least 1.3 would do it justice.</p>
+			
+			<p>Headers also serves as a guide for Google, Yahoo, Bing, and other search engines to read or <code>crawl</code> your website to analyze its content and  rank it according to relevance. So, if you'd like an additional <code>SEO</code> boosts, I insist you use the proper HTML5 semantics.</p>
+
+			<h3>Paragraph</h3>
+			<p><code>Paragraphs</code> should be short and sweet. Make it approachable and easily digestible. The <code>line-height</code> and <code>margin-bottom</code> property will provide breathing room and space for your paragraphs. Setting the line-height value of at least 1.4 should be enough (this should scale-up depending on your font-size). </p>
+
+			<img src="{{ site.baseurl }}/img/typography/paragraph.jpg" alt="Paragraph">
 
 <pre>
-	<code>
+	<code class="css">
 	p {
-		font-size: 1em; // 16px
-		line-height: 1.4;
-		margin-bottom: 1.4em;
+	  font-size: 1em; // 16px
+	  line-height: 1.4;
+	  margin-bottom: 1.4em;
 	}
 	</code>
 </pre>
@@ -87,13 +95,13 @@ css: /css/typography.css
 			<button class="btn btn-next">Next</button>
 
 			<section class="sectionGuide second">
-				<h3>Containers</h3>
-				<p>A proper composure for your page layout also plays an important role for readability. Keeping the <code>container</code> to an optimal length that will ease the eye movements of the reader.</p>
+				<h2>Containers</h2>
+				<p>A proper composure for your page layout also plays an important role for readability. Keeping the <code>container</code> to an optimal length that should ease the eye movements of the reader.</p>
 				<ul>
-					<li><b>Too wide</b> - if the line is too short, the reader will have a hard time focusing on the text.</li> 
+					<li><b>Too wide</b> - if the line is too long, the reader will have a hard time focusing on the text.</li> 
 					<li><b>Too short</b> - a short line could break the reader's rhythm and might even cause stress.</li>
 				</ul>
-				<p>One pointer is to keep it between 50 - 70 characters per line. So, using the most common font-sizes of 16 - 22 pixels, you might end up between 500 - 750 pixels.</p>
+				<p>One pointer is to keep it between 50―70 characters per line. So, using the most common font-sizes of 16―22 pixels, you might end up between 500―750 pixels.</p>
 
 				<p>If you're on mobile though, the width will stay at 100%.</p>
 			</section>
@@ -101,35 +109,31 @@ css: /css/typography.css
 			<button class="btn btn-next">Next</button>
 			
 			<section class="sectionGuide third">
-				<h3>Fonts &amp; Colors</h3>
+				<h2>Fonts &amp; Colors</h2>
 
-				<h4>Fonts</h4>
-				<p>An optional but highly recommended part of typography. This is where your creative juice comes to play! Usually, it is adviced that you only use a variety of 3 or less fonts. Too many might add confusion and clutter for your readers. More fonts would also rack-up the loading time of your page.</p>
-				<p>This demo used <em>Playfair Display</em> (<code>serif</code> font) and <em>Merriweather Sans</em> (<code>sans-serif</code> font).</p>
+				<h3>Fonts</h3>
+				<p>An optional but highly recommended part of typography. This is where your creative juice comes to play! Usually, it is adviced that you only use a variety of 3 or less fonts. Too many might add confusion and clutter your reader's visual perception. More fonts would also rack-up the loading time of your page.</p>
+
+				<p>This demo used <em>Droid Sans</em>―<code>serif</code> font and <em>Merriweather Sans</em>―<code>sans-serif</code> font.</p>
 				<p>You are free to select your own combinations or pair. See and feel which fonts would create a perfect harmony.</p>
 				
-				<h4>Colors</h4>
-				<p>You might not notice the difference in color when you clicked that button but it did a light relieve on your eyes by adjusting the contrast between the font-color and the background color.</p>
+				<h3>Colors</h3>
+				<p>You might not notice the difference in color when you clicked that button but I assure you even just a little, I did a small relief on your eyes by optimizing the contrast between the <code>font-color</code> and the <code>background-color</code>.</p>
+				
 				<p>Instead of using pure black <code>#000000</code>, I've added a bit of grey to the body by using <code>#363636</code> for the paragraph and <code>#202020</code> for the headers.</p>
+
+				<p>And that's the basic guideline of readability - a readable contrast. However, you can use any color of your preference on your article. Should it be your theme, custom color palette or just any color that fits your style. <em>As long as it has a proper contrast ratio.</em> Enough to be readable.</p>
 			</section>
 
 			<button class="btn btn-next">Next</button>
 
 			<section class="sectionGuide fourth">
-				<h3>Additional tidbits</h3>
+				<h2>Additional tidbits</h2>
 
-				<p>Adding tasty details might not be your thing but it is a welcome one. These mini-snippets on your CSS would define your style and uniqueness to your blog and/or article. A simple underline, or a border can add even more emphasis to your message.</p>
+				<p>Adding tasty details might not be your thing but it is a welcome one. These mini-snippets on your CSS can define your style and uniqueness to your blog and/or article. A simple underline, or a border can add even more emphasis to your message.</p>
+				<p>To be continued... </p>
 			</section>
-
-<!--
-<pre>
-	<code>
-	body {
-		position: relative;
-	}
-	</code>
-</pre>
--->
+			</article>
 
 		</div><!-- end container -->
 	</div> <!-- end wrapper -->
