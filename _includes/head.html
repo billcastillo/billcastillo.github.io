@@ -39,7 +39,7 @@
   	<link rel="canonical" href="https://billcastillo.me/">
   	
 
-	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ page.css | prepend: site.baseurl }}">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
@@ -52,7 +52,7 @@
 	<script type="text/javascript">
 	WebFontConfig = {
 	google: { families: [ 'Domine:400,700:latin',
-	'Muli:400,400italic,900:latin' ] }
+	'Karla:400,400italic,700:latin' ] }
 	};
 	(function() {
 	var wf = document.createElement('script');
@@ -66,9 +66,22 @@
 	</script>
 
 	<noscript>
-	  <link href="https://fonts.googleapis.com/css?family=Domine:400,700|Muli:400,400i,900" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Domine:400,700Karla:400,400i,700" rel="stylesheet">
 	</noscript>
 	
+	<style>
+		.footer_custom {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding: 15px;
+		}
+		.footer_custom p {
+			font-size: 0.850em;
+			color: #373340;
+		}
+	</style>
+
 	<script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
     function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

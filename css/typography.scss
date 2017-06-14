@@ -1,0 +1,401 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:400,400i,700|Playfair+Display:400,700');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**********************************
+ * INITIAL STYLES
+ *********************************/
+ 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+	position: relative;
+	font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”, “Ubuntu”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, sans-serif;
+	font-size: 16px;
+	padding-bottom: 10em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 1em;
+}
+
+p {
+	margin-top: 0.50em;
+}
+
+ul {
+	margin: 0.50em 0 0 2em;
+}
+
+/**********************************
+ * PROJECT STYLES
+ *********************************/
+
+.container { 
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	transition: all 0.5s ease-in-out;
+}
+
+.btn {
+	font-size: 0.850em;
+	font-weight: 700;
+	color: white;
+	
+	margin-top: 1em;
+	padding: 10px 15px;
+	border: 1px solid #1E88E5;
+	border-radius: 2px;
+	background: #2196F3;
+	max-width: 290px;
+	white-space: normal;
+	// box-shadow: 2px 2px 3px rgba(0,0,0,0.35);
+	&:hover {
+		cursor: pointer;
+	}
+	&:active, &:focus {
+		outline: none;
+		border: 1px solid #1E88E5;
+	}
+	&:disabled {
+    	background-color: #D1C4E9;
+    	border: 1px solid #D1C4E9;
+		&:hover {
+			cursor: not-allowed;
+		}
+	}
+}
+
+.button {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+
+.btn-next {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.btn {
+		font-size: 1em;
+	}
+	.button {
+		bottom: 20px;
+		right: 20px;
+	}
+}
+
+/**********************************
+ * HIDE SECTIONS
+ *********************************/
+
+.sectionGuide {
+	display: none;
+	// opacity: 0;
+	// visibility: hidden;
+	transition: 0.5s ease-in-out;
+}
+
+.sectionGuide.visible {
+	display: block;
+	// opacity: 1;
+	// visibility: visible;
+	transition: 0.5s ease-in-out;
+}
+
+
+/**********************************
+ * ZERO STYLE
+ * CONTAINER MARGINS
+ *********************************/
+
+.container.zero {
+	padding: 30px 15px;
+}
+
+@media screen and (min-width: 768px) {
+	.container.zero {
+		padding: 60px 30px;
+	}
+}
+
+/**********************************
+ * FIRST STYLE
+ * VISUAL HEIRARCHY
+ *********************************/
+
+body.first {
+	font-size: 16px;
+}
+
+.container.first {
+	p {
+		font-size: 1em;
+		font-weight: 400;
+		line-height: 1.5;
+		margin-top: 1.5em;
+	}
+	ul > li,
+	ol > li { line-height:  1.5; }
+	li { margin-top: 1em; }
+	a { text-decoration-skip: ink; }
+	em {
+		font-weight: 700;
+		font-style: italic;
+	}
+	h1 {
+		word-break: break-all;
+		hyphens: auto;
+		white-space: normal;
+		margin-bottom: 0.50em;
+	}
+	h2 {
+		margin: 1.250em 0 0 0;
+		line-height: 1.2;
+	}
+	h3,h4,h5,h6 {
+		margin: 1em 0 0 0;
+		line-height: 1.2;
+	}
+	h1 { font-size: calc( 5.378em - 4vw ); }
+	h2 { font-size: calc( 3.842em - 3.50vw ); }
+	h3 { font-size: calc( 2.744em - 3.50vw ); }
+	h4 { font-size: calc( 1.96em - 3.50vw ); }
+	h5 { font-size: calc( 1.40em - 3.50vw ); }
+	h6 { font-size: 1em; }
+
+	pre {
+		max-width: 768px;
+		overflow: auto;
+	}
+	pre > code {
+		white-space: pre;
+		line-height: 1.5;
+		font-size: 14px;
+		border-radius: 5px;
+	}
+	.sectionGuide {
+		margin-top: 7em;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	body.first {
+		font-size: 18px;
+	}
+	.container.first {
+		h1 {
+			font-size: 5.378em;
+			word-break: normal;
+		}
+		h2 { font-size: 3.842em; }
+		h3 { font-size: 2.744em; }
+		h4 { font-size: 1.96em; }
+		h5 { font-size: 1.40em; }
+		h6 { font-size: 1em; }
+
+	}
+}
+
+/**********************************
+ * SECOND STYLE
+ * CONTAINER WIDTH
+ *********************************/
+
+.container.second {
+	max-width: 650px;
+	margin: 0 auto;
+}
+
+
+/**********************************
+ * THIRD STYLE
+ * FONTS & COLOURS
+ *********************************/
+
+.container.third {
+	p, a, li {
+		font-family: 'Merriweather Sans', -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”, “Ubuntu”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, sans-serif;;
+		color: #363636;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		color: #202020;
+		font-family: 'Playfair Display', serif;
+	}
+}
+
+/**********************************
+ * FOURTH STYLE
+ * ETC
+ *********************************/
+
+.container.fourth {
+	.titleSection {
+		text-align: center;
+	}
+	.titleSection__title {
+		margin-bottom: 0.50em;
+		word-break: break-all;
+		hyphens: auto;
+	}
+	p > code {
+		display: inline-block;
+		font-family: monospace, 'Courier New','Lucida Console','Courier','Monaco';
+		font-size: 0.850em;
+		font-feature-settings: "liga" 0;
+		padding: 0 0.250em;
+		margin: 0 0.250em;
+		border: 1px solid #df9898;
+		border-radius: 5px;
+		color: #505050;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.container.fourth {
+		.titleSection__title {
+			word-break: normal;
+		}
+	}
+}
+/*
+ * GUIDELINES LINKS
+ * SASSLINE https://sassline.com/ by jakegiltsoff
+ * Gridlover generator https://www.gridlover.net/try
+ * Perfect paragraph https://betterwebtype.com/triangle
+ * Typography resources http://www.sansfrancis.co/#typography
+ * Mathematics of Web Typoghraphy https://medium.com/@jxnblk/mathematical-web-typography-d69186780a41
+ * Vertical Rhythm Guideline by Zell
+ * Scaling : http://type-scale.com/ * modularscale.com
+ * Font Combinations: http://fontflame.com
+ * Number one free font resource : fonts.google.com
+ * Optimal length https://baymard.com/blog/line-length-readability
+ * Sans vs Sans-serif https://medium.com/rareview/typography-on-the-web-4cd494d6b165
+ * also basic web typography https://medium.com/@andreacrofts/web-typography-101-302af8a65be7
+ * Different Typography pointer of view http://learn.scannerlicker.net/2015/07/13/5-typography-tips-from-a-type-designers-point-of-view/
+
+*/
+
+/*
+Dracula Theme v1.2.0
+https://github.com/zenorocha/dracula-theme
+Copyright 2015, All rights reserved
+Code licensed under the MIT license
+http://zenorocha.mit-license.org
+@author Éverton Ribeiro <nuxlli@gmail.com>
+@author Zeno Rocha <hi@zenorocha.com>
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #282a36;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: #8be9fd;
+}
+
+.hljs-function .hljs-keyword {
+  color: #ff79c6;
+}
+
+.hljs,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name,
+.hljs-type,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #f1fa8c;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: #6272a4;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+

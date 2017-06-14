@@ -15,23 +15,24 @@ dl, dd, ol, ul, figure {
  */
 
 body {
-    font-family: 'Muli','Helvetica','Arial',sans-serif;
-    font-size: 16px;
-    color: $body-color;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-feature-settings: "kern" 1;
-    -moz-font-feature-settings: "kern" 1;
-    -o-font-feature-settings: "kern" 1;
-    font-feature-settings: "kern" 1;
-    font-kerning: normal;
-    overflow-x: hidden;
+  position: relative;
+  font-family: 'Karla','Helvetica','Arial',sans-serif;
+  font-size: 16px;
+  color: $body-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  overflow-x: hidden;
 }
 
 .list__inline {
-    list-style: none;
-    li {
-        display: inline-block;
-    }
+  list-style: none;
+  li {
+      display: inline-block;
+  }
 }
 
 /**
@@ -81,7 +82,7 @@ h1 {
 
 h2 {
   font-size: 2.5em; 
-  font-size: calc( 1em + 1.50vw );
+  font-size: calc( 1em + 2vw );
   margin-top: 0.4em;
   margin-bottom: 0.4em;
 }
@@ -101,10 +102,10 @@ h3 {
 
 h3.h3-custom {
   font-family: $body-font;
-  font-size: calc( 1.50em + 1vw );
+  font-size: calc( 2em + 1vw );
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.4;
+  letter-spacing: -0.0250em;
+  line-height: 0.850;
 }
 
 h3.projectsH3 {
@@ -139,7 +140,7 @@ h6 {
 p {
   margin-top: 1em;
   margin-bottom: 1.4em;
-  font-family: 'Muli';
+  font-family: 'Karla';
   font-size: 1em;
   font-weight: 400;
   color: #504766;
@@ -171,9 +172,6 @@ a:hover {
 @include media-min($sm) {
     body {
         font-size: 18px;
-    }
-    h3.h3-custom {
-      line-height: 1.635;
     }
 }
 

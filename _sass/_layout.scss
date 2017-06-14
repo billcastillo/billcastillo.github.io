@@ -3,8 +3,8 @@
 .btn {
     padding: 10px 15px;
     margin: 15px 15px 15px 0;
-    border-radius: 50px;
-    font-weight: 700;
+    border-radius: 10px;
+    font-weight: 400;
     color: $body-color;
     text-align: center;
     transition: box-shadow 0.2s ease;
@@ -82,7 +82,7 @@
         top: -15px;
         left: 0;
         color: $grey-color;
-        font-size: calc( 0.750em + 0.50vw );
+        font-size: calc( 0.850em + 0.50vw );
     }
     h1 {
         display: inline-block;
@@ -103,7 +103,7 @@
     }
     h2 {
         font-family: $body-font;
-        font-size: calc( 0.750em + 0.50vw );
+        font-size: calc( 0.850em + 0.50vw );
         font-weight: 400;
         color: $grey-color;
         line-height: 1.635;
@@ -146,24 +146,25 @@ header {
         .mainNav__li {
             display: inline-block;
             transition: box-shadow 0.15s cubic-bezier(.17,.67,.83,.67);
-            &:not(:last-child) { margin-right: $spacing-unit; }
+            &:not(:last-child) { margin-right: $spacing-unit * 2; }
             .mainNav__li--title {
                 display: block;
                 padding-top: 5px;
                 text-align: center;
-                font-weight: 400;
-                // text-transform: uppercase;
-                font-size: 1em;
-                color: $body-color;
+                font-size: 1.250em;
+                font-weight: 700;
+                text-transform: lowercase;
+                font-variant: small-caps;
+                color: $heading-color;
             }
-            &:nth-child(1) { .mainNav__li--img { background: $c1; }}
-            &:nth-child(2) { .mainNav__li--img { background: $c2; }}
-            &:nth-child(3) { .mainNav__li--img { background: $c3; }}
+            // &:nth-child(1) { .mainNav__li--img { background: $c1; }}
+            // &:nth-child(2) { .mainNav__li--img { background: $c2; }}
+            // &:nth-child(3) { .mainNav__li--img { background: $c3; }}
             .mainNav__li--img {
                 position: relative;
+                display: block;
                 left: 50%;
                 transform: translateX(-50%);
-                display: block;
                 width: 45px;
                 height: 45px;
                 border-radius: 50%;
@@ -197,6 +198,7 @@ header {
 
 .indexDescription__heading--h3 {
     position: relative;
+    font-family: $body-font;
     width: 80%;
     margin: 0 auto;
     text-align: center;
@@ -210,83 +212,20 @@ header {
     .indexDescription__heading { padding: 160px 0; }
 }
 
+/************************************
+ * INDEX PROJECTS
+ ************************************/
+
 .indexProjects { padding-top: 80px; }
-.indexProjects__header > div,
-.indexProjects__right { padding: 0; }
 
-.indexProjects__main {
-    padding: 40px 0;
-    background: linear-gradient(135deg, #FF4081, #4B007D);
-}
-
-.indexProjects__image--container,
-.indexProjects__title { position: relative; }
-
-
-.indexProjects__title--h2 {
-    position: absolute;
-    font-family: $body-font;
-    font-weight: 700;
-    transform: rotate(270deg);
-    transform-origin: 90% 90%;
-    text-align: right;
-    white-space: nowrap;
-    margin: 0;
-    right: -0.50em;
-}
-
-.indexProjects__buttons {
-    .btn {
-        // display: block;
-        max-width: 200px;
-        // margin: 15px 15px 15px 0;
-    }
-}
-
-.indexProjects__image {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin: $spacing-unit 0;
-}
-
-.indexProjects__gallery {
-    padding: 0;
-    margin: $spacing-unit 0;
-    > div {
-        &:nth-last-child(1) {
-            margin-top: $spacing-unit;
-        }
-    }
-    img {
-        width: 100%;
-    }
-}
 
 @include media-min($sm) {
     .indexProjects { padding-top: 160px; }
-    .indexProjects__main { padding: 80px 30px; }
-    .indexProjects__image {
-        position: absolute;
-        top: -35%;
-        transform: translateY(-35%);
-        width: 95%;
-        margin: 0 auto;
-    }
-    .indexProjects__gallery {
-        > div {
-            &:nth-child(1) {
-                padding-left: 0;
-                padding-right: 30px;
-            }
-            &:nth-last-child(1) {
-                padding-right: 0;
-                padding-left: 30px; 
-                margin-top: 0;
-            }
-        }
-    }
 }
+
+/************************************
+ * INDEX PROFILE
+ ************************************/
 
 .indexProfile {
     padding-top: 60px;
