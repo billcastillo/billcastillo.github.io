@@ -27,7 +27,7 @@ description: An interactive guide for basic web typography.
 
 			<p>Before we start, let's move a bit from the browser's edge, shall we?</p>
 
-			<p>Click the button at the <em>bottom right</em> of the page to implement style guides on this page.</p>
+			<p class="highlight">Click the button at the <em>bottom right</em> of the page to implement style guides on this page.</p>
 			</section>
 
 			<button class="btn btn-next">Next</button>
@@ -73,13 +73,17 @@ description: An interactive guide for basic web typography.
 	h6 { font-size: 1.00em; }
 	</code>
 </pre>
+
+			<h4>Relevant Links:</h4>
+			<ul>
+				<li><b><a href="http://type-scale.com/">A Visual Type Scale</a></b></li>
+				<li><b><a href="modularscale.com">Modular Scale</a></b></li>
+			</ul>
 			
 			<p>Headers also serves as a guide for Google, Yahoo, Bing, and other search engines to read or <code>crawl</code> your website to analyze its content and  rank it according to relevance. So, if you'd like an additional <code>SEO</code> boosts, I insist you use the proper HTML5 semantics.</p>
 
 			<h3>Paragraph</h3>
 			<p><code>Paragraphs</code> should be short and sweet. Make it approachable and easily digestible. The <code>line-height</code> and <code>margin-bottom</code> property will provide breathing room and space for your paragraphs. Setting the line-height value of at least 1.4 should be enough (this should scale-up depending on your font-size). </p>
-
-			<img src="{{ site.baseurl }}/img/typography/paragraph.jpg" alt="Paragraph">
 
 <pre>
 	<code class="css">
@@ -90,6 +94,17 @@ description: An interactive guide for basic web typography.
 	}
 	</code>
 </pre>
+
+			<img src="{{ site.baseurl }}/img/typography/paragraph.jpg" alt="Paragraph">
+			
+			<h4>Relevant Links</h4>
+			<ul>
+				<li><b><a href="https://betterwebtype.com/triangle">The Perfect paragraph (interactive game)</a></b></li>
+				<li><b><a href="https://www.gridlover.net/try">Gridlover (Gridline typography generator)</a></b></li>
+				<li><b><a href="https://sassline.com/">Sassline (mixins for gridline typography) by jakegiltsoff</a></b></li>
+				<li><b><a href="https://zellwk.com/blog/why-vertical-rhythms/">Vertical Rhythm Guideline by Zell</a></b></li>
+			</ul>
+
 			</section>
 
 			<button class="btn btn-next">Next</button>
@@ -112,26 +127,163 @@ description: An interactive guide for basic web typography.
 				<h2>Fonts &amp; Colors</h2>
 
 				<h3>Fonts</h3>
-				<p>An optional but highly recommended part of typography. This is where your creative juice comes to play! Usually, it is adviced that you only use a variety of 3 or less fonts. Too many might add confusion and clutter your reader's visual perception. More fonts would also rack-up the loading time of your page.</p>
+				<p>An optional but highly recommended part of typography. This is where you get creative, express, and implement your own style. Using certain fonts can set the mood and tone of your text. Usually, it is adviced that you only use a variety of 3 or less fonts. Too many might add confusion and clutter your reader's visual perception. More fonts would also rack-up the loading time of your page.</p>
+
+				<img src="{{ site.baseurl }}/img/projects/enigma-salon/enigma-fonts.png" alt="Fonts Combination">
 
 				<p>This demo used <em>Droid Sans</em>―<code>serif</code> font and <em>Merriweather Sans</em>―<code>sans-serif</code> font.</p>
 				<p>You are free to select your own combinations or pair. See and feel which fonts would create a perfect harmony.</p>
+
+				<h4>Relevant Links</h4>
+				<ul>
+					<li><b><a href="fonts.google.com">
+					Google Fonts
+					</a></b></li>
+					<li><b><a href="http://brick.im/fonts/">
+					Brick Fonts
+					</a></b></li>
+					<li><b><a href="http://dotcolon.net/">
+					Dotcolon
+					</a></b></li>
+					<li><b><a href="https://www.prototypo.io/">
+					Create your own font
+					</a></b></li>
+					<li><b><a href="http://typography.supply/">
+					An Inventory Of Typography Tools
+					</a></b></li>
+					<li><b><a href="https://medium.com/rareview/typography-on-the-web-4cd494d6b165">
+					Sans vs Sans-serif
+					</a></b></li>
+					<li><b><a href="https://www.zachleat.com/web/comprehensive-webfonts/">
+					A Comprehensive Guide on Loading Fonts
+					</a></b></li>
+					<h5>CSS Font Style Generators</h5>
+					<li><b><a href="https://beta.typenugget.com/">
+					Typenugget
+					</a></b></li>
+					<li><b><a href="https://typeanything.io/">
+					Typeanything
+					</a></b></li>
+					<li><b><a href="http://fontfling.com/">
+					Find your font
+					</a></b></li>
+					<h5>Font Inspirations</h5>
+					<li><b><a href="http://100daysoffonts.com/">
+					100 Days of Fonts
+					</a></b></li>
+					<li><b><a href="http://tobiasahlin.com/typesource/">
+					Google Web Fonts Inspirations
+					</a></b></li>
+					<li><b><a href="http://fontflame.com">
+					FontFlame - A Tinder-like app for fonts
+					</a></b></li>
+					<li><b><a href="http://typespiration.com/">
+					Typespiration
+					</a></b></li>
+					<li><b><a href="https://typ.io/">
+					Fonts That Go Together
+					</a></b></li>
+				</ul>
 				
 				<h3>Colors</h3>
 				<p>You might not notice the difference in color when you clicked that button but I assure you even just a little, I did a small relief on your eyes by optimizing the contrast between the <code>font-color</code> and the <code>background-color</code>.</p>
 				
 				<p>Instead of using pure black <code>#000000</code>, I've added a bit of grey to the body by using <code>#363636</code> for the paragraph and <code>#202020</code> for the headers.</p>
 
+				<img src="{{ site.baseurl }}/img/typography/greycolors.png" alt="Grey Colors">
+
 				<p>And that's the basic guideline of readability - a readable contrast. However, you can use any color of your preference on your article. Should it be your theme, custom color palette or just any color that fits your style. <em>As long as it has a proper contrast ratio.</em> Enough to be readable.</p>
+				
+				<h4>Relevant Links:</h4>
+				<ul>
+					<li><b><a href="http://contrastchecker.com/">
+					Contrast Checker
+					</a></b></li>
+					<li><b><a href="https://material.io/guidelines/style/color.html#color-color-palette">
+					Google Material Color Guideline
+					</a></b></li>
+					<h5>Color Palette Generators</h5>
+					<li><b><a href="http://colorcubo.xyz/">
+					ColorCubo
+					</a></b></li>
+					<li><b><a href="https://color.adobe.com/">
+					Adobe Color Palette Generator
+					</a></b></li>
+					<li><b><a href="colorhunt.co">
+					Colorhunt
+					</a></b></li>
+					<li><b><a href="http://colorsupplyyy.com/app/">
+					Colorsuplyyy
+					</a></b></li>
+					<li><b><a href="http://www.palettable.io">
+					Palettable
+					</a></b></li>
+					<li><b><a href="https://color.hailpixel.com">
+					Colordot
+					</a></b></li>
+					<li><b><a href="https://www.impalette.com/">
+					Impalette (Palette generator from photos)
+					</a></b></li>
+					<li><b><a href="http://jxnblk.com/hello-color">
+					Hello Color (Contrast safe color pairs)
+					</a></b></li>
+					<h5>Color Inspirations</h5>
+					<li><b><a href="colorhexa.com">
+					Colorhexa - Comprehensive Color Information
+					</a></b></li>
+					<li><b><a href="http://www.colorion.co/">
+					Colorion
+					</a></b></li>
+					<li><b><a href="http://www.colorlisa.com/">
+					Color Lisa
+					</a></b></li>
+					<li><b><a href="http://flatcolors.net/">
+					Flat Colors
+					</a></b></li>
+					<li><b><a href="http://colorcrush.cc/">
+					Color Crush
+					</a></b></li>
+					<li><b><a href="http://www.vanschneider.com/colors/">
+					Color Claim by Tobias van Schneider
+					</a></b></li>
+					<h5>More Color Guides</h5>
+					<li><b><a href="https://medium.freecodecamp.com/designing-in-color-abd358660a7b">
+					Designing in Color by Jonathan Z. White
+					</a></b></li>
+					<li><b><a href="https://medium.com/help-scout/the-psychology-of-color-in-marketing-and-branding-ebb2320a2b0#.zbzc5pijg">
+					The Psychology of Color in Marketing and Branding by Gregory Ciotti
+					</a></b></li>
+				</ul>
+
 			</section>
 
 			<button class="btn btn-next">Next</button>
 
 			<section class="sectionGuide fourth">
-				<h2>Additional tidbits</h2>
+				<h2>Details</h2>
 
 				<p>Adding tasty details might not be your thing but it is a welcome one. These mini-snippets on your CSS can define your style and uniqueness to your blog and/or article. A simple underline, or a border can add even more emphasis to your message.</p>
 				<p>To be continued... </p>
+				
+				<h4>Relevant Links:</h4>
+				<ul>
+					<li><b><a href="typographyhandbook.com">
+						Typography Handbook
+					</a> -- This is all you need tbh dump everything else.</b></li>
+					<li><b><a href="https://ia.net/topics/">
+					Web Design is 95% Typography
+					</a></b></li>
+					<li><b><a href="http://www.adrenalinmedia.com.au/blog/january-2016/this-changes-everything-css-%E2%80%98fluid-properties%E2%80%99">
+					Fluid Typography using CSS
+					</a></b></li>
+					<li><b><a href="https://medium.com/@andreacrofts/web-typography-101-302af8a65be7">
+					Also a basic web typography guide
+					</a></b></li>
+					<li><b><a href="https://medium.com/@jxnblk/mathematical-web-typography-d69186780a41">
+					Mathematics of Web Typoghraphy
+					</a></b></li>
+				</ul>
+
 			</section>
 			</article>
 

@@ -71,22 +71,11 @@ body {
 	width: 100%;
 }
 
-article {
-	width: 100%;
-}
-
-h1,h2,h3,h4,h5,h6 {
-	margin-top: 1em;
-}
-
-p {
-	margin-top: 0.50em;
-}
-
-ul {
-	margin: 0.50em 0 0 2em;
-}
-
+article { width: 100%; }
+h1,h2,h3,h4,h5,h6 { margin-top: 1em; }
+p { margin-top: 0.50em; }
+b { font-weight: 700; }
+ul { margin: 0.50em 0 0 2em; }
 img { width: 100%; }
 
 /**********************************
@@ -101,6 +90,12 @@ img { width: 100%; }
 
 header {
 	text-align: center;
+}
+
+.highlight {
+	padding: 10px;
+	border: 1px solid #EF9A9A;
+	border-radius: 5px;
 }
 
 .btn {
@@ -118,6 +113,12 @@ header {
 	// box-shadow: 2px 2px 3px rgba(0,0,0,0.35);
 	&:hover {
 		cursor: pointer;
+		box-shadow: 0 0 6px 4px rgba(#64B5F6, 0.50);
+	}
+	&:disabled {
+		&:hover {
+			box-shadow: none;
+		}
 	}
 	&:active, &:focus {
 		outline: none;
@@ -216,7 +217,7 @@ body.first {
 	}
 	ul > li,
 	ol > li { line-height:  1.5; }
-	li { margin-top: 1em; }
+	ul, ol { margin-top: 1.50em; }
 	a { text-decoration-skip: ink; }
 	em {
 		font-weight: 700;
@@ -235,6 +236,7 @@ body.first {
 		line-height: 1;
 		margin: 1em 0 -0.250em 0;
 	}
+	li + h5 { margin: 1em 0 0.250em -1em; }
 	h1 { font-size: 3.842em; }
 	h2 { font-size: 2.744em; }
 	h3 { font-size: 1.960em; }
@@ -274,14 +276,21 @@ body.first {
 		font-size: 18px;
 	}
 	.container.first {
+		/*
 		h1 { font-size: 5.378em; }
 		h2 { font-size: 3.842em; }
 		h3 { font-size: 2.744em; }
 		h4 { font-size: 1.96em; }
-		h5 { font-size: 1.40em; }
+		*/
+		h1 { font-size: 3.998em; }
+		h2 { font-size: 2.827em; }
+		h3 { font-size: 1.999em; }
+		h4 { font-size: 1.414em; }
+		h5 { font-size: 1.250em; }
 		h6 { font-size: 1em; }
-		.sectionGuide {
-			margin-top: 7em;
+		.sectionGuide { margin-top: 7em; }
+		h3, h4, h5, h6 {
+			margin: 1.250em 0 -0.50em 0;
 		}
 		p,
 		ul > li,
@@ -290,6 +299,7 @@ body.first {
 		pre > code {
 			line-height: 1.65;
 		}
+		ul, ol { margin-top: 1.65em; }
 		p { margin-top: 1.65em; }
 	}
 }
@@ -310,10 +320,8 @@ body.first {
 		pre > code {
 			line-height: 1.8;
 		}
+		ul, ol { margin-top: 1.80em; }
 		p, img { margin-top: 1.80em; }
-		h3, h4, h5, h6 {
-			margin: 1.250em 0 -0.50em 0;
-		}
 	}
 }
 
@@ -344,6 +352,15 @@ body.first {
 		font-weight: 400;
 		color: #363636;
 	}
+	a {
+		font-size: 0.850em;
+		color: #9575CD;
+		text-decoration: underline;
+		text-decoration-skip: ink;
+		&:hover {
+			color: #B39DDB;
+		}
+	}
 	h1,h2,h3,h4,h5,h6 {
 		color: #202020;
 		font-family: 'Droid Serif', serif;
@@ -356,6 +373,15 @@ body.first {
 	h3,h4,h5,h6 {
 		font-weight: 400;
 		letter-spacing: -0.0250em;
+	}
+	h4 { color: #673AB7; }
+	li + h5 {
+	    font-family: 'Merriweather Sans';
+	    font-weight: 700;
+	    text-transform: lowercase;
+	    font-variant: small-caps;
+	    letter-spacing: 0;
+		color: #9a9a9a;
 	}
 }
 
@@ -376,10 +402,10 @@ body.first {
 			width: 100%;
 			height: 50vh;
 
-			background: url('https://unsplash.it/1200/600/?image=1081&amp;gravity=south') no-repeat;
-			background-size: cover;
+			background: url('../img/typography/pattern.png') repeat;
+			// background-size: cover;
 			background-position: top center;
-			opacity: 0.60;
+			opacity: 0.50;
 			z-index: -1;
 		}
 	}
@@ -416,14 +442,8 @@ body.first {
 
 /*
  * GUIDELINES LINKS
- * Web Design is 95% Typography - https://ia.net/topics/the-web-is-all-about-typography-period/
- * SASSLINE https://sassline.com/ by jakegiltsoff
- * Gridlover generator https://www.gridlover.net/try
- * Perfect paragraph https://betterwebtype.com/triangle
- * Typography resources http://www.sansfrancis.co/#typography
- * Mathematics of Web Typoghraphy https://medium.com/@jxnblk/mathematical-web-typography-d69186780a41
- * Vertical Rhythm Guideline by Zell
- * Scaling : http://type-scale.com/ * modularscale.com
+ 
+ 
  * Font Combinations: http://fontflame.com
  * Number one free font resource : fonts.google.com
  * Optimal length https://baymard.com/blog/line-length-readability
@@ -432,8 +452,20 @@ body.first {
  * Different Typography pointer of view http://learn.scannerlicker.net/2015/07/13/5-typography-tips-from-a-type-designers-point-of-view/
  * Another Demo - The perfect paragraph https://betterwebtype.com/triangle
  * Hanpicked colors: http://www.vanschneider.com/colors/
- * Random colors: http://jxnblk.com/hello-color/
  * Contrast checker http://contrastchecker.com/
+
+
+ **************************************************
+ USED
+ * Web Design is 95% Typography - https://ia.net/topics/the-web-is-all-about-typography-period/
+ * Scaling : http://type-scale.com/ * modularscale.com
+ * SASSLINE https://sassline.com/ by jakegiltsoff
+ * Gridlover generator https://www.gridlover.net/try
+ * Perfect paragraph https://betterwebtype.com/triangle
+ * Typography resources http://www.sansfrancis.co/#typography
+ * Mathematics of Web Typoghraphy https://medium.com/@jxnblk/mathematical-web-typography-d69186780a41
+ * Vertical Rhythm Guideline by Zell
+
 */
 
 /*
