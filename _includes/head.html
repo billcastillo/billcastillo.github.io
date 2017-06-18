@@ -8,13 +8,21 @@
 	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+	
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" value="summary">
+	<meta name="twitter:site" content="@castlenibill">
+	<meta name="twitter:title" content="{{ page.title }}">
+	<meta name="twitter:description" content="{{ page.description }}">
+	<meta name="twitter:creator" content="@castlenibill">
+	<meta name="twitter:image" content="https:/billcastillo.me/img/meta/meta_image.jpg">
 
 	<meta name="author" content="Bill Castillo">
   	<meta property="og:title" content="Bill Castillo" />
   	<meta property="og:type" content="website" />
   	<meta property="og:description" content="{{ page.description }}" />
   	<meta property="og:site_name" content="Bill Castillo" />
-  	<meta property="og:image" content="https://billcastillo.me/casbie.png" />
+  	<meta property="og:image" content="https://billcastillo.me/img/meta/meta_image.jpg" />
   	<meta name="description" content="{{ page.description }}">
 
   	<script type='application/ld+json'> 
@@ -24,8 +32,8 @@
 	  "name": "Bill Castillo",
 	  "jobTitle": "Front-end Designer / Web Developer / UI / UX / Web Designer",
 	  "url": "https://billcastillo.me/",
-	  "logo": "https://billcastillo.me/img/casbie-logo.png",
-	  "image": "https://billcastillo.me/img/casbie.png",
+	  "logo": "https://billcastillo.me/img/meta/casbie-logo.png",
+	  "image": "https://billcastillo.me/img/meta/meta_image.jpg",
 	  "description": "{{ page.description }}",
 	  "address": {
 	    "@type": "PostalAddress",
@@ -34,7 +42,7 @@
 	  },
 	  "email": "castillobil@gmail.com"
 	}
- </script>
+ 	</script>
 
   	<link rel="canonical" href="https://billcastillo.me/">
   	
@@ -70,16 +78,6 @@
 	</noscript>
 	
 	<style>
-		.footer_custom {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			padding: 15px;
-		}
-		.footer_custom p {
-			font-size: 0.850em;
-			color: #373340;
-		}
 		#pageHeader {
 		    width: 100%;
 		    background: #FFA5C0;
