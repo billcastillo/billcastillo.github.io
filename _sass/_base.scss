@@ -28,11 +28,8 @@ body {
   overflow-x: hidden;
 }
 
-.list__inline {
-  list-style: none;
-  li {
-      display: inline-block;
-  }
+.wrapper {
+  position: relative;
 }
 
 /**
@@ -69,7 +66,7 @@ i {
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Domine','Georgia','TimesNewRoman','Times New Roman',Helvetica,Arial,serif;
   font-weight: 700;
-  letter-spacing: -0.040em;
+  // letter-spacing: -0.030em;
   line-height: 1.2;
   color: $heading-color;
 }
@@ -200,66 +197,18 @@ ul, ol, dl, figure,
     text-align: center;
 }
 
-/*
-.section-text {
-    position: relative;
-    // display: inline-block;
-    font-size: 2em;
-    padding: 10px 20px;
-    border: 2px solid $color-2;
-    background: white;
-    &::after {
-        position: absolute;
-        content: '';
-        top: 10px;
-        left: 10px;
-        width: 100%;
-        height: 100%;
-        background: repeating-linear-gradient(
-          135deg,
-          $color-2,
-          $color-2 2px,
-          white 2px,
-          white 4px
-        );
-        z-index: -1;
-    }
-}
-*/
-
-
-/**
- * Images
- */
 img {
     max-width: 100%;
     vertical-align: middle;
 }
 
+figure > img {display: block; }
+figcaption { font-size: $small-font-size; }
 
-
-/**
- * Figures
- */
-figure > img {
-    display: block;
-}
-
-figcaption {
-    font-size: $small-font-size;
-}
-
-
-
-/**
- * Lists
- */
 ol {
     margin-left: $spacing-unit;
     line-height: 1.635;
 }
-
-
 
 li {
     > ul,
@@ -268,34 +217,19 @@ li {
     }
 }
 
-
-
-/**
- * Headings
- */
 h1, h2, h3, h4, h5, h6 {
     // font-weight: $base-font-weight;
     text-rendering: optimizeLegibility;
 }
 
-
-
-/**
- * Links
- */
 a {             
     text-decoration: none;
     &:hover {
-        color: $body-color;
+        color: #97aed6;
         text-decoration: underline;
     }
 }
 
-
-
-/**
- * Blockquotes
- */
 blockquote {
     color: $grey-color;
     border-left: 4px solid $grey-color-light;
@@ -309,11 +243,6 @@ blockquote {
     }
 }
 
-
-
-/**
- * Code formatting
- */
 pre,
 code {
     font-size: 15px;
@@ -337,13 +266,7 @@ pre {
     }
 }
 
-
-
-/**
- * Clearfix
- */
 %clearfix {
-
     &:after {
         content: "";
         display: table;
@@ -351,23 +274,17 @@ pre {
     }
 }
 
-
-
-/**
- * Icons
- */
 .icon {
+  > svg {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
 
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
-    }
+      path {
+          fill: $grey-color;
+      }
+  }
 }
 
 .absolute {
@@ -424,7 +341,16 @@ pre {
     padding-right: $spacing-unit / 2;
 }
 
-@include media-query(737px, 1280px) { //768
+/*
+include media-query(480px, 767px) {
+  .container {
+    padding-left: $spacing-unit / 2;
+    padding-right: $spacing-unit / 2;
+  }
+}
+*/
+
+@include media-query(768px, 1279px) { //768
     .container {
         max-width: 100%; // 960px; // 750px;
         padding-left: $spacing-unit;
@@ -432,17 +358,19 @@ pre {
     }
 }
 
-@include media-query(1281px, 1600px) { // 1024
+@include media-query(1280px, 1439px) { // 1280
     .container {
         // max-width: 1200px // 960px;
-        padding-left: $spacing-unit * 2;
-        padding-right: $spacing-unit * 2;
+        padding-left: $spacing-unit * 3;
+        padding-right: $spacing-unit * 3;
     }
 }
 
-@include media-query(1601px, 1980px) { // 1280
+@include media-query(1440px, 1981px) { // 1440
     .container {
-        max-width: 1700px;
+        max-width: 1440px;
+        padding-left: $spacing-unit * 4;
+        padding-right: $spacing-unit * 4;
     }
 }
 
@@ -733,7 +661,7 @@ pre {
   order: 1;
 }
 
-@media only screen and (min-width: 737px) {
+@media only screen and (min-width: 480px) {
 
   .col-sm,
   .col-sm-1,
@@ -969,7 +897,7 @@ pre {
   }
 }
 
-@media only screen and (min-width: 1281px) {
+@media only screen and (min-width: 768px) {
 
   .col-md,
   .col-md-1,
@@ -1205,7 +1133,7 @@ pre {
   }
 }
 
-@media only screen and (min-width: 1601px) {
+@media only screen and (min-width: 1440px) {
 
   .col-lg,
   .col-lg-1,

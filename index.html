@@ -4,109 +4,130 @@ css: /css/main.css
 description: I design and build website interfaces that humans should find easy to use and understand.
 ---
 
-<main>
-  <div class="gradient"></div>
-  <section class="indexMainSplash">
-  <!-- <div id="particles-js"></div> -->
-    <div class="indexMainSplash__heading">
-      <h1>Bill Castillo</h1>
-      <h2>Front-end Designer / Web Developer</h2>
-    </div>
-  </section>
+<div class="wrapper">
 
-  <section class="indexDescription" id="about">
-    <div class="indexDescription__heading">
-      <h3 class="indexDescription__heading--h3 h3-custom">
-        I design and build <u>website interfaces</u> that humans should find easy to use and understand.
-      </h3>
-    </div>
-  </section>
+	<section class="indexSection" id="indexSplash">
+		<div class="bg"></div>
+		<div class="container">
 
-  <section class="indexProjects" id="projects">
-    <div class="container">
+			{% include header.html %}
 
-      <h2 class="indexProjects__header--h2">
-        Projects
-      </h2>
+			<div class="indexSplash__header">
+				<h1 class="indexSplash__header--h1">
+					Bill Castillo
+				</h1>
+			</div>
+		</div>
+	</section>
 
-    </div> <!-- container -->
-  </section>
+	<section class="indexSection" id="indexCircle">
+		<div class="container">
+			<div class="indexCircle__container"></div>
+		</div>
+	</section>
 
-  <section class="indexProfile">
-    <div class="indexProfile__row row middle-xs container">
-      <div class="col-xs-2 col-sm-2 indexProfile__left">
-        
-      </div>
-      <div class="col-xs-12 col-sm-10 indexProfile__container row middle-xs">
-        
-      <div class="indexProfile__description col-xs-12 col-sm-5">
-        <h4 class="h4-custom"><i>Collab... bro?</i></h4>
-        <p>
-          Follow me on my experimental adventures on codepen and maybe participate and collab on my personal projects!
-        </p>
-        <p>My soundcloud is fire too..</p>
-      </div>
+	<section class="indexSection" id="indexDescription">
+		<div class="bg"></div>
+		<div class="indexDescription__container">
+			<h2 class="h2-custom indexDescription__header">
+				I design and build website interfaces that humans should find easy to use and understand.
+			</h2>
+		</div>
+	</section>
 
-      <div class="indexProfile__links col-xs-12 col-sm-7">
+	<section class="indexSection" id="indexProjects">
+		<div class="container">
+			<h2 class="indexProjects__header">
+				Projects
+			</h2>
+			<div class="row center-xs">
+			<div class="indexProjects__box col-xs-12 col-md-5" id="project_enigma">
+				<div class="indexProjects__btnContainer">
+				<a href="https://enigmaladiessalon.com">
+				<div class="indexProjects__btn btn">
+					Launch
+				</div></a>
+				<a href="https://billcastillo.com/projects/enigma">
+				<div class="indexProjects__btn btn">
+					Case Study
+				</div></a>
+				</div>
+				<h3 class="indexProjects__title">
+					Enigma Ladies Salon
+				</h3>
+				<p class="indexProjects__desc">
+					A website for an exclusive destination of beauty, fashion, and design in Dubai.
+				</p>
+				<img src="{{ site.baseurl }}/img/index/project_enigma.png" alt="" class="indexProjects__img">
+			</div>
+			<div class="col-md-1"></div>
+			<div class="indexProjects__box col-xs-12 col-md-5" id="project_angular">
+				<div class="indexProjects__btnContainer">
+				<a href="{{ site.baseurl }}/angular-todo-app">
+				<div class="indexProjects__btn btn">
+					Launch
+				</div></a>
+				</div>
+				<h3 class="indexProjects__title">
+					Angular to-do app
+				</h3>
+				<p class="indexProjects__desc">
+					Let's plan your day by organizing your daily tasks on this ergonomic to-do app!
+				</p>
+				<img src="{{ site.baseurl }}/img/index/project_angular.png" alt="" class="indexProjects__img">
+			</div>
+			</div><!-- end row -->
+			<div class="row center-xs">
+				<div class="indexProjects__box col-xs-12 col-md-11" id="project_typo">
+					<div class="indexProjects__btnContainer">
+					<a href="{{ site.baseurl }}/typography">
+					<div class="indexProjects__btn btn">
+						Launch
+					</div></a>
+					</div>
+					<h3 class="indexProjects__title">
+						Guide to Web Typography
+					</h3>
+					<p class="indexProjects__desc">
+						Learn the basics of web typography with this interactive guide! See and understand the difference when each module is applied.
+					</p>
+					<img src="{{ site.baseurl }}/img/index/project_typo.png" alt="" class="indexProjects__img">
+				</div>
+			</div>
+		</div>
+	</section>
 
-      <div class="indexProfile__links--row row around-xs">
-      <div class="indexProfile__box col-xs-4">
-        <a href="https://codepen.io/billcastillo/" target="_blank" title="codepen">
-        <div class="indexProfile__box--container indexProfile__box--codepen">
-          <div class="indexProfile__box--content">
-            <img src="{{ site.baseurl }}/img/icons/codepen.svg" alt="codepen">
-            <span class="a-noStyle indexProfile__box--name">
-              codepen
-            </span>
-          </div>
-        </div>
-        </a>
-      </div>
+	<section class="indexSection" id="indexContact">
+		<div class="container">
+			<h2>Contact Me</h2>
+			<p><a href="mailto:castillobil@gmail.com" target="_blank">
+				castillobil@gmail.com
+			</a></p>
+			<h2>Follow Me</h2>
+			<ul class="indexContact__ul">
+				<li class="indexContact__li">
+				<a href="https://github.com/billcastillo" target="_blank">
+					<img src="{{ site.baseurl }}/img/icons/github.svg" alt="">
+				</a>
+				</li>
+				<li class="indexContact__li">
+				<a href="https://codepen.io/billcastillo" target="_blank">
+					<img src="{{ site.baseurl }}/img/icons/codepen.svg" alt="">
+				</a>
+				</li>
+				<li class="indexContact__li">
+				<a href="https://soundcloud.com/bill-castillo" target="_blank">
+					<img src="{{ site.baseurl }}/img/icons/soundcloud.svg" alt="">
+				</a>
+				</li>
+			</ul>
+		</div>
+	</section>
 
-      <div class="indexProfile__box col-xs-4">
-        <a href="https://github.com/billcastillo" target="_blank" title="github">
-        <div class="indexProfile__box--container indexProfile__box--github">
-          <div class="indexProfile__box--content">
-            <img src="{{ site.baseurl }}/img/icons/github.svg" alt="github">
-            <span class="a-noStyle indexProfile__box--name">
-              github
-            </span>
-          </div>
-        </div>
-        </a>
-      </div>
+	<section class="" id="indexFooter">
+		<div class="container">
+			<img class="indexFooter__img" src="{{ site.baseurl }}/img/index/bg_3.png" alt="">
+		</div>
+	</section>
 
-      <div class="indexProfile__box col-xs-4">
-        <a href="https://soundcloud.com/bill-castillo" target="_blank" title="soundcloud">
-        <div class="indexProfile__box--container indexProfile__box--soundcloud">
-          <div class="indexProfile__box--content">
-            <img src="{{ site.baseurl }}/img/icons/soundcloud.svg" alt="soundcloud">
-            <span class="txt-white indexProfile__box--name">
-              soundcloud
-            </span>
-          </div>
-        </div>
-        </a>
-      </div>
-      </div>
-
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contact">
-    <div class="container">
-      <h2 class="">Contact Me</h2>
-      <a href="mailto:castillobil@gmail.com?subject=Hello" "contact me">
-      <p>castillobil@gmail.com</p>
-      </a>
-      <h2 class="footerCopy">&copy;</h2>
-      <p>2017</p>
-    </div>
-    <div class="footerBg">
-
-    </div>
-  </footer>
-
-</main>
+</div><!-- end wrapper -->

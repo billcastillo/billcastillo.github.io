@@ -88,7 +88,7 @@ img { width: 100%; }
 	transition: all 0.5s ease-in-out;
 }
 
-header {
+.titleSection {
 	text-align: center;
 }
 
@@ -150,6 +150,13 @@ header {
 	.button {
 		bottom: 20px;
 		right: 20px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.btn {
+		font-size: 1em;
+		padding: 15px 15px;
 	}
 }
 
@@ -227,17 +234,18 @@ body.first {
 		word-break: break-all;
 		white-space: normal;
 		margin-bottom: 0.50em;
+		line-height: 1;
 	}
 	h2 {
 		margin: 1.250em 0 0 0;
 		line-height: 1.2;
 	}
 	h3, h4, h5, h6 {
-		line-height: 1;
+		line-height: 1.2;
 		margin: 1em 0 -0.250em 0;
 	}
 	li + h5 { margin: 1em 0 0.250em -1em; }
-	h1 { font-size: 3.842em; }
+	h1 { font-size: 3.542em; }
 	h2 { font-size: 2.744em; }
 	h3 { font-size: 1.960em; }
 	h4 { font-size: 1.400em; }
@@ -297,10 +305,10 @@ body.first {
 		ol > li,
 		a,
 		pre > code {
-			line-height: 1.65;
+			line-height: 1.6;
 		}
-		ul, ol { margin-top: 1.65em; }
-		p { margin-top: 1.65em; }
+		ul, ol { margin-top: 1.6em; }
+		p { margin-top: 1.6em; }
 	}
 }
 
@@ -331,7 +339,7 @@ body.first {
  *********************************/
 
 .container.second article {
-	max-width: 700px;
+	max-width: 650px;
 	margin: 0 auto;
 }
 
@@ -357,6 +365,7 @@ body.first {
 		color: #9575CD;
 		text-decoration: underline;
 		text-decoration-skip: ink;
+		-webkit-text-decoration-skip: ink;
 		&:hover {
 			color: #B39DDB;
 		}
@@ -368,7 +377,7 @@ body.first {
 	h1 { letter-spacing: -0.035em; }
 	h1,h2 {
 		font-weight: 700;
-		line-height: 0.850;
+		// line-height: 0.850;
 	}
 	h3,h4,h5,h6 {
 		font-weight: 400;
@@ -408,6 +417,18 @@ body.first {
 			opacity: 0.50;
 			z-index: -1;
 		}
+		&::after {
+			position: absolute;
+			display: block;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 50vh;
+
+			background: linear-gradient(0deg, #ffffff 20%, transparent);
+			z-index: -1;
+		}
 	}
 	.titleSection__title {
 		margin-bottom: 0.50em;
@@ -417,10 +438,10 @@ body.first {
 	p > code {
 		display: inline-block;
 		font-family: monospace, 'Courier New','Lucida Console','Courier','Monaco';
-		font-size: 0.850em;
+		font-size: 0.750em;
 		font-feature-settings: "liga" 0;
 		padding: 0 0.250em;
-		margin: 0 0.250em;
+		// margin: 0 0.250em;
 		border: 1px solid #df9898;
 		border-radius: 5px;
 		color: #505050;
@@ -436,7 +457,11 @@ body.first {
 }
 
 @media screen and (min-width: 768px) {
-	
+	.container.fourth {
+		p > code {
+			font-size: 0.850em;
+		}
+	}
 }
 
 
