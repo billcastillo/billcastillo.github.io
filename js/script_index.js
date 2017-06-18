@@ -13,8 +13,18 @@
     });
   });
 
+  $(document).ready(function() {
+    var winHeight = $(window).height() / 2;
+    $('.indexSplash__header').css('height', winHeight);
+    $('#indexDescription').css('height', winHeight);
+  }); // end document.ready
+
+  /*
   window.onload = function(){ 
-    var indexSplash = document.getElementsByClassName('indexMainSplash')[0];
-    var getHeight = indexSplash.offsetHeight;
+    var indexSplash = document.getElementsByClassName('indexSplash__header')[0];
+    var indexDesc = document.getElementsById('indexDescription');
+    var getHeight = indexSplash.offsetHeight / 2;
     indexSplash.style.height = getHeight + 'px';
+    indexDesc.style.height = getHeight + 'px';
   };
+  */
