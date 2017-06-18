@@ -3,7 +3,7 @@
 # Allow crawling of all content
 User-agent: Twitterbot
 Disallow:
-Allow: /images
+Allow: /img
 
 User-agent: *
 Disallow:
