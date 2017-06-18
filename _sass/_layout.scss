@@ -5,6 +5,7 @@
     min-width: 100px;
     padding: 5px 10px;
     background: linear-gradient(180deg, $c1 10%, $c2);
+    background: $btn-color;
     border-radius: 5px;
     @extend .shadow-1;
 
@@ -17,8 +18,49 @@
     text-transform: uppercase;
 }
 
+.overlay {
+
+}
+
 .indexSection {
     margin-bottom: 4em;
+}
+
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+
+#mainHeader {
+    padding: $spacing-unit * 2 0 $spacing-unit 0;
+}
+
+#mainHeader .header__ul {
+    list-style: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+#mainHeader .header__li {
+    display: inline-block;
+    &:not(:last-child) {
+        margin-right: $spacing-unit / 2;
+    }
+}
+
+@include media-min($sm) {
+    #mainHeader .header__ul {
+        text-align: right;
+    }
+    #mainHeader .header__li {
+        display: inline-block;
+        &:not(:last-child) {
+            margin-right: $spacing-unit;
+        }
+    }
+    #mainHeader .header__li {
+        font-size: calc( 1em + 0.50vw );
+    }
 }
 
 /*------------------------------------*\
@@ -115,40 +157,6 @@
 }
 
 /*------------------------------------*\
-  #HEADER
-\*------------------------------------*/
-
-#mainHeader {
-    padding: $spacing-unit * 2 0 $spacing-unit 0;
-}
-
-#mainHeader .header__ul {
-    list-style: none;
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-
-#mainHeader .header__li {
-    display: inline-block;
-    &:not(:last-child) {
-        margin-right: $spacing-unit / 2;
-    }
-}
-
-@include media-min($sm) {
-    #mainHeader .header__ul {
-        text-align: right;
-    }
-    #mainHeader .header__li {
-        display: inline-block;
-        &:not(:last-child) {
-            margin-right: $spacing-unit;
-        }
-    }
-}
-
-/*------------------------------------*\
   #CIRCLE
 \*------------------------------------*/
 
@@ -158,11 +166,14 @@
 
 #indexCircle .indexCircle__container {
     position: relative;
-    width: 60vw;
-    height: 60vw;
+    width: 75vw;
+    height: 75vw;
     margin: calc(-10% + -4em) auto 0 auto;
-    border: 5px solid $c1;
+    border: 5px solid white; // $c1
     border-radius: 50%;
+    background: url('../img/index/hexa_dp.png') no-repeat;
+    background-size: cover;
+    background-position: center center;
     margin-bottom: 5em;
 }
 
@@ -181,7 +192,8 @@
 #indexDescription {
     position: relative;
     height: 50vh;
-    padding: 8vw;
+    padding: 0;
+    margin: -2vw 0;
 }
 
 #indexDescription .bg {
@@ -190,8 +202,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../img/index/bg_2.png') no-repeat;
-    background-size: auto 110%;
+    background: url('../img/index/bg_2.1.png') no-repeat;
+    background-size: auto 100%;
     background-position: center center;
     z-index: -1;
 }
@@ -296,59 +308,13 @@
     transform: translateZ(0); // increase animation performance
 }
 
-.indexMainSplash__heading {
-    position: absolute;
-    font-family: $body-font;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -60%);
-    -moz-transform: translate(-50%, -60%);
-    -webkit-transform: translate(-50%, -60%);
-    text-align: center;
-    z-index: 100;
-    &::before {
-        position: absolute;
-        content: "Hi, I'm";
-        top: -15px;
-        left: 0;
-        color: $grey-color;
-        font-size: calc( 0.850em + 0.50vw );
-    }
-    h1 {
-        display: inline-block;
-        font-family: $header-font;
-        font-size: calc( 3em + 2.50vw );
-        font-weight: 400;
-        color: #e6b0bb;
-        white-space: nowrap;
-        letter-spacing: -2px;
-
-        margin: 0;
-        // -moz-background: transparent;
+/*
         background: -webkit-linear-gradient( 92deg, #f6a995, #e6b0bb );
         // background: -moz-linear-gradient( 92deg, transparent, transparent );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.08), 2px 2px 1px rgba(0, 0, 0, 0.075), 4px 4px 1px rgba(0, 0, 0, 0.07), 6px 6px 1px rgba(0, 0, 0, 0.065), 8px 8px 1px rgba(0, 0, 0, 0.06), 10px 10px 1px rgba(0, 0, 0, 0.055), 12px 12px 1px rgba(0, 0, 0, 0.05), 14px 14px 1px rgba(0, 0, 0, 0.045), 16px 16px 1px rgba(0, 0, 0, 0.04), 18px 18px 1px rgba(0, 0, 0, 0.035), 20px 20px 1px rgba(0, 0, 0, 0.03), 22px 22px 1px rgba(0, 0, 0, 0.025), 24px 24px 1px rgba(0, 0, 0, 0.02), 26px 26px 1px rgba(0, 0, 0, 0.015), 28px 28px 1px rgba(0, 0, 0, 0.01), 30px 30px 1px rgba(0, 0, 0, 0.005), 32px 32px 1px rgba(0, 0, 0, 0.0025), 34px 34px 1px rgba(0, 0, 0, 0.002), 36px 36px 1px rgba(0, 0, 0, 0.0015), 38px 38px 1px rgba(0, 0, 0, 0.001);
-    }
-    h2 {
-        font-family: $body-font;
-        font-size: calc( 0.850em + 0.50vw );
-        font-weight: 400;
-        color: $grey-color;
-        line-height: 1.635;
-        margin: 0;
-    }
-}
 
-@include media-min($sm) {
-    .index__text {
-        h1 {
-            font-size: calc( 4em + 2vw );
-        }
-    }
-}
-
+*/
 
 /*------------------------------------*\
   NEW LAYOUT
@@ -395,8 +361,10 @@
     border-radius: 5px;
     margin: 30px 0;
     text-align: left;
-
-    @extend .shadow-2;
+    transition: all 0.3s cubic-bezier(.17,.67,.83,.67);
+    &:hover {
+        @extend .shadow-2;
+    }
 }
 
 #indexProjects .indexProjects__box#project_enigma  { background: linear-gradient(135deg, #ff4081, #4b007d); }
@@ -426,6 +394,7 @@
 }
 
 .indexProjects__btn {
+    z-index: 10;
     &:not(:last-child) {
         margin-right: 15px;
     }
@@ -445,7 +414,10 @@
         padding: 30px 30px 120px 30px;
         margin: 60px 0;
     }
-    .indexProjects__desc { width: 80%; }
+    .indexProjects__desc {
+        width: 80%;
+        max-width: 500px;
+    }
     .indexProjects__btnContainer {
         width: 60%;
         bottom: 15px;

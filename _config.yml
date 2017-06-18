@@ -11,7 +11,7 @@ github_username:  billcastillo
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 exclude: ["node_modules", "gulpfile.js", "package.json"]
 post_dirs: false
 

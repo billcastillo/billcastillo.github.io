@@ -89,6 +89,13 @@ h2.h2-custom {
   font-weight: 400;
   letter-spacing: 0;
   font-size: calc( 2em + 1vw );
+  color: $body-color;
+}
+
+h2.h2-sans {
+  font-family: $header-font;
+  font-size: calc( 2em + 1.50vw );
+  color: $body-color;
 }
 
 h3 {
