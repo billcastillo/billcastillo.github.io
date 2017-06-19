@@ -7,6 +7,7 @@
     background: linear-gradient(180deg, $c1 10%, $c2);
     background: $btn-color;
     border-radius: 5px;
+    z-index: 10;
     @extend .shadow-1;
 
     font-family: $body-font;
@@ -16,6 +17,32 @@
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
+    &:hover {
+        @extend .shadow-2;
+    }
+}
+
+.borderWave {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: '';
+        width: calc( 100% - 4px);
+        height: calc( 100% - 4px);
+        top: 0;
+        left: 0;
+        padding: 0;
+        background: transparent;
+        border: 2px solid $c1;
+        border-radius: inherit;
+        transform-origin: center center;
+        z-index: -1;
+    }
+    &:hover {
+        &::before {
+            animation: borderWave 0.3s forwards cubic-bezier(.17,.67,.83,.67);
+        }
+    }
 }
 
 .overlay {
@@ -271,6 +298,18 @@
     }
 }
 
+@include media-min($md) {
+    #indexContact .indexContact__li {
+        padding: 10px;
+    }
+}
+
+@include media-min($lg) {
+    #indexContact .indexContact__li {
+        padding: 15px;
+    }
+}
+
 /*------------------------------------*\
   #FOOTER
 \*------------------------------------*/
@@ -362,9 +401,6 @@
     margin: 30px 0;
     text-align: left;
     transition: all 0.3s cubic-bezier(.17,.67,.83,.67);
-    &:hover {
-        @extend .shadow-2;
-    }
 }
 
 #indexProjects .indexProjects__box#project_enigma  { background: linear-gradient(135deg, #ff4081, #4b007d); }
@@ -431,85 +467,6 @@
         height: 200px;
         right: -50px;
         bottom: -50px;
-    }
-}
-
-/************************************
- * INDEX PROFILE
- ************************************/
-
-.indexProfile {
-    padding-top: 60px;
-    text-align: center;
-}
-
-.indexProfile__left { display: none; }
-.indexProfile__container { padding: 0; }
-
-.indexProfile__links {
-    position: relative;
-    height: 200%;
-}
-
-.indexProfile__box--container {
-    width: 125px;
-    height: 125px;
-    border-radius: 50%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    @extend .shadow-1;
-    transition: box-shadow 0.15s cubic-bezier(.17,.67,.83,.67);
-    &:hover {
-        @extend .shadow-2;
-    }
-}
-
-.indexProfile__box--codepen {
-    background: linear-gradient(135deg, $c3,$c4);
-}
-
-.indexProfile__box--github {
-    background: linear-gradient(135deg, $c1,$c2);
-}
-
-.indexProfile__box--soundcloud {
-    background: linear-gradient(135deg, $heading-color,$body-color);
-}
-
-.indexProfile__box--content {
-    position: relative;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    img {
-        width: 35px;
-        height: 35px;
-    }
-}
-
-.indexProfile__box--name {
-    display: block;
-}
-
-@include media-min($sm) {
-    .indexProfile {
-        padding-top: 120px;
-        text-align: left;
-    }
-    .indexProfile__left {
-        display: block;
-    }
-    .indexProfile__box--container {
-        width: 150px;
-        height: 150px;
-    }
-    .indexProfile__box--content {
-        img {
-            width: 50px;
-            height: 50px;
-        }
     }
 }
 
@@ -655,51 +612,19 @@
 }
 
 /*------------------------------------*\
-  #FOOTER
+  #ANIMATIONS
 \*------------------------------------*/
 
-footer {
-    text-align: center;
-    padding-top: 80px;
-    color: $heading-color;
-    p {
-        display: block;
-        margin: 0;
+@keyframes borderWave {
+    0% {
+        opacity: 1;
+        transform: scale(1);
     }
-    .footerCopy {
-        font-size: 2.50em;
-        padding-top: $spacing-unit;
+    25% {
+        opacity: 1;
     }
-    .footerBg {
-        padding-bottom: 80px;
-        background: url('../img/footer-flower.png') no-repeat;
-        background-position: top center;
-        background-size: 100% auto;
-    }
-}
-
-@include media-min($sm) {
-    footer {
-        padding-top: 160px;
-        .footerBg {
-            padding-bottom: 160px;
-        }
-    }
-}
-
-.back {
-    position: absolute;
-    top: $spacing-unit;
-    left: $spacing-unit / 2;
-    z-index: 10;
-    img {
-        width: 25px;
-        height: 25px;
-    }
-}
-
-@include media-min($sm) {
-    .back {
-        left: $spacing-unit;
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
     }
 }

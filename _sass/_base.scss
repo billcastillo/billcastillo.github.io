@@ -174,9 +174,15 @@ a:hover {
 
 
 @include media-min($sm) {
-    body {
-        font-size: 18px;
-    }
+  body {
+      font-size: 18px;
+  }
+}
+
+@include media-min($lg) {
+  body {
+    font-size: 20px;
+  }
 }
 
 /**
