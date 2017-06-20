@@ -88,13 +88,13 @@ h2.h2-custom {
   font-family: $body-font;
   font-weight: 400;
   letter-spacing: 0;
-  font-size: calc( 2em + 1vw );
+  font-size: calc( 1.50em + 1vw );
   color: $body-color;
 }
 
 h2.h2-sans {
   font-family: $header-font;
-  font-size: calc( 2em + 1.50vw );
+  font-size: calc( 1.50em + 1.50vw );
   color: $body-color;
 }
 
@@ -1390,23 +1390,27 @@ include media-query(480px, 767px) {
     visibility: hidden;
     position: absolute;
     content: attr(data-tooltip);
-    padding: 6px 10px;
     top: 1.4em;
     left: 50%;
-    transform: translateX(-50%) translateY(-2px);
-    background: $heading-color;
+    padding: 5px 10px;
+
+    font-size: 0.850em;
     color: $white-color;
     white-space: nowrap;
-    z-index: 2;
     border-radius: 2px;
-    transition: opacity 0.2s cubic-bezier(.17,.67,.83,.67), transform 0.2s cubic-bezier(.17,.67,.83,.67);
+    background: $heading-color;
+    
+    transform: translateX(-50%) translateY(100%);
+    transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
+    z-index: 2;
   }
   &:hover {
+    transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
     &:after {
       display: block;
       opacity: 1;
       visibility: visible;
-      transform: translateX(-50%) translateY(0);
+      transform: translateX(-50%) translateY(calc(100% + 0.50em));
     }
   }
 }
@@ -1433,7 +1437,7 @@ include media-query(480px, 767px) {
       display: block;
       opacity: 1;
       visibility: visible;
-      transform: translateX(-50%) translateY(0);
+      transform: translateX(-50%) translateY(50%);
     }
   }
 }

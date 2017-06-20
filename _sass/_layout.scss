@@ -33,9 +33,10 @@
         left: 0;
         padding: 0;
         background: transparent;
-        border: 2px solid $c1;
+        border: 2px solid  $c1;
         border-radius: inherit;
         transform-origin: center center;
+        opacity: 0;
         z-index: -1;
     }
     &:hover {
@@ -48,6 +49,37 @@
 .overlay {
 
 }
+
+/*
+.tooltip {
+    // position: relative;
+}
+
+.tooltip::after {
+    position: absolute;
+    content: attr(data-tooltip);
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    
+    color: white;
+    font-size: 0.850em;
+    text-align: center;
+    background: $heading-color;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(10%,0,0);
+
+    transition: all 0.3s cubic-bezier(.17,.67,.83,.67);
+    &:hover {
+        opacity: 1;
+        visibility: visible;
+        transform: translate3d(0,0,0);
+    }
+}
+*/
 
 .indexSection {
     margin-bottom: 4em;
@@ -69,9 +101,18 @@
 }
 
 #mainHeader .header__li {
+    position: relative;
     display: inline-block;
+    border-radius: 5px;
+
     &:not(:last-child) {
         margin-right: $spacing-unit / 2;
+    }
+
+    &:hover {
+        a {
+            text-decoration: none;
+        }
     }
 }
 
@@ -232,6 +273,7 @@
     background: url('../img/index/bg_2.1.png') no-repeat;
     background-size: auto 100%;
     background-position: center center;
+    opacity: 0.50;
     z-index: -1;
 }
 
@@ -248,9 +290,7 @@
     margin: 0 auto;
     padding: 0 15px;
     font-family: $body-font;
-    font-weight: 400;
-    color: $heading-color;
-    line-height: 1;
+    line-height: 1.2;
     text-align: center;
 }
 
@@ -400,7 +440,7 @@
     border-radius: 5px;
     margin: 30px 0;
     text-align: left;
-    transition: all 0.3s cubic-bezier(.17,.67,.83,.67);
+    transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
 }
 
 #indexProjects .indexProjects__box#project_enigma  { background: linear-gradient(135deg, #ff4081, #4b007d); }
@@ -617,7 +657,7 @@
 
 @keyframes borderWave {
     0% {
-        opacity: 1;
+        opacity: 0;
         transform: scale(1);
     }
     25% {
