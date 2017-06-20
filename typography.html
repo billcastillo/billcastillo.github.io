@@ -8,11 +8,9 @@ description: An interactive guide for basic web typography.
 
 <body>
 	<div class="wrapper">
-	  {% include page_header.html %}
 		<div class="bg__image"></div>
 		<div class="container">
 			
-			<button class="btn button"></button>
 			
 			<header class="titleSection"> 
 				<h1 class="titleSection__title">Basic Web Typography</h1>
@@ -29,6 +27,9 @@ description: An interactive guide for basic web typography.
 			<p>Before we start, let's move a bit from the browser's edge, shall we?</p>
 
 			<p class="highlight">Click the button at the <em>bottom right</em> of the page to implement style guides on this page.</p>
+
+			<p>Or if you're quite impatient:</p>
+			<button class="btn showAllButton">Show All</button>
 			</section>
 
 			<button class="btn btn-next">Next</button>
@@ -84,7 +85,7 @@ description: An interactive guide for basic web typography.
 			<p>Headers also serves as a guide for Google, Yahoo, Bing, and other search engines to read or <code>crawl</code> your website to analyze its content and  rank it according to relevance. So, if you'd like an additional <code>SEO</code> boosts, I insist you use the proper HTML5 semantics.</p>
 
 			<h3>Paragraph</h3>
-			<p><code>Paragraphs</code> should be short and sweet. Make it approachable and easily digestible. The <code>line-height</code> and <code>margin-bottom</code> property will provide breathing room and space for your paragraphs. Setting the line-height value of at least 1.4 should be enough (this should scale-up depending on your font-size). </p>
+			<p><code>Paragraphs</code> should be short and sweet. Make it approachable and easily digestible. The <code>line-height</code> and <code>margin-bottom</code> property will provide breathing room and space for your paragraphs. Setting the line-height value of at least 1.4 should be enough (this should scale-up depending on your font-size).</p>
 
 <pre>
 	<code class="css">
@@ -289,8 +290,12 @@ description: An interactive guide for basic web typography.
 			</article>
 
 		</div><!-- end container -->
+	<button class="btn mainButton"></button>
+	
 	</div> <!-- end wrapper -->
-	{% include script_typography.html %}
+	{% include script_jquery.html %}
+	<script src="js/highlight.js"></script>
+	<script src="js/typography.js"></script>
 
 </body>
 </html>

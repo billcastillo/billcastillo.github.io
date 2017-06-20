@@ -88,6 +88,11 @@ img { width: 100%; }
 	transition: all 0.5s ease-in-out;
 }
 
+.container article {
+	width: 100%;
+	max-width: 1000px;
+}
+
 .titleSection {
 	text-align: center;
 }
@@ -133,10 +138,14 @@ img { width: 100%; }
 	}
 }
 
-.button {
+.mainButton {
 	position: fixed;
 	bottom: 10px;
 	right: 10px;
+}
+
+.showAllButton {
+
 }
 
 .btn-next {
@@ -147,7 +156,7 @@ img { width: 100%; }
 	.btn {
 		font-size: 1em;
 	}
-	.button {
+	.mainButton {
 		bottom: 20px;
 		right: 20px;
 	}
@@ -194,7 +203,7 @@ img { width: 100%; }
 	}
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
 	.container.zero {
 		padding: 30px 60px;
 	}
@@ -231,8 +240,8 @@ body.first {
 		font-style: italic;
 	}
 	h1 {
-		word-break: break-all;
-		white-space: normal;
+		// word-break: break-all;
+		word-wrap: break-word;
 		margin-bottom: 0.50em;
 		line-height: 1;
 	}
@@ -245,7 +254,7 @@ body.first {
 		margin: 1em 0 -0.250em 0;
 	}
 	li + h5 { margin: 1em 0 0.250em -1em; }
-	h1 { font-size: 3.542em; }
+	h1 { font-size: 3.242em; }
 	h2 { font-size: 2.744em; }
 	h3 { font-size: 1.960em; }
 	h4 { font-size: 1.400em; }
@@ -290,7 +299,7 @@ body.first {
 		h3 { font-size: 2.744em; }
 		h4 { font-size: 1.96em; }
 		*/
-		h1 { font-size: 3.998em; }
+		h1 { font-size: 4.998em; }
 		h2 { font-size: 2.827em; }
 		h3 { font-size: 1.999em; }
 		h4 { font-size: 1.414em; }
@@ -338,14 +347,25 @@ body.first {
  * CONTAINER WIDTH
  *********************************/
 
+.container.second {
+	padding-top: 30px;
+}
+
 .container.second article {
 	max-width: 650px;
 	margin: 0 auto;
 }
 
+@media screen and (min-width: 1280px) {
+	.container.second article {
+		margin-left: 210px;
+	}
+}
+
 @media screen and (min-width: 1440px) {
 	.container.second article {
 		max-width: 750px;
+		margin-left: 250px;
 	}
 }
 
@@ -372,12 +392,24 @@ body.first {
 	}
 	h1,h2,h3,h4,h5,h6 {
 		color: #202020;
-		font-family: 'Droid Serif', serif;
+		font-family: 'Georgia','Droid Serif', serif;
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+	     hyphens: auto;
 	}
-	h1 { letter-spacing: -0.035em; }
-	h1,h2 {
-		font-weight: 700;
-		// line-height: 0.850;
+	.titleSection {
+		max-width: 500px;
+		text-align: left;
+	}
+	h1 {
+		font-weight: 400;
+		font-style: italic;
+		line-height: 1.2;
+		margin-bottom: 0;
+		letter-spacing: -0.035em;
+	}
+	h2 {
+		margin: 1.250em 0 -0.250em 0;
 	}
 	h3,h4,h5,h6 {
 		font-weight: 400;
@@ -391,6 +423,22 @@ body.first {
 	    font-variant: small-caps;
 	    letter-spacing: 0;
 		color: #9a9a9a;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.container.third {
+		.titleSection {
+			margin-left: 210px;
+		}
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.container.third {
+		.titleSection {
+			margin-left: 250px;
+		}
 	}
 }
 
@@ -431,9 +479,8 @@ body.first {
 		}
 	}
 	.titleSection__title {
-		margin-bottom: 0.50em;
-		word-break: break-all;
-		hyphens: auto;
+		margin: 0 0 0.50em 0;
+		// word-break: break-all;
 	}
 	p > code {
 		display: inline-block;
@@ -478,6 +525,14 @@ body.first {
  * Another Demo - The perfect paragraph https://betterwebtype.com/triangle
  * Hanpicked colors: http://www.vanschneider.com/colors/
  * Contrast checker http://contrastchecker.com/
+
+ *https://practice.typekit.com/lesson/caring-about-opentype-features/
+ * https://practice.typekit.com/lesson/using-shades/
+ * Universal Typography http://universaltypography.com/
+ * Times New Roman https://www.youtube.com/watch?v=-cGUaBbT0bA
+ * AI font choose http://fontjoy.com/
+ * AI Color generator http://colormind.io/
+
 
 
  **************************************************
