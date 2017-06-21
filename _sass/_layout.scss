@@ -8,7 +8,7 @@
     background: $btn-color;
     border-radius: 5px;
     z-index: 10;
-    @extend .shadow-1;
+    @extend .shadow-1-5;
 
     font-family: $body-font;
     font-size: 0.850em;
@@ -121,13 +121,12 @@
         text-align: right;
     }
     #mainHeader .header__li {
-        display: inline-block;
         &:not(:last-child) {
             margin-right: $spacing-unit;
         }
     }
     #mainHeader .header__li {
-        font-size: calc( 1em + 0.50vw );
+        font-size: calc( 1em + 0.250vw );
     }
 }
 
@@ -174,7 +173,7 @@
     border-radius: 10px;
     background: linear-gradient(135deg, $c2, $c4);
     transform-style: preserve-3d;
-    @extend .shadow-2;
+    // @extend .shadow-2;
 }
 
 #indexSplash .indexSplash__header--h1 {
@@ -248,6 +247,7 @@
     background-size: cover;
     background-position: center center;
     margin-bottom: 5em;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
 
 @include media-min($sm) {
@@ -266,7 +266,7 @@
     position: relative;
     height: 50vh;
     padding: 0;
-    margin: -2vw 0;
+    margin: -4vw 0;
 }
 
 #indexDescription .bg {
@@ -450,8 +450,8 @@
     @extend .shadow-2;
 }
 
-#indexProjects .indexProjects__box#project_enigma  { background: linear-gradient(135deg, #ff4081, #4b007d); }
-#indexProjects .indexProjects__box#project_angular { background: #3e3c3d; }
+#indexProjects .indexProjects__box#project_enigma  { background: linear-gradient(135deg, #ff4081 10%, #4b007d); }
+#indexProjects .indexProjects__box#project_angular { background: linear-gradient(135deg, #3e3c3d 10%, #C9FDD7); }
 #indexProjects .indexProjects__box#project_typo    { background: #c1225a; }
 
 
@@ -462,6 +462,7 @@
     .indexProjects__btn {
         display: block;
         margin-bottom: 15px;
+        transform: translateZ(20px);
     }
     &:not(:last-child) {
         .indexProjects__btn {
