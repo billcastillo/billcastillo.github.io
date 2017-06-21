@@ -173,6 +173,8 @@
     height: 50vh;
     border-radius: 10px;
     background: linear-gradient(135deg, $c2, $c4);
+    transform-style: preserve-3d;
+    @extend .shadow-2;
 }
 
 #indexSplash .indexSplash__header--h1 {
@@ -184,7 +186,8 @@
     margin: 0;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 20px);
+    // text-shadow: 2px 8px 16px rgba(0,0,0,0.35);
     &::before,
     &::after {
         position: absolute;
@@ -193,6 +196,8 @@
         font-weight: 400;
         letter-spacing: 0.040em;
         color: $c5;
+        transform: translateZ(20px);
+        text-shadow: none;
     }
     &::before {
         content: "hi, I'm";
@@ -441,6 +446,8 @@
     margin: 30px 0;
     text-align: left;
     transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
+    transform-style: preserve-3d;
+    @extend .shadow-2;
 }
 
 #indexProjects .indexProjects__box#project_enigma  { background: linear-gradient(135deg, #ff4081, #4b007d); }
@@ -481,7 +488,12 @@
     width: 150px;
     height: 150px;
     right: 0;
-    bottom: -30px
+    bottom: -30px;
+    transform: translateZ(20px);
+
+    filter: url(#drop-shadow);
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.35));
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.35));
 }
 
 @include media-min($sm) {
