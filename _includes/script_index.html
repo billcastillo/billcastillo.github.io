@@ -19,20 +19,32 @@
 		});
 	});
 
+	$(window).bind("load", function() {
+		// $( '.overlay' ).toggleClass('visible');
+	});
 
 	$(document).ready(function() {
-	
-  	$('.js-tilt').tilt({
-  		maxTilt:        7.5,
-  		perspective:    500,
-  		glare: 					false,
-  		reset: 					true,
-  		speed: 					500,
-  	});
+		// Get screen height
+		
+		var winHeight = $(window).height();
+		var winWidth = $(window).width();
 
-    var winHeight = $(window).height() / 2;
-    $('.indexSplash__header').css('height', winHeight);
-    $('#indexDescription').css('height', winHeight * 2);
+		// 
+		const tilt = $('.js-tilt').tilt();
+
+		if( (winWidth + 17) > 768 ) {
+			$('.js-tilt').tilt({
+	  		maxTilt:        7.5,
+	  		perspective:    500,
+	  		glare: 					false,
+	  		reset: 					true,
+	  		speed: 					500,
+	  	});
+		}
+		else { tilt.tilt.destroy.call(tilt); }
+    
+    $('.indexSplash__header').css('height', winHeight / 2);
+    $('#indexDescription').css('height', winHeight);
 
   	}); // end document.ready
 		
