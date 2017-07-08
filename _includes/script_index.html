@@ -33,6 +33,8 @@
 		const tilt = $('.js-tilt').tilt();
 
 		if( (winWidth + 17) > 768 ) {
+			$('.indexProjects__box').addClass('js-tilt');
+			$('.indexCircle__container').addClass('js-tilt');
 			$('.js-tilt').tilt({
 	  		maxTilt:        7.5,
 	  		perspective:    500,
@@ -41,7 +43,10 @@
 	  		speed: 					500,
 	  	});
 		}
-		else { tilt.tilt.destroy.call(tilt); }
+		else {
+			$('.js-tilt').removeClass('js-tilt');
+			tilt.tilt.destroy.call(tilt);
+		}
     
     $('.indexSplash__header').css('height', winHeight / 2);
     $('#indexDescription').css('height', winHeight);

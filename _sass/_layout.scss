@@ -325,6 +325,7 @@
     padding: 0 15px;
     font-family: $body-font;
     line-height: 1.2;
+    letter-spacing: -0.050em;
     text-align: center;
 }
 
@@ -420,8 +421,6 @@
     left: 0;
     background: transparent;
     background: linear-gradient(0deg, transparent, #f2f2f2);
-    -webkit-transform: translateZ(0);
-    ms-transform: translateZ(0);
     transform: translateZ(0); // increase animation performance
 }
 
