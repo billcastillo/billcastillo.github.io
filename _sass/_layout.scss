@@ -323,16 +323,16 @@
     position: relative;
     margin: 0 auto;
     padding: 0 15px;
-    font-family: $body-font;
-    line-height: 1.2;
-    letter-spacing: -0.050em;
-    text-align: center;
+    font-family: $header-font;
+    line-height: 1;
+    letter-spacing: -0.0250em;
+    text-align: right;
 }
 
 @include media-min($sm) {
     #indexDescription .indexDescription__header {
         width: 80%;
-        max-width: 60vw;
+        // max-width: 60vw;
     }
 }
 
